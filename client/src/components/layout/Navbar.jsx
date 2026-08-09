@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, ChevronDown, Calendar } from 'lucide-react';
+import { Menu, X, Calendar } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 w-full z-50 py-6 px-4 md:px-16 flex items-center justify-between text-white border-b transition-all duration-300 bg-[#0a192f] border-[#1a2b3c]">
@@ -43,9 +44,38 @@ const Navbar = () => {
 
       {/* Mobile Menu Icon */}
       <div className="md:hidden">
-        <button className="text-white hover:text-[#D29F54]">
-          <Menu size={28} />
+        <button 
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="text-white hover:text-[#D29F54] transition-colors"
+        >
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      <div 
+        className={`md:hidden fixed top-[88px] left-0 w-full bg-[#0a192f] border-b border-[#1a2b3c] transition-all duration-300 overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-[500px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
+        }`}
+      >
+        <div className="flex flex-col px-6 space-y-4 font-medium text-sm">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>HOME</Link>
+          <Link to="/properties" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/properties' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>PROPERTIES</Link>
+          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/about' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>ABOUT US</Link>
+          <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/services' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>SERVICES</Link>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/contact' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>CONTACT</Link>
+          
+          <div className="pt-4 border-t border-[#1a2b3c]">
+            <Link 
+              to="/schedule-visit" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center justify-center gap-2 border border-[#D29F54] bg-[#D29F54] text-white px-5 py-3 rounded text-sm font-bold hover:bg-[#b88a44] transition-colors w-full"
+            >
+              <Calendar size={16} />
+              Schedule a Visit
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   );
