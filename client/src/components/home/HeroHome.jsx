@@ -79,10 +79,10 @@ const HeroHome = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <button className="bg-[#D29F54] text-black font-semibold px-8 py-3.5 rounded-md hover:bg-[#b88a44] transition-colors tracking-wide flex items-center justify-center gap-2">
+                            <button onClick={() => navigate('/properties')} className="bg-[#D29F54] text-black font-semibold px-8 py-3.5 rounded-md hover:bg-[#b88a44] transition-colors tracking-wide flex items-center justify-center gap-2">
                                 EXPLORE PROPERTIES
                             </button>
-                            <button className="border border-white/30 text-white font-semibold px-8 py-3.5 rounded-md hover:bg-white/10 transition-colors tracking-wide flex items-center justify-center gap-2">
+                            <button onClick={() => navigate('/contact')} className="border border-white/30 text-white font-semibold px-8 py-3.5 rounded-md hover:bg-white/10 transition-colors tracking-wide flex items-center justify-center gap-2">
                                 <Download size={18} className="rotate-180" /> CONTACT AGENT
                             </button>
                         </div>
