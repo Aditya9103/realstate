@@ -29,7 +29,7 @@ const PropertiesMap = ({ properties }) => {
     : [28.5355, 77.3910];
 
   return (
-    <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-lg border border-gray-100 z-0">
+    <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-lg border border-gray-100 relative z-0">
       <MapContainer center={center} zoom={11} style={{ height: '100%', width: '100%' }}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

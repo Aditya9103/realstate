@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Grid, List } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import PropertyCard from './PropertyCard';
 
 const PropertyGrid = ({ properties }) => {
@@ -15,35 +15,20 @@ const PropertyGrid = ({ properties }) => {
   return (
     <div className="flex-1">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
-        <h2 className="font-bold text-[#1a2b3c]">
-          <span className="text-[#D29F54]">{sortedProperties.length}</span> Properties Found
-        </h2>
-        
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2 text-sm text-gray-500">
-            <span>Sort by:</span>
-            <div className="relative">
-              <select 
-                className="appearance-none border border-gray-200 rounded-lg py-2 pl-4 pr-10 text-[#1a2b3c] font-medium outline-none focus:border-[#D29F54] bg-white cursor-pointer"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-              >
-                <option value="newest">Newest First</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-              </select>
-              <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" />
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-white">
-            <button className="p-1.5 bg-[#fcf9f2] text-[#D29F54] rounded shadow-sm border border-[#f5e6ce]">
-              <Grid size={18} />
-            </button>
-            <button className="p-1.5 text-gray-400 hover:text-[#1a2b3c] transition-colors">
-              <List size={18} />
-            </button>
+      <div className="flex items-center justify-end mb-8">
+        <div className="flex items-center gap-2 text-sm text-gray-500">
+          <span>Sort by:</span>
+          <div className="relative">
+            <select 
+              className="appearance-none border border-gray-200 rounded-lg py-2 pl-4 pr-10 text-[#1a2b3c] font-medium outline-none focus:border-[#D29F54] bg-white cursor-pointer"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
+              <option value="newest">Newest First</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+            <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" />
           </div>
         </div>
       </div>
