@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  Building2, 
-  MessageSquare, 
-  CalendarCheck, 
-  Briefcase, 
-  Star, 
+import {
+  LayoutDashboard,
+  Building2,
+  MessageSquare,
+  CalendarCheck,
+  Briefcase,
+  Star,
   HelpCircle,
   Settings,
   LogOut,
@@ -23,9 +23,6 @@ const AdminSidebar = () => {
     { name: 'Properties', path: '/admin/properties', icon: Building2 },
     { name: 'Messages', path: '/admin/messages', icon: MessageSquare },
     { name: 'Visits', path: '/admin/visits', icon: CalendarCheck },
-    { name: 'Services', path: '/admin/services', icon: Briefcase },
-    { name: 'Testimonials', path: '/admin/testimonials', icon: Star },
-    { name: 'FAQs', path: '/admin/faqs', icon: HelpCircle },
   ];
 
   const handleLogout = () => {
@@ -47,8 +44,8 @@ const AdminSidebar = () => {
 
       {/* Navigation */}
       <nav className="flex-1 py-6 px-4 space-y-1 overflow-y-auto custom-scrollbar">
-        <p className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">Management</p>
-        
+        <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Management</p>
+
         {navItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -56,17 +53,16 @@ const AdminSidebar = () => {
               key={item.name}
               to={item.path}
               className={({ isActive }) =>
-                `flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group ${
-                  isActive 
-                    ? 'bg-[#D29F54]/10 text-[#D29F54]' 
-                    : 'text-gray-400 hover:bg-[#2a3b4c] hover:text-white'
+                `flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group ${isActive
+                  ? 'bg-[#D29F54]/10 text-[#D29F54]'
+                  : 'text-gray-300 hover:bg-[#2a3b4c] hover:text-white'
                 }`
               }
             >
               {({ isActive }) => (
                 <>
-                  <Icon 
-                    className={`mr-3 h-5 w-5 transition-colors ${isActive ? 'text-[#D29F54]' : 'text-gray-500 group-hover:text-gray-300'}`} 
+                  <Icon
+                    className={`mr-3 h-5 w-5 transition-colors ${isActive ? 'text-[#D29F54]' : 'text-gray-400 group-hover:text-gray-300'}`}
                   />
                   {item.name}
                 </>
@@ -74,29 +70,28 @@ const AdminSidebar = () => {
             </NavLink>
           );
         })}
-
+        {/* 
         <div className="pt-8 pb-2">
-          <p className="px-4 text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4">System</p>
+          <p className="px-4 text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">System</p>
           <NavLink
             to="/admin/settings"
             className={({ isActive }) =>
-              `flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group ${
-                isActive 
-                  ? 'bg-[#D29F54]/10 text-[#D29F54]' 
-                  : 'text-gray-400 hover:bg-[#2a3b4c] hover:text-white'
+              `flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group ${isActive
+                ? 'bg-[#D29F54]/10 text-[#D29F54]'
+                : 'text-gray-300 hover:bg-[#2a3b4c] hover:text-white'
               }`
             }
           >
             {({ isActive }) => (
               <>
-                <Settings 
-                  className={`mr-3 h-5 w-5 transition-colors ${isActive ? 'text-[#D29F54]' : 'text-gray-500 group-hover:text-gray-300'}`} 
+                <Settings
+                  className={`mr-3 h-5 w-5 transition-colors ${isActive ? 'text-[#D29F54]' : 'text-gray-400 group-hover:text-gray-300'}`}
                 />
                 Settings
               </>
             )}
           </NavLink>
-        </div>
+        </div> */}
       </nav>
 
       {/* Bottom Profile / Logout */}

@@ -21,6 +21,7 @@ import ManageProperties from './pages/admin/ManageProperties'
 import AddEditProperty from './pages/admin/AddEditProperty'
 import ManageMessages from './pages/admin/ManageMessages'
 import ManageVisits from './pages/admin/ManageVisits'
+import AdminSettings from './pages/admin/AdminSettings'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import AdminLayout from './components/admin/AdminLayout'
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="properties/edit/:id" element={<AddEditProperty />} />
           <Route path="messages" element={<ManageMessages />} />
           <Route path="visits" element={<ManageVisits />} />
+          <Route path="settings" element={<AdminSettings />} />
           {/* Add more protected admin routes here in the future */}
         </Route>
 
