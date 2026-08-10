@@ -14,7 +14,7 @@ const AdminDashboard = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-[#1a2b3c] font-serif">Dashboard Overview</h1>
-          <p className="text-gray-500 text-sm mt-1">Here's what's happening with your properties today.</p>
+          <p className="text-gray-600 text-sm mt-1">Here's what's happening with your properties today.</p>
         </div>
       </div>
 
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
                 <Icon size={24} />
               </div>
               <div>
-                <p className="text-sm text-gray-500 font-medium">{stat.title}</p>
+                <p className="text-sm text-gray-600 font-medium">{stat.title}</p>
                 <h3 className="text-2xl font-bold text-[#1a2b3c]">{stat.value}</h3>
               </div>
             </div>
@@ -42,7 +42,7 @@ const AdminDashboard = () => {
         {/* Main Content Area (e.g. Chart or Table) */}
         <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
           <h2 className="text-lg font-bold text-[#1a2b3c] mb-4">Recent Properties</h2>
-          <div className="flex flex-col items-center justify-center h-64 text-gray-400">
+          <div className="flex flex-col items-center justify-center h-64 text-gray-500">
             <Building2 size={48} className="mb-4 text-gray-200" />
             <p>No properties added yet.</p>
           </div>
@@ -51,7 +51,7 @@ const AdminDashboard = () => {
         {/* Sidebar Content Area (e.g. Recent Activity Feed) */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
           <h2 className="text-lg font-bold text-[#1a2b3c] mb-4">Recent Activity</h2>
-          <div className="flex flex-col items-center justify-center h-64 text-gray-400">
+          <div className="flex flex-col items-center justify-center h-64 text-gray-500">
             <Users size={48} className="mb-4 text-gray-200" />
             <p>No recent activity.</p>
           </div>

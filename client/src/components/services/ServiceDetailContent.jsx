@@ -39,7 +39,7 @@ const ServiceDetailContent = ({ service }) => {
               {/* Card */}
               <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] p-6 rounded-2xl bg-white shadow-sm border border-gray-100 group-hover:shadow-md transition-shadow">
                 <h3 className="text-xl font-bold text-[#1a2b3c] mb-2">{step.title}</h3>
-                <p className="text-gray-500">{step.description}</p>
+                <p className="text-gray-600">{step.description}</p>
               </div>
             </div>
           ))}

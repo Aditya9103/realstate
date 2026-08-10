@@ -52,7 +52,7 @@ const AboutValues = () => {
                 <Icon size={28} strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-bold text-[#1a2b3c] mb-3">{val.title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{val.description}</p>
+              <p className="text-gray-600 text-sm leading-relaxed">{val.description}</p>
             </div>
           );
         })}

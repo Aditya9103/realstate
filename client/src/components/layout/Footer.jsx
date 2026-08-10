@@ -23,7 +23,7 @@ const Footer = () => {
                 <span className="text-[0.6rem] text-[#D29F54] uppercase tracking-[0.3em] mt-1">Real Estate</span>
               </div>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-8">
+            <p className="text-gray-300 text-sm leading-relaxed mb-8">
               Redefining luxury living. We provide an unparalleled real estate experience, helping you find exceptional properties in premium locations with absolute transparency.
             </p>
             <div className="flex gap-4">
@@ -48,7 +48,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {['Home', 'About Us', 'Properties', 'Agents', 'Blog', 'Contact Us'].map((item) => (
                 <li key={item}>
-                  <Link to="/" className="text-gray-400 hover:text-[#D29F54] transition-colors flex items-center gap-2 group text-sm">
+                  <Link to="/" className="text-gray-300 hover:text-[#D29F54] transition-colors flex items-center gap-2 group text-sm">
                     <ArrowRight size={14} className="text-[#D29F54]/0 group-hover:text-[#D29F54] -ml-4 group-hover:ml-0 transition-all duration-300" />
                     {item}
                   </Link>
@@ -63,7 +63,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {['Buy a Home', 'Rent a Home', 'Sell Property', 'Property Management', 'Commercial Real Estate', 'Legal Advisory'].map((item) => (
                 <li key={item}>
-                  <Link to="/" className="text-gray-400 hover:text-[#D29F54] transition-colors flex items-center gap-2 group text-sm">
+                  <Link to="/" className="text-gray-300 hover:text-[#D29F54] transition-colors flex items-center gap-2 group text-sm">
                     <ArrowRight size={14} className="text-[#D29F54]/0 group-hover:text-[#D29F54] -ml-4 group-hover:ml-0 transition-all duration-300" />
                     {item}
                   </Link>
@@ -82,7 +82,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h5 className="font-semibold text-sm mb-1">Our Location</h5>
-                  <p className="text-gray-400 text-sm">Unit 402, Trade Centre, Bandra Kurla Complex, Mumbai, India</p>
+                  <p className="text-gray-300 text-sm">Unit 402, Trade Centre, Bandra Kurla Complex, Mumbai, India</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -91,7 +91,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h5 className="font-semibold text-sm mb-1">Phone Number</h5>
-                  <p className="text-gray-400 text-sm">+91 (22) 1234 5678</p>
+                  <p className="text-gray-300 text-sm">+91 (22) 1234 5678</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -100,7 +100,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h5 className="font-semibold text-sm mb-1">Email Address</h5>
-                  <p className="text-gray-400 text-sm">contact@luxora.in</p>
+                  <p className="text-gray-300 text-sm">contact@luxora.in</p>
                 </div>
               </li>
             </ul>
@@ -110,12 +110,12 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-sm text-center md:text-left">
+          <p className="text-gray-400 text-sm text-center md:text-left">
             &copy; {new Date().getFullYear()} Luxora Real Estate. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link to="/" className="text-gray-500 text-sm hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/" className="text-gray-500 text-sm hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/" className="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/" className="text-gray-400 text-sm hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
 

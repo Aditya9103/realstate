@@ -18,7 +18,7 @@ const ScheduleVisitForm = ({
         </div>
         <div>
           <h2 className="text-lg font-bold text-[#1a2b3c] font-serif">Your Details</h2>
-          <p className="text-gray-400 text-xs">Please fill in your information</p>
+          <p className="text-gray-500 text-xs">Please fill in your information</p>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ const ScheduleVisitForm = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <User size={16} className="text-gray-400" />
+              <User size={16} className="text-gray-500" />
             </div>
             <input 
               type="text" 
@@ -53,7 +53,7 @@ const ScheduleVisitForm = ({
           </div>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Mail size={16} className="text-gray-400" />
+              <Mail size={16} className="text-gray-500" />
             </div>
             <input 
               type="email" 
@@ -70,7 +70,7 @@ const ScheduleVisitForm = ({
         {/* Phone Number */}
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <Phone size={16} className="text-gray-400" />
+            <Phone size={16} className="text-gray-500" />
           </div>
           <input 
             type="tel" 
@@ -97,7 +97,7 @@ const ScheduleVisitForm = ({
             <option value="other">Other</option>
           </select>
           <div className="absolute right-4 top-[36px] pointer-events-none">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </div>
         </div>
 
@@ -132,12 +132,12 @@ const ScheduleVisitForm = ({
                 : 'bg-white border-gray-200 hover:border-[#D29F54]/50 hover:bg-[#fafafa]'
             }`}
           >
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${formData.visitType === 'in-person' ? 'bg-[#D29F54]/10 text-[#D29F54]' : 'bg-gray-50 text-gray-400'}`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${formData.visitType === 'in-person' ? 'bg-[#D29F54]/10 text-[#D29F54]' : 'bg-gray-50 text-gray-500'}`}>
               <Users size={20} />
             </div>
             <div>
               <h4 className="text-sm font-bold text-[#1a2b3c] mb-0.5">In-Person Visit</h4>
-              <p className="text-[11px] text-gray-500">Visit the property in person</p>
+              <p className="text-[11px] text-gray-600">Visit the property in person</p>
             </div>
           </button>
 
@@ -150,12 +150,12 @@ const ScheduleVisitForm = ({
                 : 'bg-white border-gray-200 hover:border-[#D29F54]/50 hover:bg-[#fafafa]'
             }`}
           >
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${formData.visitType === 'virtual' ? 'bg-[#D29F54]/10 text-[#D29F54]' : 'bg-gray-50 text-gray-400'}`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${formData.visitType === 'virtual' ? 'bg-[#D29F54]/10 text-[#D29F54]' : 'bg-gray-50 text-gray-500'}`}>
               <Video size={20} />
             </div>
             <div>
               <h4 className="text-sm font-bold text-[#1a2b3c] mb-0.5">Virtual Tour</h4>
-              <p className="text-[11px] text-gray-500">Schedule a live virtual tour</p>
+              <p className="text-[11px] text-gray-600">Schedule a live virtual tour</p>
             </div>
           </button>
         </div>
@@ -163,7 +163,7 @@ const ScheduleVisitForm = ({
         {/* Security Banner */}
         <div className="bg-[#fafafa] border border-gray-100 rounded-lg p-4 flex items-center gap-3 mt-2">
           <Lock size={16} className="text-[#D29F54]" />
-          <p className="text-[11px] text-gray-500 font-medium">Your information is secure and will never be shared with third parties.</p>
+          <p className="text-[11px] text-gray-600 font-medium">Your information is secure and will never be shared with third parties.</p>
         </div>
 
         <button 
@@ -174,7 +174,7 @@ const ScheduleVisitForm = ({
           {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Calendar size={16} />}
           {isLoading ? 'Submitting...' : 'Schedule My Visit'}
         </button>
-        <p className="text-center text-[10px] text-gray-400 mt-1 flex items-center justify-center gap-1">
+        <p className="text-center text-[10px] text-gray-500 mt-1 flex items-center justify-center gap-1">
           <span>&copy;</span> We'll confirm your appointment via email or phone.
         </p>
 

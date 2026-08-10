@@ -23,7 +23,7 @@ const ServiceCard = ({ title, description, image, icon: Icon, slug }) => {
           <h3 className="text-xl md:text-2xl font-bold text-[#1a2b3c] font-serif">{title}</h3>
         </div>
         
-        <p className="text-gray-500 text-sm md:text-[15px] leading-relaxed mb-6">
+        <p className="text-gray-600 text-sm md:text-[15px] leading-relaxed mb-6">
           {description}
         </p>
 

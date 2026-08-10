@@ -16,7 +16,7 @@ const PropertyGrid = ({ properties }) => {
     <div className="flex-1">
       {/* Header */}
       <div className="flex items-center justify-end mb-8">
-        <div className="flex items-center gap-2 text-sm text-gray-500">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
           <span>Sort by:</span>
           <div className="relative">
             <select 
@@ -28,7 +28,7 @@ const PropertyGrid = ({ properties }) => {
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
             </select>
-            <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400" />
+            <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500" />
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@ const PropertyGrid = ({ properties }) => {
       ) : (
         <div className="text-center py-20 bg-white rounded-xl border border-gray-100">
           <h3 className="text-xl font-bold text-[#1a2b3c] mb-2">No properties found</h3>
-          <p className="text-gray-500">Try adjusting your filters or search criteria.</p>
+          <p className="text-gray-600">Try adjusting your filters or search criteria.</p>
         </div>
       )}
 
@@ -51,7 +51,7 @@ const PropertyGrid = ({ properties }) => {
       {sortedProperties.length > 0 && (
         <div className="mt-12 flex justify-center">
           <div className="flex gap-2">
-            <button className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:border-[#D29F54] hover:text-[#D29F54] transition-colors">
+            <button className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#D29F54] hover:text-[#D29F54] transition-colors">
               &lt;
             </button>
             <button className="w-10 h-10 rounded-lg bg-[#D29F54] text-white flex items-center justify-center font-bold shadow-md">

@@ -43,7 +43,7 @@ const AboutStats = () => {
                 <Icon size={20} strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl lg:text-3xl font-bold text-[#1a2b3c] leading-none mb-1 font-serif">{stat.value}</h3>
-              <p className="text-gray-500 text-[10px] lg:text-xs font-medium whitespace-nowrap">{stat.label}</p>
+              <p className="text-gray-600 text-[10px] lg:text-xs font-medium whitespace-nowrap">{stat.label}</p>
             </div>
           );
         })}

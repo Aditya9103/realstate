@@ -134,7 +134,7 @@ const AddEditProperty = () => {
           <h1 className="text-2xl font-bold text-[#1a2b3c] font-serif">
             {isEditMode ? 'Edit Property' : 'Add New Property'}
           </h1>
-          <p className="text-gray-500 text-sm mt-1">Fill out the details below to publish to the portal.</p>
+          <p className="text-gray-600 text-sm mt-1">Fill out the details below to publish to the portal.</p>
         </div>
       </div>
 
@@ -260,7 +260,7 @@ const AddEditProperty = () => {
                 accept="image/*" 
                 onChange={handleImageChange}
                 required={!isEditMode && !formData.image && !imagePreview}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#D29F54]/10 file:text-[#D29F54] hover:file:bg-[#D29F54]/20 cursor-pointer"
+                className="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#D29F54]/10 file:text-[#D29F54] hover:file:bg-[#D29F54]/20 cursor-pointer"
               />
               {imagePreview && (
                 <div className="mt-4 w-64 h-40 rounded-lg overflow-hidden border border-gray-200 shadow-sm">
@@ -276,7 +276,7 @@ const AddEditProperty = () => {
                 accept="image/*" 
                 multiple
                 onChange={handleGalleryChange}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#D29F54]/10 file:text-[#D29F54] hover:file:bg-[#D29F54]/20 cursor-pointer"
+                className="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#D29F54]/10 file:text-[#D29F54] hover:file:bg-[#D29F54]/20 cursor-pointer"
               />
               {galleryPreviews.length > 0 && (
                 <div className="mt-4 flex flex-wrap gap-4">

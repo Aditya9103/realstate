@@ -31,7 +31,7 @@ const ContactForm = () => {
     <div className="bg-white rounded-2xl p-8 md:p-10 shadow-xl shadow-gray-200/50 w-full h-full flex flex-col">
       <div className="mb-10 border-b border-gray-100 pb-6">
         <h2 className="text-2xl md:text-3xl font-bold text-[#1a2b3c] mb-3 font-serif">Send Us a Message</h2>
-        <p className="text-gray-500 text-sm leading-relaxed">
+        <p className="text-gray-600 text-sm leading-relaxed">
           Fill out the form below and our team will get back to you shortly.
         </p>
       </div>
@@ -51,7 +51,7 @@ const ContactForm = () => {
           {/* Full Name */}
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <User size={16} className="text-gray-500" />
+              <User size={16} className="text-gray-600" />
             </div>
             <input
               type="text"
@@ -67,7 +67,7 @@ const ContactForm = () => {
           {/* Email Address */}
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Mail size={16} className="text-gray-500" />
+              <Mail size={16} className="text-gray-600" />
             </div>
             <input
               type="email"
@@ -83,7 +83,7 @@ const ContactForm = () => {
           {/* Phone Number */}
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Phone size={16} className="text-gray-500" />
+              <Phone size={16} className="text-gray-600" />
             </div>
             <input
               type="tel"
@@ -98,7 +98,7 @@ const ContactForm = () => {
           {/* Subject */}
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Tag size={16} className="text-gray-500" />
+              <Tag size={16} className="text-gray-600" />
             </div>
             <input
               type="text"
@@ -128,7 +128,7 @@ const ContactForm = () => {
           </select>
           {/* Custom Chevron for select */}
           <div className="absolute right-4 top-[38px] pointer-events-none">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-600"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </div>
         </div>
 
@@ -156,7 +156,7 @@ const ContactForm = () => {
             {!isLoading && <Send size={16} />}
           </button>
 
-          <div className="flex items-center gap-2 text-gray-500">
+          <div className="flex items-center gap-2 text-gray-600">
             <Lock size={14} />
             <span className="text-xs font-medium">Your information is secure and will never be shared.</span>
           </div>

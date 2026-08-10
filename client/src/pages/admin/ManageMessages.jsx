@@ -32,7 +32,7 @@ const ManageMessages = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-[#1a2b3c] font-serif">Inbox Messages</h1>
-          <p className="text-gray-500 text-sm mt-1">View and manage contact form inquiries.</p>
+          <p className="text-gray-600 text-sm mt-1">View and manage contact form inquiries.</p>
         </div>
         <div className="bg-white px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold shadow-sm flex items-center gap-2">
           <Mail size={16} className="text-[#D29F54]" />
@@ -42,15 +42,15 @@ const ManageMessages = () => {
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         {isLoading ? (
-          <div className="p-8 text-center text-gray-500">Loading messages...</div>
+          <div className="p-8 text-center text-gray-600">Loading messages...</div>
         ) : isError ? (
           <div className="p-8 text-center text-red-500">{error?.data?.message || 'Failed to load messages'}</div>
         ) : messages.length === 0 ? (
-          <div className="p-8 text-center text-gray-500">Your inbox is empty.</div>
+          <div className="p-8 text-center text-gray-600">Your inbox is empty.</div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-gray-50 border-b border-gray-100 uppercase text-xs font-semibold text-gray-500">
+              <thead className="bg-gray-50 border-b border-gray-100 uppercase text-xs font-semibold text-gray-600">
                 <tr>
                   <th className="px-6 py-4">Sender</th>
                   <th className="px-6 py-4">Subject</th>
@@ -64,12 +64,12 @@ const ManageMessages = () => {
                   <tr key={msg._id} className={`hover:bg-gray-50 transition-colors ${msg.status === 'Unread' ? 'bg-[#fcf9f2]/50 font-medium' : ''}`}>
                     <td className="px-6 py-4">
                       <div className="font-bold text-[#1a2b3c]">{msg.name}</div>
-                      <div className="text-xs text-gray-500">{msg.email}</div>
-                      {msg.phone && <div className="text-xs text-gray-500">{msg.phone}</div>}
+                      <div className="text-xs text-gray-600">{msg.email}</div>
+                      {msg.phone && <div className="text-xs text-gray-600">{msg.phone}</div>}
                     </td>
                     <td className="px-6 py-4 max-w-[300px]">
                       <div className="font-semibold text-gray-800 mb-1">{msg.subject}</div>
-                      <div className="text-xs text-gray-500 truncate" title={msg.message}>{msg.message}</div>
+                      <div className="text-xs text-gray-600 truncate" title={msg.message}>{msg.message}</div>
                     </td>
                     <td className="px-6 py-4 text-xs">
                       {new Date(msg.createdAt).toLocaleDateString()}

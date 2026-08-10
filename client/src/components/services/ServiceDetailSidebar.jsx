@@ -9,7 +9,7 @@ const ServiceDetailSidebar = ({ service }) => {
       {/* Contact Form Card */}
       <div className="bg-white rounded-2xl shadow-xl shadow-gray-200/50 p-8 border border-gray-100 mb-8">
         <h3 className="text-2xl font-bold text-[#1a2b3c] mb-2 font-serif">Get Started</h3>
-        <p className="text-gray-500 text-sm mb-6">
+        <p className="text-gray-600 text-sm mb-6">
           Interested in our {service.title} service? Fill out the form below and we'll be in touch shortly.
         </p>
 
@@ -64,7 +64,7 @@ const ServiceDetailSidebar = ({ service }) => {
               <Phone size={18} />
             </div>
             <div>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Call Us</p>
+              <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">Call Us</p>
               <p className="font-semibold">+91 98765 43210</p>
             </div>
           </a>
@@ -74,7 +74,7 @@ const ServiceDetailSidebar = ({ service }) => {
               <Mail size={18} />
             </div>
             <div>
-              <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5">Email Us</p>
+              <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">Email Us</p>
               <p className="font-semibold">contact@horizon.com</p>
             </div>
           </a>

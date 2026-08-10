@@ -78,12 +78,12 @@ const ScheduleVisitSidebar = ({
           <img src={displayProperty.image} alt={displayProperty.title} className="w-full sm:w-32 h-24 object-cover rounded-lg" />
           <div className="flex flex-col justify-center">
             <h3 className="font-bold text-[#1a2b3c] text-sm mb-1">{displayProperty.title}</h3>
-            <p className="flex items-center gap-1 text-[11px] text-gray-500 mb-3">
+            <p className="flex items-center gap-1 text-[11px] text-gray-600 mb-3">
               <MapPin size={12} className="text-[#D29F54]" />
               {displayProperty.location}
             </p>
             
-            <div className="flex items-center gap-4 text-[10px] text-gray-500 font-medium mb-3">
+            <div className="flex items-center gap-4 text-[10px] text-gray-600 font-medium mb-3">
               <div className="flex items-center gap-1">
                 <Bed size={12} className="text-[#D29F54]" /> {displayProperty.beds} Beds
               </div>
@@ -116,15 +116,15 @@ const ScheduleVisitSidebar = ({
           <div className="flex items-center justify-between mb-4">
             <h4 className="font-bold text-sm text-[#1a2b3c]">{monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}</h4>
             <div className="flex items-center gap-2">
-              <button onClick={prevMonth} className="text-gray-400 hover:text-[#D29F54] transition-colors"><ChevronLeft size={18} /></button>
-              <button onClick={nextMonth} className="text-gray-400 hover:text-[#D29F54] transition-colors"><ChevronRight size={18} /></button>
+              <button onClick={prevMonth} className="text-gray-500 hover:text-[#D29F54] transition-colors"><ChevronLeft size={18} /></button>
+              <button onClick={nextMonth} className="text-gray-500 hover:text-[#D29F54] transition-colors"><ChevronRight size={18} /></button>
             </div>
           </div>
 
           {/* Calendar Grid */}
           <div className="grid grid-cols-7 gap-1 mb-2">
             {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((day) => (
-              <div key={day} className="text-center text-[10px] font-bold text-gray-400 mb-2">{day}</div>
+              <div key={day} className="text-center text-[10px] font-bold text-gray-500 mb-2">{day}</div>
             ))}
             {days}
           </div>

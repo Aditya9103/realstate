@@ -34,7 +34,7 @@ const PropertyCard = ({ property }) => {
         {/* Top Right Favorite Button */}
         <button 
           onClick={() => setIsFavorite(!isFavorite)}
-          className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-400 hover:text-red-500 shadow-sm transition-colors"
+          className="absolute top-3 right-3 w-8 h-8 bg-white rounded-full flex items-center justify-center text-gray-500 hover:text-red-500 shadow-sm transition-colors"
         >
           <Heart size={16} fill={isFavorite ? 'currentColor' : 'none'} className={isFavorite ? 'text-red-500' : ''} />
         </button>
@@ -49,23 +49,23 @@ const PropertyCard = ({ property }) => {
       {/* Content Body */}
       <div className="p-5 pt-8 flex-grow flex flex-col">
         <h3 className="font-bold text-[#1a2b3c] text-lg mb-1 truncate">{property.title}</h3>
-        <div className="flex items-center text-gray-500 text-xs mb-4">
-          <MapPin size={12} className="mr-1 text-gray-400" />
+        <div className="flex items-center text-gray-600 text-xs mb-4">
+          <MapPin size={12} className="mr-1 text-gray-500" />
           <span className="truncate">{property.location}</span>
         </div>
 
         {/* Amenities Row */}
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-gray-600 text-[11px] sm:text-xs font-medium mb-5">
           <div className="flex items-center gap-1.5 whitespace-nowrap">
-            <Bed size={14} className="text-gray-400" />
+            <Bed size={14} className="text-gray-500" />
             {property.beds} Beds
           </div>
           <div className="flex items-center gap-1.5 whitespace-nowrap">
-            <Bath size={14} className="text-gray-400" />
+            <Bath size={14} className="text-gray-500" />
             {property.baths} Baths
           </div>
           <div className="flex items-center gap-1.5 whitespace-nowrap">
-            <Square size={14} className="text-gray-400" />
+            <Square size={14} className="text-gray-500" />
             {property.sqft} Sq.Ft
           </div>
         </div>

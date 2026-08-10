@@ -23,7 +23,7 @@ const AdminSettings = () => {
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-2xl font-bold text-[#1a2b3c]">Settings</h1>
-          <p className="text-gray-500 text-sm mt-1">Manage your account preferences and system settings</p>
+          <p className="text-gray-600 text-sm mt-1">Manage your account preferences and system settings</p>
         </div>
         <button 
           onClick={handleSave}
@@ -83,14 +83,14 @@ const AdminSettings = () => {
               </h3>
               
               <div className="flex items-center gap-6 mb-8">
-                <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center text-gray-400 border border-gray-200">
+                <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 border border-gray-200">
                   <User size={40} />
                 </div>
                 <div>
                   <button className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-50 transition-colors">
                     Upload Photo
                   </button>
-                  <p className="text-xs text-gray-400 mt-2">JPG, GIF or PNG. Max size of 800K</p>
+                  <p className="text-xs text-gray-500 mt-2">JPG, GIF or PNG. Max size of 800K</p>
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ const AdminSettings = () => {
                 </div>
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">Role</label>
-                  <div className="w-full bg-gray-100 border border-gray-200 rounded-lg px-4 py-2.5 text-gray-500 flex items-center gap-2 cursor-not-allowed">
+                  <div className="w-full bg-gray-100 border border-gray-200 rounded-lg px-4 py-2.5 text-gray-600 flex items-center gap-2 cursor-not-allowed">
                     <Shield size={16} className="text-[#D29F54]" /> Super Admin
                   </div>
                 </div>
@@ -150,7 +150,7 @@ const AdminSettings = () => {
                 <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg border border-gray-100">
                   <div>
                     <h4 className="font-semibold text-gray-800">New Visit Requests</h4>
-                    <p className="text-sm text-gray-500">Receive an email when a user schedules a property visit.</p>
+                    <p className="text-sm text-gray-600">Receive an email when a user schedules a property visit.</p>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" className="sr-only peer" defaultChecked />
@@ -161,7 +161,7 @@ const AdminSettings = () => {
                 <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg border border-gray-100">
                   <div>
                     <h4 className="font-semibold text-gray-800">New Contact Messages</h4>
-                    <p className="text-sm text-gray-500">Receive an email for new inquiries via the contact form.</p>
+                    <p className="text-sm text-gray-600">Receive an email for new inquiries via the contact form.</p>
                   </div>
                   <label className="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" className="sr-only peer" defaultChecked />
@@ -177,7 +177,7 @@ const AdminSettings = () => {
               <h3 className="text-lg font-bold text-[#1a2b3c] mb-6 flex items-center gap-2">
                 <Moon className="text-[#D29F54]" /> Appearance Settings
               </h3>
-              <p className="text-gray-500 mb-4">Dark mode for the admin panel is currently in development. It will automatically sync with your system preferences once released.</p>
+              <p className="text-gray-600 mb-4">Dark mode for the admin panel is currently in development. It will automatically sync with your system preferences once released.</p>
               
               <div className="opacity-50 pointer-events-none p-4 bg-gray-50 border border-gray-200 rounded-lg flex items-center justify-between">
                 <span className="font-semibold text-gray-700">Enable Dark Mode</span>

@@ -48,7 +48,7 @@ const HowItWorks = () => {
                 Your Dream Property <br />
                 In <span className="text-[#D29F54]">4 Simple Steps</span>
               </h2>
-              <p className="text-gray-500 text-sm leading-relaxed max-w-xl">
+              <p className="text-gray-600 text-sm leading-relaxed max-w-xl">
                 We make buying or selling a property effortless, transparent, and completely stress-free.
               </p>
             </div>
@@ -66,7 +66,7 @@ const HowItWorks = () => {
                   <h3 className="text-lg font-bold text-[#1a2b3c] mb-2 whitespace-pre-line leading-snug">
                     {step.title}
                   </h3>
-                  <p className="text-gray-500 text-sm mb-5 flex-grow leading-relaxed">
+                  <p className="text-gray-600 text-sm mb-5 flex-grow leading-relaxed">
                     {step.description}
                   </p>
                   <button className="text-[#D29F54] font-semibold text-xs uppercase tracking-wider flex items-center gap-2 hover:text-[#b88a44] transition-colors mt-auto w-fit">
@@ -124,7 +124,7 @@ const HowItWorks = () => {
 
           <div className="hidden lg:block w-[1px] h-16 bg-[#D29F54]/20"></div>
 
-          <div className="w-full lg:w-auto flex-1 max-w-md text-gray-500 font-medium">
+          <div className="w-full lg:w-auto flex-1 max-w-md text-gray-600 font-medium">
             Whether you're buying, selling, or investing &mdash; we're here to help you make the right move.
           </div>
 

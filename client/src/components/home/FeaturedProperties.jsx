@@ -30,7 +30,7 @@ const FeaturedProperties = () => {
         </div>
 
         {isLoading ? (
-          <div className="text-center py-10 font-bold text-gray-500">Loading Featured Properties...</div>
+          <div className="text-center py-10 font-bold text-gray-600">Loading Featured Properties...</div>
         ) : isError ? (
           <div className="text-center py-10 font-bold text-red-500">Failed to load properties.</div>
         ) : (
@@ -60,8 +60,8 @@ const FeaturedProperties = () => {
                 {/* Content Container */}
                 <div className="p-5 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold text-[#1a2b3c] mb-1.5 group-hover/card:text-[#D29F54] transition-colors truncate">{property.title}</h3>
-                  <div className="flex items-center text-gray-500 text-sm mb-4 font-medium truncate">
-                    <MapPin size={16} className="mr-1.5 text-gray-400 flex-shrink-0" /> <span className="truncate">{property.location}</span>
+                  <div className="flex items-center text-gray-600 text-sm mb-4 font-medium truncate">
+                    <MapPin size={16} className="mr-1.5 text-gray-500 flex-shrink-0" /> <span className="truncate">{property.location}</span>
                   </div>
 
                   <div className="text-[#D29F54] font-bold text-xl mb-6 mt-auto">

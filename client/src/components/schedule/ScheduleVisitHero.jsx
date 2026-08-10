@@ -22,7 +22,7 @@ const ScheduleVisitHero = () => {
             </div>
             <div>
               <h4 className="font-bold text-sm">Need Help?</h4>
-              <p className="text-xs text-gray-400">Talk to our property expert</p>
+              <p className="text-xs text-gray-500">Talk to our property expert</p>
             </div>
           </div>
           
@@ -63,7 +63,7 @@ const ScheduleVisitHero = () => {
               </div>
               <div>
                 <h4 className="text-[#1a2b3c] font-bold text-xs mb-1">Easy Scheduling</h4>
-                <p className="text-gray-500 text-[11px] leading-snug">Pick your preferred<br/>date & time</p>
+                <p className="text-gray-600 text-[11px] leading-snug">Pick your preferred<br/>date & time</p>
               </div>
             </div>
 
@@ -73,7 +73,7 @@ const ScheduleVisitHero = () => {
               </div>
               <div>
                 <h4 className="text-[#1a2b3c] font-bold text-xs mb-1">Expert Guidance</h4>
-                <p className="text-gray-500 text-[11px] leading-snug">Get personalized<br/>assistance</p>
+                <p className="text-gray-600 text-[11px] leading-snug">Get personalized<br/>assistance</p>
               </div>
             </div>
 
@@ -83,7 +83,7 @@ const ScheduleVisitHero = () => {
               </div>
               <div>
                 <h4 className="text-[#1a2b3c] font-bold text-xs mb-1">No Obligation</h4>
-                <p className="text-gray-500 text-[11px] leading-snug">Visit with no pressure<br/>to commit</p>
+                <p className="text-gray-600 text-[11px] leading-snug">Visit with no pressure<br/>to commit</p>
               </div>
             </div>
 

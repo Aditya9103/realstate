@@ -20,8 +20,8 @@ const PropertiesHeader = ({ searchParams, setSearchParams, onSearch }) => {
 
         {/* Left Side: Text Content */}
         <div className="flex-1 overflow-hidden pr-4">
-          <div className="text-sm font-medium text-gray-500 mb-4 xl:mb-6 tracking-wide">
-            <span className="hover:text-[#D29F54] cursor-pointer transition-colors">Home</span> &gt; <span className="text-gray-400">Properties</span>
+          <div className="text-sm font-medium text-gray-600 mb-4 xl:mb-6 tracking-wide">
+            <span className="hover:text-[#D29F54] cursor-pointer transition-colors">Home</span> &gt; <span className="text-gray-500">Properties</span>
           </div>
           <h1 className="text-3xl md:text-4xl xl:text-[2.4rem] font-medium text-[#1a2b3c] mb-3 xl:mb-4 whitespace-nowrap">
             Find Your Perfect <span className="text-[#D29F54]">Property</span>
@@ -61,8 +61,8 @@ const PropertiesHeader = ({ searchParams, setSearchParams, onSearch }) => {
           {/* Property Type */}
           <div className="flex-1 px-4 py-3 md:py-2 w-full md:w-auto">
             <div className="text-[11px] font-bold text-[#1a2b3c] mb-1.5 uppercase tracking-wider">Property Type</div>
-            <div className="flex items-center text-gray-500">
-              <Grid size={16} className="mr-2 text-gray-400 flex-shrink-0" />
+            <div className="flex items-center text-gray-600">
+              <Grid size={16} className="mr-2 text-gray-500 flex-shrink-0" />
               <select
                 className="w-full bg-transparent outline-none text-sm text-gray-600 appearance-none cursor-pointer"
                 value={searchParams.type}
@@ -81,8 +81,8 @@ const PropertiesHeader = ({ searchParams, setSearchParams, onSearch }) => {
           {/* Price Range */}
           <div className="flex-1 px-4 py-3 md:py-2 w-full md:w-auto">
             <div className="text-[11px] font-bold text-[#1a2b3c] mb-1.5 uppercase tracking-wider">Price Range</div>
-            <div className="flex items-center text-gray-500">
-              <CreditCard size={16} className="mr-2 text-gray-400 flex-shrink-0" />
+            <div className="flex items-center text-gray-600">
+              <CreditCard size={16} className="mr-2 text-gray-500 flex-shrink-0" />
               <select
                 className="w-full bg-transparent outline-none text-sm text-gray-600 appearance-none cursor-pointer"
                 value={searchParams.price}

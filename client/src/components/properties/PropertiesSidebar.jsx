@@ -47,7 +47,7 @@ const PropertiesSidebar = ({ filters, setFilters, onReset }) => {
         <h3 className="text-sm font-bold text-[#1a2b3c] group-hover:text-[#D29F54] transition-colors">{title}</h3>
         <ChevronDown
           size={16}
-          className={`text-gray-400 transition-transform duration-300 ${expanded[section] ? 'rotate-180' : ''}`}
+          className={`text-gray-500 transition-transform duration-300 ${expanded[section] ? 'rotate-180' : ''}`}
         />
       </div>
       <div className={`transition-all duration-300 ${expanded[section] ? 'max-h-[800px] opacity-100 mt-3 overflow-visible' : 'max-h-0 opacity-0 overflow-hidden'}`}>
@@ -62,7 +62,7 @@ const PropertiesSidebar = ({ filters, setFilters, onReset }) => {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h2 className="font-bold text-[#1a2b3c] flex items-center gap-2">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
           Filters
         </h2>
         <button onClick={onReset} className="text-[#D29F54] text-sm font-semibold hover:underline">
@@ -106,7 +106,7 @@ const PropertiesSidebar = ({ filters, setFilters, onReset }) => {
                 </div>
                 <span className="text-sm text-gray-600 group-hover:text-[#1a2b3c] transition-colors">{type.name}</span>
               </div>
-              <span className="text-xs text-gray-400">{type.count}</span>
+              <span className="text-xs text-gray-500">{type.count}</span>
             </label>
           ))}
         </div>
@@ -140,7 +140,7 @@ const PropertiesSidebar = ({ filters, setFilters, onReset }) => {
             onChange={(e) => setFilters({ ...filters, maxPrice: Math.max(Number(e.target.value), filters.minPrice + 1000000) })}
           />
         </div>
-        <div className="flex items-center justify-between text-xs text-gray-500 font-medium">
+        <div className="flex items-center justify-between text-xs text-gray-600 font-medium">
           <span>₹ {filters.minPrice === 0 ? '0' : (filters.minPrice / 10000000).toFixed(1)} Cr</span>
           <span>₹ {filters.maxPrice >= 100000000 ? '10 Cr+' : (filters.maxPrice / 10000000).toFixed(1) + ' Cr'}</span>
         </div>
@@ -272,7 +272,7 @@ const PropertiesSidebar = ({ filters, setFilters, onReset }) => {
       <AccordionItem title="Property Size (Sq.Ft)" section="propertySize">
         <div className="flex gap-4">
           <div className="flex-1">
-            <label className="text-[10px] uppercase font-bold text-gray-400 mb-1.5 block">Min Size</label>
+            <label className="text-[10px] uppercase font-bold text-gray-500 mb-1.5 block">Min Size</label>
             <input
               type="number"
               className="w-full border border-gray-200 rounded-lg py-2 px-3 text-sm outline-none focus:border-[#D29F54] transition-colors"
@@ -282,7 +282,7 @@ const PropertiesSidebar = ({ filters, setFilters, onReset }) => {
             />
           </div>
           <div className="flex-1">
-            <label className="text-[10px] uppercase font-bold text-gray-400 mb-1.5 block">Max Size</label>
+            <label className="text-[10px] uppercase font-bold text-gray-500 mb-1.5 block">Max Size</label>
             <input
               type="number"
               className="w-full border border-gray-200 rounded-lg py-2 px-3 text-sm outline-none focus:border-[#D29F54] transition-colors"

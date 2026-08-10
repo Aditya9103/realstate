@@ -95,25 +95,25 @@ const HeroHome = () => {
                             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
 
                             <h3 className="text-2xl font-semibold mb-2">Find Your <span className="text-[#D29F54]">Dream</span> Property</h3>
-                            <p className="text-gray-400 text-sm mb-6">Search from thousands of verified listings</p>
+                            <p className="text-gray-300 text-sm mb-6">Search from thousands of verified listings</p>
 
                             <div className="space-y-4">
                                 {/* Location Input */}
                                 <div className="relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
-                                    <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Location</label>
+                                    <label className="block text-[10px] uppercase text-gray-300 font-semibold mb-1">Location</label>
                                     <LocationSearchInput
                                         theme="dark"
                                         value={searchParams.location}
                                         onChange={handleLocationChange}
                                         onSelect={handleLocationSelect}
-                                        className="bg-transparent border-none outline-none text-white w-full placeholder:text-gray-500"
+                                        className="bg-transparent border-none outline-none text-white w-full placeholder:text-gray-400"
                                     />
                                 </div>
 
                                 {/* Property Type & Status Row */}
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <div className="flex-1 relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
-                                        <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Property Type</label>
+                                        <label className="block text-[10px] uppercase text-gray-300 font-semibold mb-1">Property Type</label>
                                         <div className="flex items-center justify-between text-gray-200">
                                             <select
                                                 className="w-full bg-transparent border-none outline-none text-white appearance-none cursor-pointer"
@@ -127,11 +127,11 @@ const HeroHome = () => {
                                                 <option value="Penthouse" className="text-black">Penthouse</option>
                                                 <option value="Townhouse" className="text-black">Townhouse</option>
                                             </select>
-                                            <ChevronDown size={16} className="text-gray-400 pointer-events-none absolute right-3" />
+                                            <ChevronDown size={16} className="text-gray-300 pointer-events-none absolute right-3" />
                                         </div>
                                     </div>
                                     <div className="flex-1 relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
-                                        <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Status</label>
+                                        <label className="block text-[10px] uppercase text-gray-300 font-semibold mb-1">Status</label>
                                         <div className="flex items-center justify-between text-gray-200">
                                             <select
                                                 className="w-full bg-transparent border-none outline-none text-white appearance-none cursor-pointer"
@@ -142,7 +142,7 @@ const HeroHome = () => {
                                                 <option value="Buy" className="text-black">For Sale</option>
                                                 <option value="Rent" className="text-black">For Rent</option>
                                             </select>
-                                            <ChevronDown size={16} className="text-gray-400 pointer-events-none absolute right-3" />
+                                            <ChevronDown size={16} className="text-gray-300 pointer-events-none absolute right-3" />
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@ const HeroHome = () => {
                                 {/* Price Range & Bedrooms Row */}
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <div className="flex-1 relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
-                                        <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Price Range</label>
+                                        <label className="block text-[10px] uppercase text-gray-300 font-semibold mb-1">Price Range</label>
                                         <div className="flex items-center justify-between text-gray-200">
                                             <select
                                                 className="w-full bg-transparent outline-none text-gray-200 appearance-none cursor-pointer"
@@ -163,11 +163,11 @@ const HeroHome = () => {
                                                 <option value="0-50000000" className="text-black">Under ₹ 5 Crore</option>
                                                 <option value="0-100000000" className="text-black">Under ₹ 10 Crore</option>
                                             </select>
-                                            <ChevronDown size={16} className="text-gray-400 pointer-events-none absolute right-3" />
+                                            <ChevronDown size={16} className="text-gray-300 pointer-events-none absolute right-3" />
                                         </div>
                                     </div>
                                     <div className="flex-1 relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
-                                        <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Bedrooms</label>
+                                        <label className="block text-[10px] uppercase text-gray-300 font-semibold mb-1">Bedrooms</label>
                                         <div className="flex items-center justify-between text-gray-200">
                                             <select
                                                 className="w-full bg-transparent outline-none text-gray-200 appearance-none cursor-pointer"
@@ -180,7 +180,7 @@ const HeroHome = () => {
                                                 <option value="3" className="text-black">3+ Beds</option>
                                                 <option value="4" className="text-black">4+ Beds</option>
                                             </select>
-                                            <ChevronDown size={16} className="text-gray-400 pointer-events-none absolute right-3" />
+                                            <ChevronDown size={16} className="text-gray-300 pointer-events-none absolute right-3" />
                                         </div>
                                     </div>
                                 </div>
@@ -210,7 +210,7 @@ const HeroHome = () => {
                             </div>
                             <div>
                                 <div className="text-2xl font-bold">2,500+</div>
-                                <div className="text-sm text-gray-400">Premium Properties</div>
+                                <div className="text-sm text-gray-300">Premium Properties</div>
                             </div>
                         </div>
 
@@ -220,7 +220,7 @@ const HeroHome = () => {
                             </div>
                             <div>
                                 <div className="text-2xl font-bold">10,000+</div>
-                                <div className="text-sm text-gray-400">Happy Clients</div>
+                                <div className="text-sm text-gray-300">Happy Clients</div>
                             </div>
                         </div>
 
@@ -230,7 +230,7 @@ const HeroHome = () => {
                             </div>
                             <div>
                                 <div className="text-2xl font-bold">15+</div>
-                                <div className="text-sm text-gray-400">Years Experience</div>
+                                <div className="text-sm text-gray-300">Years Experience</div>
                             </div>
                         </div>
 
@@ -240,7 +240,7 @@ const HeroHome = () => {
                             </div>
                             <div>
                                 <div className="text-2xl font-bold">50+</div>
-                                <div className="text-sm text-gray-400">Trusted Partners</div>
+                                <div className="text-sm text-gray-300">Trusted Partners</div>
                             </div>
                         </div>
 

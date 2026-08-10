@@ -57,11 +57,11 @@ const PropertiesMap = ({ properties }) => {
                     <div className="font-bold text-[#1a2b3c] text-sm mb-1 line-clamp-1">{property.title}</div>
                     <div className="text-[#D29F54] font-bold text-sm mb-2">{property.priceDisplay}</div>
                     
-                    <div className="flex items-center gap-1 text-[10px] text-gray-500 mb-2">
+                    <div className="flex items-center gap-1 text-[10px] text-gray-600 mb-2">
                       <MapPin size={10} className="text-[#D29F54]" /> {property.location}
                     </div>
                     
-                    <div className="flex items-center gap-3 text-[10px] text-gray-500 font-medium mb-3">
+                    <div className="flex items-center gap-3 text-[10px] text-gray-600 font-medium mb-3">
                       {property.beds && <div className="flex items-center gap-1"><Bed size={10} className="text-[#D29F54]" /> {property.beds}</div>}
                       {property.baths && <div className="flex items-center gap-1"><Bath size={10} className="text-[#D29F54]" /> {property.baths}</div>}
                       <div className="flex items-center gap-1"><Square size={10} className="text-[#D29F54]" /> {property.sqft} sqft</div>

@@ -27,7 +27,7 @@ const AboutCTA = () => {
 
       {/* Middle Text */}
       <div className="relative z-10 lg:w-[35%] text-center lg:text-left">
-        <p className="text-gray-400 text-sm md:text-base leading-relaxed">
+        <p className="text-gray-500 text-sm md:text-base leading-relaxed">
           Whether you're buying, selling, or investing, our experts are here to guide you every step of the way.
         </p>
       </div>

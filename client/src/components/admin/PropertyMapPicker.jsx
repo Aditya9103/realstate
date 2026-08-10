@@ -84,13 +84,13 @@ const PropertyMapPicker = ({ formData, setFormData }) => {
       </div>
       <div className="flex items-center justify-between">
         <label className="block text-sm font-bold text-gray-700">Property Location (Map)</label>
-        <div className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded flex items-center gap-1">
+        <div className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded flex items-center gap-1">
           <MapPin size={12} />
           {position.lat.toFixed(4)}, {position.lng.toFixed(4)}
         </div>
       </div>
       
-      <p className="text-xs text-gray-500">Click on the map to pin the exact location of the property.</p>
+      <p className="text-xs text-gray-600">Click on the map to pin the exact location of the property.</p>
       
       <div className="h-[300px] w-full rounded-xl overflow-hidden border border-gray-200 z-0">
         <MapContainer center={initialPosition} zoom={13} style={{ height: '100%', width: '100%' }}>

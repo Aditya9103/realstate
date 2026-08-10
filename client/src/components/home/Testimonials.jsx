@@ -108,7 +108,7 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-[#1a2b3c] font-serif mb-6 leading-tight">
             What Our <span className="text-[#D29F54]">Clients Say</span>
           </h2>
-          <p className="text-gray-500 text-sm leading-relaxed max-w-2xl mb-6">
+          <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mb-6">
             Real stories from real people who found their dream properties with Luxora Real Estate.
           </p>
           <div className="flex items-center justify-center gap-2 text-[#1a2b3c] font-bold text-lg">
@@ -118,7 +118,7 @@ const Testimonials = () => {
               ))}
             </div>
             <span className="ml-2">4.9/5</span>
-            <span className="text-gray-400 text-sm font-normal ml-2">(From 2,800+ Happy Clients)</span>
+            <span className="text-gray-500 text-sm font-normal ml-2">(From 2,800+ Happy Clients)</span>
           </div>
         </div>
 
@@ -179,7 +179,7 @@ const Testimonials = () => {
                       </div>
                       <div>
                         <h4 className="font-bold text-[#1a2b3c] text-sm leading-tight mb-1">{testimonial.name}</h4>
-                        <p className="text-gray-400 text-xs mb-1">{testimonial.role}</p>
+                        <p className="text-gray-500 text-xs mb-1">{testimonial.role}</p>
                         <div className="flex items-center text-[#D29F54] text-[10px] font-semibold">
                           <MapPin size={10} className="mr-1" /> {testimonial.location}
                         </div>
@@ -226,7 +226,7 @@ const Testimonials = () => {
                 <Users size={24} className="text-[#D29F54]" strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold text-[#1a2b3c] mb-1">2,800+</h3>
-              <p className="text-gray-500 text-xs font-semibold">Happy Clients</p>
+              <p className="text-gray-600 text-xs font-semibold">Happy Clients</p>
             </div>
 
             <div className="flex flex-col items-center text-center px-4">
@@ -234,7 +234,7 @@ const Testimonials = () => {
                 <Home size={24} className="text-[#D29F54]" strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold text-[#1a2b3c] mb-1">5,000+</h3>
-              <p className="text-gray-500 text-xs font-semibold">Properties Sold</p>
+              <p className="text-gray-600 text-xs font-semibold">Properties Sold</p>
             </div>
 
             <div className="flex flex-col items-center text-center px-4">
@@ -242,7 +242,7 @@ const Testimonials = () => {
                 <Award size={24} className="text-[#D29F54]" strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold text-[#1a2b3c] mb-1">10+</h3>
-              <p className="text-gray-500 text-xs font-semibold">Years of Experience</p>
+              <p className="text-gray-600 text-xs font-semibold">Years of Experience</p>
             </div>
 
             <div className="flex flex-col items-center text-center px-4">
@@ -250,7 +250,7 @@ const Testimonials = () => {
                 <Handshake size={24} className="text-[#D29F54]" strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold text-[#1a2b3c] mb-1">25+</h3>
-              <p className="text-gray-500 text-xs font-semibold">Expert Agents</p>
+              <p className="text-gray-600 text-xs font-semibold">Expert Agents</p>
             </div>
 
           </div>

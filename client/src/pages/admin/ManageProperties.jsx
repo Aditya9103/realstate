@@ -23,7 +23,7 @@ const ManageProperties = () => {
       <div className="flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-[#1a2b3c] font-serif">Manage Properties</h1>
-          <p className="text-gray-500 text-sm mt-1">Add, edit, or remove properties from the portal.</p>
+          <p className="text-gray-600 text-sm mt-1">Add, edit, or remove properties from the portal.</p>
         </div>
         <Link 
           to="/admin/properties/add" 
@@ -36,15 +36,15 @@ const ManageProperties = () => {
 
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         {isLoading ? (
-          <div className="p-8 text-center text-gray-500">Loading properties...</div>
+          <div className="p-8 text-center text-gray-600">Loading properties...</div>
         ) : isError ? (
           <div className="p-8 text-center text-red-500">{error?.data?.message || 'Failed to load properties'}</div>
         ) : properties?.length === 0 ? (
-          <div className="p-8 text-center text-gray-500">No properties found. Add one to get started!</div>
+          <div className="p-8 text-center text-gray-600">No properties found. Add one to get started!</div>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-gray-50 border-b border-gray-100 uppercase text-xs font-semibold text-gray-500">
+              <thead className="bg-gray-50 border-b border-gray-100 uppercase text-xs font-semibold text-gray-600">
                 <tr>
                   <th className="px-6 py-4">Image</th>
                   <th className="px-6 py-4">Title</th>

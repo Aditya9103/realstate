@@ -22,7 +22,7 @@ const ScheduleVisitProcess = () => {
           </div>
           <div>
             <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Schedule</h4>
-            <p className="text-[11px] text-gray-500 leading-snug">Pick your date<br/>and time</p>
+            <p className="text-[11px] text-gray-600 leading-snug">Pick your date<br/>and time</p>
           </div>
         </div>
 
@@ -30,12 +30,12 @@ const ScheduleVisitProcess = () => {
 
         {/* Step 2 */}
         <div className="flex items-center gap-4 flex-1">
-          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-400 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
+          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-500 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
             2
           </div>
           <div>
             <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Confirmation</h4>
-            <p className="text-[11px] text-gray-500 leading-snug">We'll confirm your<br/>appointment</p>
+            <p className="text-[11px] text-gray-600 leading-snug">We'll confirm your<br/>appointment</p>
           </div>
         </div>
 
@@ -43,12 +43,12 @@ const ScheduleVisitProcess = () => {
 
         {/* Step 3 */}
         <div className="flex items-center gap-4 flex-1">
-          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-400 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
+          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-500 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
             3
           </div>
           <div>
             <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Visit</h4>
-            <p className="text-[11px] text-gray-500 leading-snug">Meet our expert and<br/>explore the property</p>
+            <p className="text-[11px] text-gray-600 leading-snug">Meet our expert and<br/>explore the property</p>
           </div>
         </div>
 
@@ -56,12 +56,12 @@ const ScheduleVisitProcess = () => {
 
         {/* Step 4 */}
         <div className="flex items-center gap-4 flex-1">
-          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-400 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
+          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-500 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
             4
           </div>
           <div>
             <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Find Your Home</h4>
-            <p className="text-[11px] text-gray-500 leading-snug">We help you make the<br/>best decision</p>
+            <p className="text-[11px] text-gray-600 leading-snug">We help you make the<br/>best decision</p>
           </div>
         </div>
 

@@ -89,9 +89,9 @@ const LocationSearchInput = ({
           className={className}
         />
         {isLoading ? (
-          <Loader2 size={18} className={`animate-spin ${isDark ? 'text-gray-400' : 'text-gray-400'}`} />
+          <Loader2 size={18} className={`animate-spin ${isDark ? 'text-gray-500' : 'text-gray-500'}`} />
         ) : (
-          <MapPin size={18} className={isDark ? 'text-gray-400' : 'text-gray-400'} />
+          <MapPin size={18} className={isDark ? 'text-gray-500' : 'text-gray-500'} />
         )}
       </div>
 

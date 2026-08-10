@@ -220,13 +220,13 @@ const Properties = () => {
             <div className="flex bg-gray-50 p-1 rounded-lg border border-gray-200">
               <button 
                 onClick={() => setViewMode('grid')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-colors ${viewMode === 'grid' ? 'bg-white text-[#D29F54] shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-colors ${viewMode === 'grid' ? 'bg-white text-[#D29F54] shadow-sm' : 'text-gray-600 hover:text-gray-700'}`}
               >
                 <LayoutGrid size={16} /> Grid
               </button>
               <button 
                 onClick={() => setViewMode('map')}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-colors ${viewMode === 'map' ? 'bg-white text-[#D29F54] shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-colors ${viewMode === 'map' ? 'bg-white text-[#D29F54] shadow-sm' : 'text-gray-600 hover:text-gray-700'}`}
               >
                 <MapIcon size={16} /> Map
               </button>

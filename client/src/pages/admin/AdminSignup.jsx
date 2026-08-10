@@ -66,7 +66,7 @@ const AdminSignup = () => {
           <div className="mb-10 text-center">
             <h4 className="text-[#D29F54] font-bold text-xs tracking-widest uppercase mb-3">First Time Setup</h4>
             <h1 className="text-4xl font-bold text-[#1a2b3c] font-serif mb-2">Create Admin</h1>
-            <p className="text-gray-500 text-sm">Initialize the portal by setting up your secure account.</p>
+            <p className="text-gray-400 text-sm">Initialize the portal by setting up your secure account.</p>
           </div>
 
           {errorMsg && (
@@ -83,7 +83,7 @@ const AdminSignup = () => {
               <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">Full Name</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <User className="h-5 w-5 text-gray-400" />
+                  <User className="h-5 w-5 text-gray-300" />
                 </div>
                 <input 
                   type="text" 
@@ -100,7 +100,7 @@ const AdminSignup = () => {
               <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">Email Address</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-gray-400" />
+                  <Mail className="h-5 w-5 text-gray-300" />
                 </div>
                 <input 
                   type="email" 
@@ -117,7 +117,7 @@ const AdminSignup = () => {
               <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">Password</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-400" />
+                  <Lock className="h-5 w-5 text-gray-300" />
                 </div>
                 <input 
                   type="password" 
@@ -135,7 +135,7 @@ const AdminSignup = () => {
               <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">Confirm Password</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-400" />
+                  <Lock className="h-5 w-5 text-gray-300" />
                 </div>
                 <input 
                   type="password" 
@@ -183,7 +183,7 @@ const AdminSignup = () => {
           </form>
           
           <div className="mt-8 text-center">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-300">
               Already initialized? <Link to="/admin/login" className="text-[#1a2b3c] font-bold hover:underline">Go to Login</Link>
             </p>
           </div>

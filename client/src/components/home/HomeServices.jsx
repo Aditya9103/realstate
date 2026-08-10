@@ -23,7 +23,7 @@ const HomeServices = () => {
               Comprehensive Real<br />
               Estate Solutions
             </h2>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-lg">
+            <p className="text-gray-600 text-sm leading-relaxed max-w-lg">
               We offer a complete suite of real estate services designed to meet your every need. From buying your first home to managing large commercial portfolios, our experts are here to guide you.
             </p>
           </div>

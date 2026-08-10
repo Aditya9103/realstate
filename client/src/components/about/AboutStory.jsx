@@ -24,7 +24,7 @@ const AboutStory = () => {
             Rahul Malhotra
           </div>
           <h4 className="font-bold text-[#1a2b3c] text-sm">Rahul Malhotra</h4>
-          <p className="text-xs text-gray-500 font-medium">Founder & CEO, Horizon Real Estate</p>
+          <p className="text-xs text-gray-600 font-medium">Founder & CEO, Horizon Real Estate</p>
         </div>
       </div>
 
@@ -42,7 +42,7 @@ const AboutStory = () => {
 
         {/* Floating "Specializing In" Card */}
         <div className="absolute -bottom-8 lg:bottom-10 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:-left-12 bg-[#0f172a] rounded-2xl p-6 shadow-xl w-[90%] max-w-[340px]">
-          <p className="text-gray-400 text-xs font-semibold mb-4 uppercase tracking-wider">Specializing In</p>
+          <p className="text-gray-500 text-xs font-semibold mb-4 uppercase tracking-wider">Specializing In</p>
           <div className="flex items-center justify-between gap-4 text-white">
             <span className="font-serif font-bold text-[15px] tracking-wide">Luxury Homes</span>
             <span className="font-bold text-[15px] tracking-tight text-[#D29F54]">Estates</span>

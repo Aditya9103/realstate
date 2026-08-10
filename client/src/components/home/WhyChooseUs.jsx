@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
             A Better Way to Find Your <span className="text-[#D29F54]">Dream Property</span>
           </h2>
 
-          <p className="text-gray-500 text-sm leading-relaxed">
+          <p className="text-gray-600 text-sm leading-relaxed">
             We combine local expertise, cutting-edge technology, and a client-first approach to make your real estate journey simple, transparent, and rewarding.
           </p>
         </div>
@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-gray-500">{feature.description}</p>
+              <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
@@ -87,7 +87,7 @@ const WhyChooseUs = () => {
               <span className="text-[#D29F54]">Extraordinary Lives.</span>
             </h2>
 
-            <p className="text-gray-500 text-lg mb-10 leading-relaxed">
+            <p className="text-gray-600 text-lg mb-10 leading-relaxed">
               From modern city apartments to breathtaking waterfront villas, we bring you a curated selection of properties that match your lifestyle and aspirations.
             </p>
 

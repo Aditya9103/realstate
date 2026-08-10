@@ -64,7 +64,7 @@ const AdminLogin = () => {
           <div className="mb-10 text-center">
             <h4 className="text-[#D29F54] font-bold text-xs tracking-widest uppercase mb-3">Welcome Back</h4>
             <h1 className="text-4xl font-bold text-[#1a2b3c] font-serif mb-2">Admin Login</h1>
-            <p className="text-gray-500 text-sm">Please enter your credentials to access the dashboard.</p>
+            <p className="text-gray-400 text-sm">Please enter your credentials to access the dashboard.</p>
           </div>
 
           {errorMsg && (
@@ -80,7 +80,7 @@ const AdminLogin = () => {
               <label className="text-xs font-bold text-gray-700 uppercase tracking-wider">Email Address</label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Mail className="h-5 w-5 text-gray-400" />
+                  <Mail className="h-5 w-5 text-gray-300" />
                 </div>
                 <input 
                   type="email" 
@@ -99,7 +99,7 @@ const AdminLogin = () => {
               </div>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <Lock className="h-5 w-5 text-gray-400" />
+                  <Lock className="h-5 w-5 text-gray-300" />
                 </div>
                 <input 
                   type="password" 
@@ -130,7 +130,7 @@ const AdminLogin = () => {
           
           {/* Optional: Secret link to signup for initial setup */}
           <div className="mt-12 text-center">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-300">
               Need to initialize the system? <Link to="/admin/signup" className="text-[#D29F54] hover:underline">Setup Admin</Link>
             </p>
           </div>

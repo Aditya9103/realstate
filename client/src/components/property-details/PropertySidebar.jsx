@@ -31,36 +31,36 @@ const PropertySidebar = ({ property }) => {
         <h2 className="text-3xl font-bold text-[#D29F54] mb-1">
           {property.priceDisplay}
         </h2>
-        <p className="text-sm text-gray-500 mb-8">Price Negotiable</p>
+        <p className="text-sm text-gray-600 mb-8">Price Negotiable</p>
 
         <div className="grid grid-cols-4 gap-4 mb-8">
           <div className="text-center">
             <div className="flex justify-center mb-2">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><path d="M2 4v16" /><path d="M2 8h18a2 2 0 0 1 2 2v10" /><path d="M2 17h20" /><path d="M6 8v9" /></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500"><path d="M2 4v16" /><path d="M2 8h18a2 2 0 0 1 2 2v10" /><path d="M2 17h20" /><path d="M6 8v9" /></svg>
             </div>
             <div className="font-bold text-[#1a2b3c]">{property.beds}</div>
-            <div className="text-xs text-gray-500">Beds</div>
+            <div className="text-xs text-gray-600">Beds</div>
           </div>
           <div className="text-center border-l border-gray-100">
             <div className="flex justify-center mb-2">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" /><line x1="10" x2="8" y1="5" y2="7" /><line x1="2" x2="22" y1="12" y2="12" /><line x1="7" x2="7" y1="19" y2="21" /><line x1="17" x2="17" y1="19" y2="21" /></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" /><line x1="10" x2="8" y1="5" y2="7" /><line x1="2" x2="22" y1="12" y2="12" /><line x1="7" x2="7" y1="19" y2="21" /><line x1="17" x2="17" y1="19" y2="21" /></svg>
             </div>
             <div className="font-bold text-[#1a2b3c]">{property.baths}</div>
-            <div className="text-xs text-gray-500">Baths</div>
+            <div className="text-xs text-gray-600">Baths</div>
           </div>
           <div className="text-center border-l border-gray-100">
             <div className="flex justify-center mb-2">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><path d="M22 13h-4" /><path d="M22 17h-4" /><path d="M14 13h-4" /><path d="M14 17h-4" /><path d="M6 13H2" /><path d="M6 17H2" /></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><path d="M22 13h-4" /><path d="M22 17h-4" /><path d="M14 13h-4" /><path d="M14 17h-4" /><path d="M6 13H2" /><path d="M6 17H2" /></svg>
             </div>
             <div className="font-bold text-[#1a2b3c]">{property.sqft}</div>
-            <div className="text-xs text-gray-500">Sq.Ft</div>
+            <div className="text-xs text-gray-600">Sq.Ft</div>
           </div>
           <div className="text-center border-l border-gray-100">
             <div className="flex justify-center mb-2">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
             </div>
             <div className="font-bold text-[#1a2b3c] truncate px-1">{property.type}</div>
-            <div className="text-xs text-gray-500">Property Type</div>
+            <div className="text-xs text-gray-600">Property Type</div>
           </div>
         </div>
 
@@ -94,7 +94,7 @@ const PropertySidebar = ({ property }) => {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <p className="text-[13px] font-semibold text-gray-500 mb-1">Property Expert</p>
+            <p className="text-[13px] font-semibold text-gray-600 mb-1">Property Expert</p>
             <h3 className="font-bold text-[#1a2b3c] text-xl md:text-[22px] mb-2 leading-none" style={{ fontFamily: 'Georgia, serif' }}>Rahul Sharma</h3>
 
             <div className="flex items-center gap-1.5 text-xs text-gray-600 mb-2">

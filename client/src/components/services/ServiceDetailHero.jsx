@@ -7,12 +7,12 @@ const ServiceDetailHero = ({ service }) => {
     <div className="w-full mb-12">
       
       {/* Breadcrumbs */}
-      <div className="text-sm font-medium text-gray-500 mb-6 flex items-center gap-2">
+      <div className="text-sm font-medium text-gray-600 mb-6 flex items-center gap-2">
         <Link to="/" className="hover:text-[#D29F54] transition-colors">Home</Link>
-        <ChevronRight size={14} className="text-gray-400" />
+        <ChevronRight size={14} className="text-gray-500" />
         <Link to="/services" className="hover:text-[#D29F54] transition-colors">Services</Link>
-        <ChevronRight size={14} className="text-gray-400" />
-        <span className="text-gray-400">{service.title}</span>
+        <ChevronRight size={14} className="text-gray-500" />
+        <span className="text-gray-500">{service.title}</span>
       </div>
 
       {/* Hero Image Container */}

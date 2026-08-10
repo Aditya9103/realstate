@@ -18,7 +18,7 @@ const Navbar = () => {
         </Link>
         <Link to="/" className="flex flex-col tracking-wider">
           <span className="text-xl md:text-2xl font-semibold uppercase leading-none tracking-[0.2em]">Luxora</span>
-          <span className="text-[0.6rem] text-gray-400 uppercase tracking-[0.3em] mt-1">Real Estate</span>
+          <span className="text-[0.6rem] text-gray-300 uppercase tracking-[0.3em] mt-1">Real Estate</span>
         </Link>
       </div>
 

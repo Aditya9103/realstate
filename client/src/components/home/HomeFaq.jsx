@@ -45,13 +45,13 @@ const HomeFaq = () => {
             <h2 className="text-3xl md:text-5xl font-bold text-[#1a2b3c] font-serif mb-6 leading-tight">
               Frequently Asked <span className="text-[#D29F54]">Questions</span>
             </h2>
-            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+            <p className="text-gray-600 text-sm leading-relaxed mb-8">
               We know that buying, selling, or renting a property can be overwhelming. Here are answers to some of the most common questions we receive to help guide you.
             </p>
             
             <div className="p-6 bg-[#fafafa] border border-gray-100 rounded-2xl">
               <h5 className="font-bold mb-2">Still have questions?</h5>
-              <p className="text-sm text-gray-500 mb-4">Can't find the answer you're looking for? Please chat to our friendly team.</p>
+              <p className="text-sm text-gray-600 mb-4">Can't find the answer you're looking for? Please chat to our friendly team.</p>
               <a href="/contact" className="inline-block bg-[#1a2b3c] hover:bg-[#2a3b4c] text-white text-sm font-bold py-3 px-6 rounded-lg transition-colors">
                 Get in Touch
               </a>
@@ -76,7 +76,7 @@ const HomeFaq = () => {
                   <span className={`font-bold pr-8 ${isOpen ? 'text-[#D29F54]' : 'text-[#1a2b3c]'}`}>
                     {faq.question}
                   </span>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? 'bg-[#D29F54] text-white rotate-180' : 'bg-gray-100 text-gray-500'}`}>
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${isOpen ? 'bg-[#D29F54] text-white rotate-180' : 'bg-gray-100 text-gray-600'}`}>
                     <ChevronDown size={18} />
                   </div>
                 </button>

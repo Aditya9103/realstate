@@ -21,7 +21,7 @@ const AboutSection = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-gray-500 text-sm leading-relaxed mb-12 max-w-xl">
+          <p className="text-gray-600 text-sm leading-relaxed mb-12 max-w-xl">
             Luxora Real Estate is a leading real estate company dedicated to helping individuals and families find properties that truly feel like home. With a client-first approach and deep market knowledge, we make every step of your real estate journey seamless and successful.
           </p>
 
@@ -33,7 +33,7 @@ const AboutSection = () => {
                 <ShieldCheck size={20} className="text-[#D29F54]" strokeWidth={2} />
               </div>
               <h4 className="font-bold text-[#1a2b3c] mb-2 text-sm md:text-base">Integrity</h4>
-              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">Honest advice and transparent deals.</p>
+              <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Honest advice and transparent deals.</p>
             </div>
 
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -41,7 +41,7 @@ const AboutSection = () => {
                 <Users size={20} className="text-[#D29F54]" strokeWidth={2} />
               </div>
               <h4 className="font-bold text-[#1a2b3c] mb-2 text-sm md:text-base">Client Focused</h4>
-              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">Your goals are at the heart of what we do.</p>
+              <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Your goals are at the heart of what we do.</p>
             </div>
 
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -49,7 +49,7 @@ const AboutSection = () => {
                 <Home size={20} className="text-[#D29F54]" strokeWidth={2} />
               </div>
               <h4 className="font-bold text-[#1a2b3c] mb-2 text-sm md:text-base">Market Experts</h4>
-              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">In-depth knowledge for smarter real estate decisions.</p>
+              <p className="text-gray-500 text-xs md:text-sm leading-relaxed">In-depth knowledge for smarter real estate decisions.</p>
             </div>
 
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
@@ -57,7 +57,7 @@ const AboutSection = () => {
                 <Award size={20} className="text-[#D29F54]" strokeWidth={2} />
               </div>
               <h4 className="font-bold text-[#1a2b3c] mb-2 text-sm md:text-base">Proven Results</h4>
-              <p className="text-gray-400 text-xs md:text-sm leading-relaxed">Delivering value and satisfaction every time.</p>
+              <p className="text-gray-500 text-xs md:text-sm leading-relaxed">Delivering value and satisfaction every time.</p>
             </div>
 
           </div>
@@ -68,25 +68,25 @@ const AboutSection = () => {
             <div className="w-1/2 md:w-1/4 flex flex-col items-center text-center p-2">
               <Building size={24} className="text-[#D29F54] mb-3" strokeWidth={1.5} />
               <div className="text-xl md:text-2xl font-bold text-[#1a2b3c] mb-1">10+</div>
-              <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Years of Experience</div>
+              <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Years of Experience</div>
             </div>
             
             <div className="w-1/2 md:w-1/4 flex flex-col items-center text-center p-2">
               <Users size={24} className="text-[#D29F54] mb-3" strokeWidth={1.5} />
               <div className="text-xl md:text-2xl font-bold text-[#1a2b3c] mb-1">2,500+</div>
-              <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Happy Clients</div>
+              <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Happy Clients</div>
             </div>
 
             <div className="w-1/2 md:w-1/4 flex flex-col items-center text-center p-2">
               <Home size={24} className="text-[#D29F54] mb-3" strokeWidth={1.5} />
               <div className="text-xl md:text-2xl font-bold text-[#1a2b3c] mb-1">5,000+</div>
-              <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Properties Sold</div>
+              <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Properties Sold</div>
             </div>
 
             <div className="w-1/2 md:w-1/4 flex flex-col items-center text-center p-2">
               <MapPin size={24} className="text-[#D29F54] mb-3" strokeWidth={1.5} />
               <div className="text-xl md:text-2xl font-bold text-[#1a2b3c] mb-1">25+</div>
-              <div className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Prime Locations</div>
+              <div className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Prime Locations</div>
             </div>
 
           </div>

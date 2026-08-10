@@ -23,9 +23,9 @@ const ContactHero = () => {
       <div className="relative z-10 max-w-[1400px] mx-auto w-full pt-8">
         
         {/* Breadcrumb */}
-        <div className="text-sm font-medium text-gray-400 mb-6 flex items-center gap-2">
+        <div className="text-sm font-medium text-gray-300 mb-6 flex items-center gap-2">
           <Link to="/" className="hover:text-white transition-colors">Home</Link>
-          <span className="text-gray-500">&gt;</span>
+          <span className="text-gray-400">&gt;</span>
           <span className="text-gray-300">Contact Us</span>
         </div>
 
@@ -51,7 +51,7 @@ const ContactHero = () => {
               </div>
               <div>
                 <p className="font-semibold text-sm">Quick Response</p>
-                <p className="text-xs text-gray-400">We reply within 24 hours</p>
+                <p className="text-xs text-gray-300">We reply within 24 hours</p>
               </div>
             </div>
             
@@ -61,7 +61,7 @@ const ContactHero = () => {
               </div>
               <div>
                 <p className="font-semibold text-sm">Trusted by 2,500+</p>
-                <p className="text-xs text-gray-400">Happy customers</p>
+                <p className="text-xs text-gray-300">Happy customers</p>
               </div>
             </div>
             
@@ -71,7 +71,7 @@ const ContactHero = () => {
               </div>
               <div>
                 <p className="font-semibold text-sm">Expert Support</p>
-                <p className="text-xs text-gray-400">From our real estate experts</p>
+                <p className="text-xs text-gray-300">From our real estate experts</p>
               </div>
             </div>
             

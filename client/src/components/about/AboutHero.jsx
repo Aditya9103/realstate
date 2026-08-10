@@ -22,8 +22,8 @@ const AboutHero = () => {
 
         {/* Left Side: Text Content */}
         <div className="flex-1 w-full max-w-2xl pr-4 relative z-10">
-          <div className="text-sm font-medium text-gray-500 mb-4 xl:mb-6 tracking-wide">
-            <Link to="/" className="hover:text-[#D29F54] transition-colors">Home</Link> &gt; <span className="text-gray-400">About Us</span>
+          <div className="text-sm font-medium text-gray-600 mb-4 xl:mb-6 tracking-wide">
+            <Link to="/" className="hover:text-[#D29F54] transition-colors">Home</Link> &gt; <span className="text-gray-500">About Us</span>
           </div>
 
           <h4 className="text-[#D29F54] font-bold text-sm tracking-widest uppercase mb-2">
