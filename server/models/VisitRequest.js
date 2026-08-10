@@ -32,6 +32,11 @@ const visitRequestSchema = new mongoose.Schema({
   message: {
     type: String,
   },
+  visitType: {
+    type: String,
+    enum: ['in-person', 'virtual'],
+    default: 'in-person'
+  },
   status: {
     type: String,
     enum: ['Pending', 'Confirmed', 'Completed', 'Cancelled'],

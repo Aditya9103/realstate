@@ -27,10 +27,10 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 pb-4 px-4 whitespace-nowrap font-semibold text-sm transition-colors border-b-2 ${
+              className={`flex items-center gap-2 pb-4 px-4 whitespace-nowrap font-bold text-base transition-colors border-b-2 ${
                 isActive 
                   ? 'border-[#D29F54] text-[#D29F54]' 
-                  : 'border-transparent text-gray-600 hover:text-[#1a2b3c]'
+                  : 'border-transparent text-gray-900 hover:text-[#D29F54]'
               }`}
             >
               <Icon size={16} />
@@ -47,7 +47,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
             {/* Description */}
             <div className="flex-1">
               <h3 className="text-xl font-bold text-[#1a2b3c] mb-4">About this Property</h3>
-              <p className="text-gray-600 leading-relaxed text-sm whitespace-pre-line">
+              <p className="text-gray-900 leading-relaxed text-sm whitespace-pre-line">
                 {isExpanded ? description : (description.length > 180 ? `${description.substring(0, 180)}...` : description)}
               </p>
               {description.length > 180 && (
@@ -65,23 +65,23 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
             <div className="flex-1 bg-[#fafafa] rounded-xl p-5 border border-gray-100">
               <div className="grid grid-cols-2 gap-y-4">
                 <div>
-                  <div className="text-xs text-gray-600 mb-1">Property ID</div>
+                  <div className="text-xs text-gray-900 mb-1">Property ID</div>
                   <div className="text-sm font-semibold text-[#1a2b3c]">HRZ{(property._id || '').slice(-6).toUpperCase()}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-gray-600 mb-1">Posted On</div>
+                  <div className="text-xs text-gray-900 mb-1">Posted On</div>
                   <div className="text-sm font-semibold text-[#1a2b3c]">{property.createdAt ? new Date(property.createdAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }) : '12 May, 2024'}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-gray-600 mb-1">Possession</div>
+                  <div className="text-xs text-gray-900 mb-1">Possession</div>
                   <div className="text-sm font-semibold text-[#1a2b3c]">{property.status === 'Buy' ? 'Ready to Move' : 'Immediate'}</div>
                 </div>
                 <div>
-                  <div className="text-xs text-gray-600 mb-1">Ownership</div>
+                  <div className="text-xs text-gray-900 mb-1">Ownership</div>
                   <div className="text-sm font-semibold text-[#1a2b3c]">{property.status === 'Buy' ? 'Freehold' : 'Leasehold'}</div>
                 </div>
                 <div className="col-span-2">
-                  <div className="text-xs text-gray-600 mb-1">RERA ID</div>
+                  <div className="text-xs text-gray-900 mb-1">RERA ID</div>
                   <div className="text-sm font-semibold text-[#1a2b3c]">PRM/RERA/{(property._id || '123456').slice(-6).toUpperCase()}/{new Date(property.createdAt || Date.now()).getFullYear()}</div>
                 </div>
               </div>
@@ -96,7 +96,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
               </div>
               <div>
                 <h4 className="font-bold text-[#1a2b3c] text-sm mb-1">Located in Prime Area</h4>
-                <p className="text-xs text-gray-600">Well-connected to major hubs</p>
+                <p className="text-xs text-gray-900">Well-connected to major hubs</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -105,7 +105,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
               </div>
               <div>
                 <h4 className="font-bold text-[#1a2b3c] text-sm mb-1">Excellent Connectivity</h4>
-                <p className="text-xs text-gray-600">Close to metro, schools, malls</p>
+                <p className="text-xs text-gray-900">Close to metro, schools, malls</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -114,7 +114,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
               </div>
               <div>
                 <h4 className="font-bold text-[#1a2b3c] text-sm mb-1">High Investment Value</h4>
-                <p className="text-xs text-gray-600">Great ROI & future appreciation</p>
+                <p className="text-xs text-gray-900">Great ROI & future appreciation</p>
               </div>
             </div>
           </div>
@@ -126,14 +126,14 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
         <div className="animate-fade-in space-y-6">
           <h3 className="text-xl font-bold text-[#1a2b3c] mb-4">Property Details</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6 bg-[#fafafa] rounded-xl p-6 border border-gray-100">
-            <div><p className="text-sm text-gray-600 mb-1">Property ID</p><p className="font-semibold text-[#1a2b3c]">HRZ{(property._id || '').slice(-6).toUpperCase()}</p></div>
-            <div><p className="text-sm text-gray-600 mb-1">Property Type</p><p className="font-semibold text-[#1a2b3c]">{property.type}</p></div>
-            <div><p className="text-sm text-gray-600 mb-1">Property Status</p><p className="font-semibold text-[#1a2b3c]">{property.status || 'For Sale'}</p></div>
-            <div><p className="text-sm text-gray-600 mb-1">Property Size</p><p className="font-semibold text-[#1a2b3c]">{property.sqft} Sq.Ft</p></div>
-            <div><p className="text-sm text-gray-600 mb-1">Bedrooms</p><p className="font-semibold text-[#1a2b3c]">{property.beds}</p></div>
-            <div><p className="text-sm text-gray-600 mb-1">Bathrooms</p><p className="font-semibold text-[#1a2b3c]">{property.baths}</p></div>
-            <div><p className="text-sm text-gray-600 mb-1">Year Built</p><p className="font-semibold text-[#1a2b3c]">{property.yearBuilt || '2022'}</p></div>
-            <div><p className="text-sm text-gray-600 mb-1">Furnishing</p><p className="font-semibold text-[#1a2b3c]">{property.furnishing || 'Semi-Furnished'}</p></div>
+            <div><p className="text-sm text-gray-900 mb-1">Property ID</p><p className="font-semibold text-[#1a2b3c]">HRZ{(property._id || '').slice(-6).toUpperCase()}</p></div>
+            <div><p className="text-sm text-gray-900 mb-1">Property Type</p><p className="font-semibold text-[#1a2b3c]">{property.type}</p></div>
+            <div><p className="text-sm text-gray-900 mb-1">Property Status</p><p className="font-semibold text-[#1a2b3c]">{property.status || 'For Sale'}</p></div>
+            <div><p className="text-sm text-gray-900 mb-1">Property Size</p><p className="font-semibold text-[#1a2b3c]">{property.sqft} Sq.Ft</p></div>
+            <div><p className="text-sm text-gray-900 mb-1">Bedrooms</p><p className="font-semibold text-[#1a2b3c]">{property.beds}</p></div>
+            <div><p className="text-sm text-gray-900 mb-1">Bathrooms</p><p className="font-semibold text-[#1a2b3c]">{property.baths}</p></div>
+            <div><p className="text-sm text-gray-900 mb-1">Year Built</p><p className="font-semibold text-[#1a2b3c]">{property.yearBuilt || '2022'}</p></div>
+            <div><p className="text-sm text-gray-900 mb-1">Furnishing</p><p className="font-semibold text-[#1a2b3c]">{property.furnishing || 'Semi-Furnished'}</p></div>
           </div>
         </div>
       )}
@@ -159,7 +159,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
       {activeTab === 'location' && (
         <div className="animate-fade-in">
           <h3 className="text-xl font-bold text-[#1a2b3c] mb-4">Location Map</h3>
-          <p className="text-sm text-gray-600 flex items-center gap-2 mb-6"><MapPin size={16} className="text-[#D29F54]"/> {property.location}</p>
+          <p className="text-sm text-gray-900 flex items-center gap-2 mb-6"><MapPin size={16} className="text-[#D29F54]"/> {property.location}</p>
           
           {property.coordinates?.lat && property.coordinates?.lng ? (
             <div className="w-full h-[400px] bg-gray-200 rounded-xl overflow-hidden relative border border-gray-100 z-0">
@@ -182,7 +182,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
               </MapContainer>
             </div>
           ) : (
-            <div className="w-full h-[400px] bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 text-gray-600">
+            <div className="w-full h-[400px] bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 text-gray-900">
               No exact coordinates available for this property.
             </div>
           )}
@@ -198,16 +198,16 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
             <div className="flex flex-col md:flex-row gap-8 items-center justify-between border-b border-[#D29F54]/20 pb-6 mb-6">
               <div className="text-center md:text-left">
                 <p className="text-sm font-semibold text-[#D29F54] uppercase tracking-wider mb-1">Total Super Built-up Area</p>
-                <h4 className="text-3xl font-bold text-[#1a2b3c]">{property.sqft} <span className="text-lg text-gray-600 font-normal">sq.ft.</span></h4>
+                <h4 className="text-3xl font-bold text-[#1a2b3c]">{property.sqft} <span className="text-lg text-gray-900 font-normal">sq.ft.</span></h4>
               </div>
               <div className="flex gap-6">
                 <div className="text-center">
                   <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-[#1a2b3c] font-bold text-lg mx-auto mb-2 border border-gray-100">{property.beds}</div>
-                  <p className="text-xs font-semibold text-gray-600 uppercase">Bedrooms</p>
+                  <p className="text-xs font-semibold text-gray-900 uppercase">Bedrooms</p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-sm text-[#1a2b3c] font-bold text-lg mx-auto mb-2 border border-gray-100">{property.baths}</div>
-                  <p className="text-xs font-semibold text-gray-600 uppercase">Bathrooms</p>
+                  <p className="text-xs font-semibold text-gray-900 uppercase">Bathrooms</p>
                 </div>
               </div>
             </div>
@@ -217,7 +217,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
                 <div key={i} className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm flex justify-between items-center">
                   <div>
                     <h5 className="font-bold text-[#1a2b3c]">{i === 0 ? 'Master Bedroom' : `Bedroom ${i + 1}`}</h5>
-                    <p className="text-xs text-gray-600 mt-1">With attached balcony & ventilation</p>
+                    <p className="text-xs text-gray-900 mt-1">With attached balcony & ventilation</p>
                   </div>
                   {i === 0 && property.baths > 0 && <span className="text-[10px] bg-[#D29F54]/10 text-[#D29F54] px-2 py-1 rounded font-bold uppercase">Ensuite</span>}
                 </div>
@@ -226,14 +226,14 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
               <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm flex justify-between items-center">
                 <div>
                   <h5 className="font-bold text-[#1a2b3c]">Living & Dining Area</h5>
-                  <p className="text-xs text-gray-600 mt-1">Spacious open-concept layout</p>
+                  <p className="text-xs text-gray-900 mt-1">Spacious open-concept layout</p>
                 </div>
               </div>
               
               <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm flex justify-between items-center">
                 <div>
                   <h5 className="font-bold text-[#1a2b3c]">Modern Kitchen</h5>
-                  <p className="text-xs text-gray-600 mt-1">Utility area included</p>
+                  <p className="text-xs text-gray-900 mt-1">Utility area included</p>
                 </div>
               </div>
             </div>
@@ -245,7 +245,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
       {activeTab === 'walkthrough' && (
         <div className="animate-fade-in">
           <h3 className="text-xl font-bold text-[#1a2b3c] mb-6">Property Walkthrough</h3>
-          <div className="bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-600">
+          <div className="bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-900">
             <p className="mb-4">
               Welcome to this breathtaking <span className="font-semibold text-[#1a2b3c]">{property.type}</span> located in the highly sought-after neighborhood of <span className="font-semibold text-[#1a2b3c]">{property.location.split(',')[0]}</span>. 
               As you approach the property, you are immediately greeted by its stunning modern architecture and premium finish.

@@ -1,13 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Search, Bell, User as UserIcon } from 'lucide-react';
+import { Search, Bell, User as UserIcon, Menu } from 'lucide-react';
 
-const AdminHeader = () => {
+const AdminHeader = ({ toggleSidebar }) => {
   const { adminName, adminEmail, adminPhoto } = useSelector((state) => state.auth);
 
   return (
-    <header className="h-20 bg-white border-b border-gray-100 flex items-center justify-between px-8 sticky top-0 z-10 font-sans">
+    <header className="h-20 bg-white border-b border-gray-100 flex items-center justify-between px-4 md:px-8 sticky top-0 z-10 font-sans">
       
+      {/* Mobile Menu Toggle */}
+      <button 
+        onClick={toggleSidebar}
+        className="lg:hidden p-2 -ml-2 mr-2 text-gray-500 hover:text-[#D29F54] transition-colors rounded-lg hover:bg-gray-50"
+      >
+        <Menu size={24} />
+      </button>
+
       {/* Search Bar (Placeholder) */}
       <div className="flex-1 max-w-md hidden md:flex">
         <div className="relative w-full">

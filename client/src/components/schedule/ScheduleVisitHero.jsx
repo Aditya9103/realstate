@@ -22,7 +22,7 @@ const ScheduleVisitHero = () => {
             </div>
             <div>
               <h4 className="font-bold text-sm">Need Help?</h4>
-              <p className="text-xs text-gray-500">Talk to our property expert</p>
+              <p className="text-xs text-gray-400">Talk to our property expert</p>
             </div>
           </div>
           
@@ -50,7 +50,7 @@ const ScheduleVisitHero = () => {
             <span className="text-[#D29F54]">Perfect Property</span>
           </h1>
           
-          <p className="text-gray-600 max-w-md text-sm leading-relaxed mb-10">
+          <p className="text-gray-900 max-w-md text-sm leading-relaxed mb-10">
             Schedule a personalized visit and explore the property that fits your needs. Our experts are here to guide you every step of the way.
           </p>
 

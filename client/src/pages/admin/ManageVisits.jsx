@@ -1,11 +1,12 @@
-import React from 'react';
-import { Calendar, Trash2, Home, User, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, Trash2, Home, User, Clock, Eye, X, MessageSquare } from 'lucide-react';
 import { useGetVisitsQuery, useUpdateVisitStatusMutation, useDeleteVisitMutation } from '../../redux/api/visitApiSlice';
 
 const ManageVisits = () => {
   const { data: response, isLoading, isError, error } = useGetVisitsQuery();
   const [updateStatus] = useUpdateVisitStatusMutation();
   const [deleteVisit] = useDeleteVisitMutation();
+  const [selectedVisit, setSelectedVisit] = useState(null);
 
   const visits = response?.data || [];
 
@@ -54,6 +55,7 @@ const ManageVisits = () => {
                 <tr>
                   <th className="px-6 py-4">Visitor Info</th>
                   <th className="px-6 py-4">Property</th>
+                  <th className="px-6 py-4">Type</th>
                   <th className="px-6 py-4">Requested Date/Time</th>
                   <th className="px-6 py-4">Status</th>
                   <th className="px-6 py-4 text-right">Actions</th>
@@ -85,6 +87,11 @@ const ManageVisits = () => {
                       )}
                     </td>
                     <td className="px-6 py-4">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#D29F54] bg-[#D29F54]/10 inline-block px-3 py-1 rounded-full whitespace-nowrap">
+                        {visit.visitType || 'in-person'}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4">
                       <div className="flex items-center gap-2 font-semibold text-gray-800 mb-1">
                         <Calendar size={14} className="text-[#D29F54]" /> 
                         {new Date(visit.preferredDate).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}
@@ -113,6 +120,12 @@ const ManageVisits = () => {
                     <td className="px-6 py-4 text-right">
                       <div className="flex items-center justify-end gap-2">
                         <button 
+                          onClick={() => setSelectedVisit(visit)}
+                          className="p-1.5 text-blue-500 hover:bg-blue-50 rounded transition-colors" title="View Details"
+                        >
+                          <Eye size={18} />
+                        </button>
+                        <button 
                           onClick={() => handleDelete(visit._id)}
                           className="p-1.5 text-red-500 hover:bg-red-50 rounded transition-colors" title="Delete Request"
                         >
@@ -127,6 +140,92 @@ const ManageVisits = () => {
           </div>
         )}
       </div>
+
+      {/* Visit Details Modal */}
+      {selectedVisit && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+          <div className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+            <div className="flex justify-between items-center p-6 border-b border-gray-100 bg-gray-50">
+              <h2 className="text-xl font-bold text-[#1a2b3c] font-serif">Visit Request Details</h2>
+              <button 
+                onClick={() => setSelectedVisit(null)}
+                className="text-gray-400 hover:text-gray-700 bg-white hover:bg-gray-100 rounded-full p-2 transition-colors border border-gray-200"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            
+            <div className="p-6 overflow-y-auto space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-5 rounded-xl border border-gray-100">
+                <div>
+                  <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-1">Visitor Name</p>
+                  <p className="font-semibold text-gray-900">{selectedVisit.name}</p>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-1">Email</p>
+                  <p className="font-semibold text-gray-900">{selectedVisit.email}</p>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-1">Phone</p>
+                  <p className="font-semibold text-gray-900">{selectedVisit.phone}</p>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-1">Visit Type</p>
+                  <p className="font-semibold text-gray-900 capitalize">{selectedVisit.visitType || 'in-person'}</p>
+                </div>
+              </div>
+
+              <div className="bg-[#fcf9f2] p-5 rounded-xl border border-[#D29F54]/20 flex items-start gap-4">
+                <Calendar className="text-[#D29F54] mt-1" size={24} />
+                <div>
+                  <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-1">Requested Schedule</p>
+                  <p className="font-bold text-lg text-[#1a2b3c]">
+                    {new Date(selectedVisit.preferredDate).toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                  </p>
+                  <p className="font-semibold text-[#D29F54]">{selectedVisit.preferredTime}</p>
+                </div>
+              </div>
+
+              {selectedVisit.propertyId && (
+                <div>
+                  <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-2">Interested Property</p>
+                  <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                    <img src={selectedVisit.propertyId.image || selectedVisit.propertyId.priceDisplay} alt="" className="w-16 h-16 rounded-lg object-cover border border-gray-200" />
+                    <div>
+                      <p className="font-bold text-[#1a2b3c]">{selectedVisit.propertyId.title}</p>
+                      <p className="text-sm text-gray-600">{selectedVisit.propertyId.location}</p>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {selectedVisit.message && (
+                <div>
+                  <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-2">Additional Message</p>
+                  <div className="bg-gray-50 p-5 rounded-xl border border-gray-100 whitespace-pre-wrap text-gray-800 leading-relaxed text-sm">
+                    {selectedVisit.message}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="p-6 border-t border-gray-100 flex justify-end gap-3 bg-gray-50">
+              <a 
+                href={`mailto:${selectedVisit.email}`}
+                className="px-6 py-2.5 bg-[#1a2b3c] text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+              >
+                Contact Visitor
+              </a>
+              <button 
+                onClick={() => setSelectedVisit(null)}
+                className="px-6 py-2.5 border border-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors bg-white"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

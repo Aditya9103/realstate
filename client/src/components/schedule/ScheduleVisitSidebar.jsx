@@ -54,7 +54,7 @@ const ScheduleVisitSidebar = ({
         className={`text-center p-2 w-8 h-8 flex items-center justify-center rounded-full text-xs mx-auto transition-colors ${
           isSelected 
             ? 'bg-[#D29F54] text-white font-bold shadow-md shadow-[#D29F54]/30' 
-            : 'text-gray-700 hover:bg-gray-100 font-medium'
+            : 'text-gray-900 hover:bg-gray-100 font-medium'
         }`}
       >
         {i}
@@ -116,15 +116,15 @@ const ScheduleVisitSidebar = ({
           <div className="flex items-center justify-between mb-4">
             <h4 className="font-bold text-sm text-[#1a2b3c]">{monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}</h4>
             <div className="flex items-center gap-2">
-              <button onClick={prevMonth} className="text-gray-500 hover:text-[#D29F54] transition-colors"><ChevronLeft size={18} /></button>
-              <button onClick={nextMonth} className="text-gray-500 hover:text-[#D29F54] transition-colors"><ChevronRight size={18} /></button>
+              <button onClick={prevMonth} className="text-gray-900 hover:text-[#D29F54] transition-colors"><ChevronLeft size={18} /></button>
+              <button onClick={nextMonth} className="text-gray-900 hover:text-[#D29F54] transition-colors"><ChevronRight size={18} /></button>
             </div>
           </div>
 
           {/* Calendar Grid */}
           <div className="grid grid-cols-7 gap-1 mb-2">
             {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((day) => (
-              <div key={day} className="text-center text-[10px] font-bold text-gray-500 mb-2">{day}</div>
+              <div key={day} className="text-center text-[10px] font-bold text-gray-900 mb-2">{day}</div>
             ))}
             {days}
           </div>

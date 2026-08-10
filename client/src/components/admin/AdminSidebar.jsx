@@ -13,7 +13,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/slices/authSlice';
 
-const AdminSidebar = () => {
+const AdminSidebar = ({ isOpen, setIsOpen }) => {
   const dispatch = useDispatch();
 
   const navItems = [
@@ -30,15 +30,17 @@ const AdminSidebar = () => {
   };
 
   return (
-    <aside className="w-64 bg-[#1a2b3c] min-h-screen text-gray-300 flex flex-col font-sans shrink-0 border-r border-[#2a3b4c]">
+    <aside className={`fixed lg:static inset-y-0 left-0 z-50 w-64 bg-[#1a2b3c] min-h-screen text-gray-300 flex flex-col font-sans shrink-0 border-r border-[#2a3b4c] transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
       {/* Brand Logo */}
-      <div className="h-20 flex items-center px-6 bg-[#13202e] border-b border-[#2a3b4c]">
-        <div className="w-10 h-10 bg-[#D29F54] rounded-xl flex items-center justify-center mr-3 shadow-lg">
-          <ShieldCheck className="text-white" size={20} strokeWidth={2} />
-        </div>
-        <div>
-          <h2 className="text-xl font-serif font-bold text-white tracking-wide">Mithila Legacy Realty</h2>
-          <p className="text-[10px] text-[#D29F54] uppercase tracking-widest font-bold">Admin Portal</p>
+      <div className="h-20 flex items-center justify-between px-6 bg-[#13202e] border-b border-[#2a3b4c]">
+        <div className="flex items-center">
+          <div className="w-10 h-10 bg-[#D29F54] rounded-xl flex items-center justify-center mr-3 shadow-lg">
+            <ShieldCheck className="text-white" size={20} strokeWidth={2} />
+          </div>
+          <div>
+            <h2 className="text-xl font-serif font-bold text-white tracking-wide">Mithila Legacy</h2>
+            <p className="text-[10px] text-[#D29F54] uppercase tracking-widest font-bold">Admin</p>
+          </div>
         </div>
       </div>
 
@@ -52,6 +54,7 @@ const AdminSidebar = () => {
             <NavLink
               key={item.name}
               to={item.path}
+              onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
                 `flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group ${isActive
                   ? 'bg-[#D29F54]/10 text-[#D29F54]'

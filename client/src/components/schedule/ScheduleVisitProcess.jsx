@@ -13,7 +13,7 @@ const ScheduleVisitProcess = () => {
       </div>
 
       {/* Steps Container */}
-      <div className="flex-1 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2 w-full">
+      <div className="flex-1 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-2 w-full">
         
         {/* Step 1 */}
         <div className="flex items-center gap-4 flex-1">
@@ -22,7 +22,7 @@ const ScheduleVisitProcess = () => {
           </div>
           <div>
             <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Schedule</h4>
-            <p className="text-[11px] text-gray-600 leading-snug">Pick your date<br/>and time</p>
+            <p className="text-[11px] text-gray-900 leading-snug">Pick your date<br/>and time</p>
           </div>
         </div>
 
@@ -30,12 +30,12 @@ const ScheduleVisitProcess = () => {
 
         {/* Step 2 */}
         <div className="flex items-center gap-4 flex-1">
-          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-500 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
+          <div className="w-12 h-12 rounded-full border border-gray-300 text-gray-900 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
             2
           </div>
           <div>
             <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Confirmation</h4>
-            <p className="text-[11px] text-gray-600 leading-snug">We'll confirm your<br/>appointment</p>
+            <p className="text-[11px] text-gray-900 leading-snug">We'll confirm your<br/>appointment</p>
           </div>
         </div>
 
@@ -43,25 +43,25 @@ const ScheduleVisitProcess = () => {
 
         {/* Step 3 */}
         <div className="flex items-center gap-4 flex-1">
-          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-500 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
+          <div className="w-12 h-12 rounded-full border border-gray-300 text-gray-900 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
             3
           </div>
           <div>
             <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Visit</h4>
-            <p className="text-[11px] text-gray-600 leading-snug">Meet our expert and<br/>explore the property</p>
+            <p className="text-[11px] text-gray-900 leading-snug">Meet our expert and<br/>explore the property</p>
           </div>
         </div>
 
         <ArrowRight size={16} className="text-gray-300 hidden md:block flex-shrink-0 mx-2" />
 
         {/* Step 4 */}
-        <div className="flex items-center gap-4 flex-1">
-          <div className="w-12 h-12 rounded-full border border-gray-200 text-gray-500 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
+        <div className="flex items-start md:items-center gap-4 flex-1">
+          <div className="w-12 h-12 rounded-full border border-gray-300 text-gray-900 font-bold text-lg flex items-center justify-center flex-shrink-0 bg-white">
             4
           </div>
           <div>
-            <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Find Your Home</h4>
-            <p className="text-[11px] text-gray-600 leading-snug">We help you make the<br/>best decision</p>
+            <h4 className="text-sm font-bold text-[#1a2b3c] mb-1">Decide</h4>
+            <p className="text-[11px] text-gray-900 leading-snug">Make an informed<br/>final decision</p>
           </div>
         </div>
 

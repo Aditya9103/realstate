@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1a2b3c] text-white pt-20 pb-10 px-4 md:px-16 font-sans">
+    <footer className="bg-[#051120] text-white pt-20 pb-10 px-4 md:px-16 font-sans">
       <div className="max-w-[1400px] mx-auto">
         
         {/* Top Section */}
@@ -105,7 +105,7 @@ const Footer = () => {
           
           {/* Left: Copyright */}
           <div className="flex-1 text-center md:text-left">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-300 text-sm">
               &copy; {new Date().getFullYear()} Mithila Legacy Realty. All rights reserved.
             </p>
           </div>
@@ -118,7 +118,7 @@ const Footer = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#D29F54]/30 bg-[#D29F54]/5 hover:border-[#D29F54]/80 hover:bg-[#D29F54]/10 transition-all duration-300 shadow-lg shadow-[#D29F54]/5"
             >
-              <span className="text-[10px] text-gray-400 tracking-wider font-medium">
+              <span className="text-[10px] text-gray-300 tracking-wider font-medium">
                 ✦ Designed &amp; Developed by
               </span>
               <span className="text-[12px] font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-[#D29F54] to-[#e6b872]">
@@ -129,8 +129,8 @@ const Footer = () => {
 
           {/* Right: Links */}
           <div className="flex-1 flex justify-center md:justify-end gap-6">
-            <Link to="/privacy-policy" className="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="text-gray-400 text-sm hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/privacy-policy" className="text-gray-300 text-sm hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-gray-300 text-sm hover:text-white transition-colors">Terms of Service</Link>
           </div>
 
         </div>

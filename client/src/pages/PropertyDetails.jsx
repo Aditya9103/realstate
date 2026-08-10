@@ -52,12 +52,12 @@ const PropertyDetails = () => {
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 xl:px-16">
 
         {/* Breadcrumbs */}
-        <div className="text-sm font-medium text-gray-600 mb-6 flex items-center gap-2">
+        <div className="text-sm font-medium text-gray-900 mb-6 flex items-center gap-2">
           <Link to="/" className="hover:text-[#D29F54] transition-colors">Home</Link>
-          <ChevronRight size={14} className="text-gray-500" />
+          <ChevronRight size={14} className="text-gray-800" />
           <Link to="/properties" className="hover:text-[#D29F54] transition-colors">Properties</Link>
-          <ChevronRight size={14} className="text-gray-500" />
-          <span className="text-gray-500">{property.title}</span>
+          <ChevronRight size={14} className="text-gray-800" />
+          <span className="text-gray-800">{property.title}</span>
         </div>
 
         {/* Title Area */}
@@ -71,7 +71,7 @@ const PropertyDetails = () => {
             <h1 className="text-3xl md:text-4xl lg:text-[2.5rem] font-bold text-[#1a2b3c] mb-3">
               {property.title}
             </h1>
-            <div className="flex items-center text-gray-600 text-sm md:text-base gap-4">
+            <div className="flex items-center text-gray-900 text-sm md:text-base gap-4">
               <span className="flex items-center">
                 <MapPin size={18} className="mr-1.5 text-[#D29F54]" />
                 {property.location}
@@ -87,13 +87,13 @@ const PropertyDetails = () => {
           </div>
 
           <div className="flex items-center gap-4 lg:gap-6">
-            <button onClick={handleShare} className="flex flex-col items-center gap-1 text-gray-600 hover:text-[#1a2b3c] transition-colors group">
+            <button onClick={handleShare} className="flex flex-col items-center gap-1 text-gray-900 hover:text-[#1a2b3c] transition-colors group">
               <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#1a2b3c] bg-white transition-colors">
                 <Share size={18} />
               </div>
               <span className="text-xs font-semibold">{shareText}</span>
             </button>
-            <button onClick={() => setIsSaved(!isSaved)} className={`flex flex-col items-center gap-1 transition-colors group ${isSaved ? 'text-red-500' : 'text-gray-600 hover:text-red-500'}`}>
+            <button onClick={() => setIsSaved(!isSaved)} className={`flex flex-col items-center gap-1 transition-colors group ${isSaved ? 'text-red-500' : 'text-gray-900 hover:text-red-500'}`}>
               <div className={`w-10 h-10 rounded-full border flex items-center justify-center transition-colors bg-white ${isSaved ? 'border-red-500' : 'border-gray-200 group-hover:border-red-500'}`}>
                 <Heart size={18} fill={isSaved ? 'currentColor' : 'none'} />
               </div>

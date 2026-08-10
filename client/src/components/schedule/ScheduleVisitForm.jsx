@@ -18,7 +18,7 @@ const ScheduleVisitForm = ({
         </div>
         <div>
           <h2 className="text-lg font-bold text-[#1a2b3c] font-serif">Your Details</h2>
-          <p className="text-gray-500 text-xs">Please fill in your information</p>
+          <p className="text-gray-900 text-xs">Please fill in your information</p>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ const ScheduleVisitForm = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <User size={16} className="text-gray-500" />
+              <User size={16} className="text-gray-900" />
             </div>
             <input 
               type="text" 
@@ -48,12 +48,12 @@ const ScheduleVisitForm = ({
               onChange={handleChange}
               required
               placeholder="Full Name" 
-              className="w-full bg-white border border-gray-200 rounded-lg pl-11 pr-4 py-3.5 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-700 placeholder-gray-400"
+              className="w-full bg-white border border-gray-200 rounded-lg pl-11 pr-4 py-3.5 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-900 placeholder-gray-600"
             />
           </div>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Mail size={16} className="text-gray-500" />
+              <Mail size={16} className="text-gray-900" />
             </div>
             <input 
               type="email" 
@@ -62,7 +62,7 @@ const ScheduleVisitForm = ({
               onChange={handleChange}
               required
               placeholder="Email Address" 
-              className="w-full bg-white border border-gray-200 rounded-lg pl-11 pr-4 py-3.5 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-700 placeholder-gray-400"
+              className="w-full bg-white border border-gray-200 rounded-lg pl-11 pr-4 py-3.5 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-900 placeholder-gray-600"
             />
           </div>
         </div>
@@ -70,7 +70,7 @@ const ScheduleVisitForm = ({
         {/* Phone Number */}
         <div className="relative">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <Phone size={16} className="text-gray-500" />
+            <Phone size={16} className="text-gray-900" />
           </div>
           <input 
             type="tel" 
@@ -79,7 +79,7 @@ const ScheduleVisitForm = ({
             onChange={handleChange}
             required
             placeholder="Phone Number" 
-            className="w-full bg-white border border-gray-200 rounded-lg pl-11 pr-4 py-3.5 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-700 placeholder-gray-400"
+            className="w-full bg-white border border-gray-200 rounded-lg pl-11 pr-4 py-3.5 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-900 placeholder-gray-600"
           />
         </div>
 
@@ -87,7 +87,7 @@ const ScheduleVisitForm = ({
         <div className="relative">
           <label className="block text-[11px] font-bold text-gray-600 mb-1.5 pl-1">I'm Interested In</label>
           <select 
-            className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3.5 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-700 appearance-none cursor-pointer"
+            className="w-full bg-white border border-gray-200 rounded-lg px-4 py-3.5 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-900 appearance-none cursor-pointer"
             defaultValue=""
           >
             <option value="" disabled>Select an option</option>
@@ -97,7 +97,7 @@ const ScheduleVisitForm = ({
             <option value="other">Other</option>
           </select>
           <div className="absolute right-4 top-[36px] pointer-events-none">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </div>
         </div>
 
@@ -109,7 +109,7 @@ const ScheduleVisitForm = ({
             value={formData.message}
             onChange={handleChange}
             placeholder="Any specific requirements or questions?"
-            className="w-full flex-1 bg-white border border-gray-200 rounded-lg p-4 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-700 placeholder-gray-400 resize-none min-h-[100px]"
+            className="w-full flex-1 bg-white border border-gray-200 rounded-lg p-4 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-all text-gray-900 placeholder-gray-600 resize-none min-h-[100px]"
           ></textarea>
         </div>
 
@@ -132,7 +132,7 @@ const ScheduleVisitForm = ({
                 : 'bg-white border-gray-200 hover:border-[#D29F54]/50 hover:bg-[#fafafa]'
             }`}
           >
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${formData.visitType === 'in-person' ? 'bg-[#D29F54]/10 text-[#D29F54]' : 'bg-gray-50 text-gray-500'}`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${formData.visitType === 'in-person' ? 'bg-[#D29F54]/10 text-[#D29F54]' : 'bg-gray-50 text-gray-900'}`}>
               <Users size={20} />
             </div>
             <div>
@@ -150,7 +150,7 @@ const ScheduleVisitForm = ({
                 : 'bg-white border-gray-200 hover:border-[#D29F54]/50 hover:bg-[#fafafa]'
             }`}
           >
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${formData.visitType === 'virtual' ? 'bg-[#D29F54]/10 text-[#D29F54]' : 'bg-gray-50 text-gray-500'}`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${formData.visitType === 'virtual' ? 'bg-[#D29F54]/10 text-[#D29F54]' : 'bg-gray-50 text-gray-900'}`}>
               <Video size={20} />
             </div>
             <div>
@@ -174,7 +174,7 @@ const ScheduleVisitForm = ({
           {isLoading ? <Loader2 size={16} className="animate-spin" /> : <Calendar size={16} />}
           {isLoading ? 'Submitting...' : 'Schedule My Visit'}
         </button>
-        <p className="text-center text-[10px] text-gray-500 mt-1 flex items-center justify-center gap-1">
+        <p className="text-center text-[10px] text-gray-900 mt-1 flex items-center justify-center gap-1">
           <span>&copy;</span> We'll confirm your appointment via email or phone.
         </p>
 
