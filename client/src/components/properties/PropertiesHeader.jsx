@@ -4,7 +4,7 @@ import LocationSearchInput from '../common/LocationSearchInput';
 
 const PropertiesHeader = ({ searchParams, setSearchParams, onSearch }) => {
   return (
-    <div className="relative pt-15 pb-12 md:pt-25 md:pb-20 px-4 md:px-16 flex items-center border-b border-gray-200/50 bg-[#fbfaf8] overflow-hidden">
+    <div className="relative pt-15 pb-12 md:pt-25 md:pb-20 px-4 md:px-16 flex items-center border-b border-gray-200/50 bg-[#fbfaf8]">
       {/* Right Side Background Image */}
       <div className="absolute top-0 right-0 bottom-0 w-full md:w-2/3 lg:w-1/2 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-[#fbfaf8] via-[#fbfaf8]/50 to-transparent z-10"></div>
@@ -33,10 +33,10 @@ const PropertiesHeader = ({ searchParams, setSearchParams, onSearch }) => {
         </div>
 
         {/* Right Side: Inline Search Bar */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-2 flex flex-col md:flex-row items-center divide-y md:divide-y-0 md:divide-x divide-gray-100 flex-shrink-0 w-full xl:w-[58%]">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-2 flex flex-col md:flex-row items-stretch md:items-center divide-y md:divide-y-0 md:divide-x divide-gray-100 flex-shrink-0 w-full xl:w-[58%]">
 
           {/* Location */}
-          <div className="flex-1 px-4 py-3 md:py-2">
+          <div className="flex-[1.5] px-4 py-3 md:py-2 w-full md:w-auto md:min-w-[200px]">
             <div className="text-[11px] font-bold text-[#1a2b3c] mb-1.5 uppercase tracking-wider">Location</div>
             <LocationSearchInput
               theme="light"
@@ -59,7 +59,7 @@ const PropertiesHeader = ({ searchParams, setSearchParams, onSearch }) => {
           </div>
 
           {/* Property Type */}
-          <div className="flex-1 px-4 py-3 md:py-2">
+          <div className="flex-1 px-4 py-3 md:py-2 w-full md:w-auto">
             <div className="text-[11px] font-bold text-[#1a2b3c] mb-1.5 uppercase tracking-wider">Property Type</div>
             <div className="flex items-center text-gray-500">
               <Grid size={16} className="mr-2 text-gray-400 flex-shrink-0" />
@@ -79,7 +79,7 @@ const PropertiesHeader = ({ searchParams, setSearchParams, onSearch }) => {
           </div>
 
           {/* Price Range */}
-          <div className="flex-1 px-4 py-3 md:py-2">
+          <div className="flex-1 px-4 py-3 md:py-2 w-full md:w-auto">
             <div className="text-[11px] font-bold text-[#1a2b3c] mb-1.5 uppercase tracking-wider">Price Range</div>
             <div className="flex items-center text-gray-500">
               <CreditCard size={16} className="mr-2 text-gray-400 flex-shrink-0" />

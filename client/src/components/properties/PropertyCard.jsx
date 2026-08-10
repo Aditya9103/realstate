@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Heart, Bed, Bath, Square } from 'lucide-react';
+import { MapPin, Heart, Bed, Bath, Square, ArrowRight } from 'lucide-react';
 
 const PropertyCard = ({ property }) => {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -55,28 +55,32 @@ const PropertyCard = ({ property }) => {
         </div>
 
         {/* Amenities Row */}
-        <div className="flex items-center gap-4 text-gray-600 text-xs font-medium mb-5">
-          <div className="flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-gray-600 text-[11px] sm:text-xs font-medium mb-5">
+          <div className="flex items-center gap-1.5 whitespace-nowrap">
             <Bed size={14} className="text-gray-400" />
             {property.beds} Beds
           </div>
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 whitespace-nowrap">
             <Bath size={14} className="text-gray-400" />
             {property.baths} Baths
           </div>
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 whitespace-nowrap">
             <Square size={14} className="text-gray-400" />
             {property.sqft} Sq.Ft
           </div>
         </div>
 
         {/* Footer: Price & Button */}
-        <div className="mt-auto flex items-center justify-between border-t border-gray-100 pt-4">
-          <div className="text-[#D29F54] font-bold text-xl">
+        <div className="mt-auto flex flex-col sm:flex-row sm:items-center justify-between border-t border-gray-100 pt-4 gap-3 sm:gap-0">
+          <div className="text-[#D29F54] font-bold text-lg sm:text-xl truncate">
             {property.priceDisplay}
           </div>
-          <Link to={`/properties/${property._id || property.id}`} className="px-4 py-2 border border-[#D29F54] text-[#D29F54] rounded-md text-xs font-bold hover:bg-[#D29F54] hover:text-white transition-colors">
+          <Link 
+            to={`/properties/${property._id || property.id}`} 
+            className="w-full sm:w-auto text-center px-4 py-2.5 bg-[#D29F54]/10 hover:bg-[#D29F54] text-[#D29F54] hover:text-white border border-[#D29F54]/30 hover:border-[#D29F54] rounded-lg text-xs font-bold transition-all duration-300 flex items-center justify-center gap-1.5 group"
+          >
             View Details
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

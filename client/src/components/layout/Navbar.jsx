@@ -23,7 +23,7 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+      <div className="hidden lg:flex items-center gap-8 text-sm font-medium">
         <Link to="/" className={`${location.pathname === '/' ? 'text-[#D29F54] border-b border-[#D29F54]' : 'hover:text-[#D29F54] transition-colors'} pb-1`}>HOME</Link>
         <Link to="/properties" className={`${location.pathname === '/properties' ? 'text-[#D29F54] border-b border-[#D29F54]' : 'hover:text-[#D29F54] transition-colors'} pb-1`}>PROPERTIES</Link>
         <Link to="/about" className={`${location.pathname === '/about' ? 'text-[#D29F54] border-b border-[#D29F54]' : 'hover:text-[#D29F54] transition-colors'} pb-1`}>ABOUT US</Link>
@@ -32,9 +32,9 @@ const Navbar = () => {
       </div>
 
       {/* Action Button */}
-      <div className="hidden md:block">
-        <Link 
-          to="/schedule-visit" 
+      <div className="hidden lg:block">
+        <Link
+          to="/schedule-visit"
           className="flex items-center gap-2 border border-[#D29F54] bg-[#D29F54] text-white px-5 py-2.5 rounded text-sm font-bold hover:bg-[#b88a44] transition-colors"
         >
           <Calendar size={16} />
@@ -43,8 +43,8 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Icon */}
-      <div className="md:hidden">
-        <button 
+      <div className="lg:hidden">
+        <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="text-white hover:text-[#D29F54] transition-colors"
         >
@@ -53,10 +53,9 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <div 
-        className={`md:hidden fixed top-[88px] left-0 w-full bg-[#0a192f] border-b border-[#1a2b3c] transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen ? 'max-h-[500px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
-        }`}
+      <div
+        className={`lg:hidden fixed top-[88px] left-0 w-full bg-[#0a192f] border-b border-[#1a2b3c] transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-[500px] opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
+          }`}
       >
         <div className="flex flex-col px-6 space-y-4 font-medium text-sm">
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>HOME</Link>
@@ -64,10 +63,10 @@ const Navbar = () => {
           <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/about' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>ABOUT US</Link>
           <Link to="/services" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/services' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>SERVICES</Link>
           <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`${location.pathname === '/contact' ? 'text-[#D29F54]' : 'text-gray-300 hover:text-[#D29F54]'}`}>CONTACT</Link>
-          
+
           <div className="pt-4 border-t border-[#1a2b3c]">
-            <Link 
-              to="/schedule-visit" 
+            <Link
+              to="/schedule-visit"
               onClick={() => setIsMobileMenuOpen(false)}
               className="flex items-center justify-center gap-2 border border-[#D29F54] bg-[#D29F54] text-white px-5 py-3 rounded text-sm font-bold hover:bg-[#b88a44] transition-colors w-full"
             >

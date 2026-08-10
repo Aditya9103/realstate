@@ -79,10 +79,10 @@ const HeroHome = () => {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                            <button onClick={() => navigate('/properties')} className="bg-[#D29F54] text-black font-semibold px-8 py-3.5 rounded-md hover:bg-[#b88a44] transition-colors tracking-wide flex items-center justify-center gap-2">
+                            <button onClick={() => navigate('/properties')} className="bg-[#D29F54] text-black font-semibold px-8 py-3.5 rounded-md hover:bg-[#b88a44] cursor-pointer transition-colors tracking-wide flex items-center justify-center gap-2">
                                 EXPLORE PROPERTIES
                             </button>
-                            <button onClick={() => navigate('/contact')} className="border border-white/30 text-white font-semibold px-8 py-3.5 rounded-md hover:bg-white/10 transition-colors tracking-wide flex items-center justify-center gap-2">
+                            <button onClick={() => navigate('/contact')} className="border border-white/30 text-white font-semibold px-8 py-3.5 rounded-md hover:bg-white/10 cursor-pointer transition-colors tracking-wide flex items-center justify-center gap-2">
                                 <Download size={18} className="rotate-180" /> CONTACT AGENT
                             </button>
                         </div>
@@ -101,7 +101,7 @@ const HeroHome = () => {
                                 {/* Location Input */}
                                 <div className="relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
                                     <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Location</label>
-                                    <LocationSearchInput 
+                                    <LocationSearchInput
                                         theme="dark"
                                         value={searchParams.location}
                                         onChange={handleLocationChange}
@@ -115,7 +115,7 @@ const HeroHome = () => {
                                     <div className="flex-1 relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
                                         <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Property Type</label>
                                         <div className="flex items-center justify-between text-gray-200">
-                                            <select 
+                                            <select
                                                 className="w-full bg-transparent border-none outline-none text-white appearance-none cursor-pointer"
                                                 value={searchParams.type}
                                                 onChange={(e) => setSearchParams(prev => ({ ...prev, type: e.target.value }))}
@@ -133,7 +133,7 @@ const HeroHome = () => {
                                     <div className="flex-1 relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
                                         <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Status</label>
                                         <div className="flex items-center justify-between text-gray-200">
-                                            <select 
+                                            <select
                                                 className="w-full bg-transparent border-none outline-none text-white appearance-none cursor-pointer"
                                                 value={searchParams.status}
                                                 onChange={(e) => setSearchParams(prev => ({ ...prev, status: e.target.value }))}
@@ -152,7 +152,7 @@ const HeroHome = () => {
                                     <div className="flex-1 relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
                                         <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Price Range</label>
                                         <div className="flex items-center justify-between text-gray-200">
-                                            <select 
+                                            <select
                                                 className="w-full bg-transparent outline-none text-gray-200 appearance-none cursor-pointer"
                                                 value={searchParams.price}
                                                 onChange={(e) => setSearchParams({ ...searchParams, price: e.target.value })}
@@ -169,7 +169,7 @@ const HeroHome = () => {
                                     <div className="flex-1 relative border border-white/20 rounded-lg p-3 bg-white/5 hover:border-white/40 transition-colors">
                                         <label className="block text-[10px] uppercase text-gray-400 font-semibold mb-1">Bedrooms</label>
                                         <div className="flex items-center justify-between text-gray-200">
-                                            <select 
+                                            <select
                                                 className="w-full bg-transparent outline-none text-gray-200 appearance-none cursor-pointer"
                                                 value={searchParams.bedrooms}
                                                 onChange={(e) => setSearchParams({ ...searchParams, bedrooms: e.target.value })}
@@ -186,7 +186,7 @@ const HeroHome = () => {
                                 </div>
 
                                 {/* Search Button */}
-                                <button 
+                                <button
                                     onClick={handleSearch}
                                     className="w-full bg-[#D29F54] text-black font-semibold py-3.5 rounded-lg hover:bg-[#b88a44] transition-colors mt-2 flex items-center justify-center gap-2"
                                 >
