@@ -141,7 +141,7 @@ const Testimonials = () => {
             What Our <span className="text-[#D29F54]">Clients Say</span>
           </h2>
           <p className="text-gray-600 text-sm leading-relaxed max-w-2xl mb-6">
-            Real stories from real people who found their dream properties with Luxora Real Estate.
+            Real stories from real people who found their dream properties with Mithila Legacy Realty.
           </p>
           <div className="flex items-center justify-center gap-2 text-[#1a2b3c] font-bold text-lg mb-6">
             <div className="flex items-center gap-1">
@@ -358,7 +358,7 @@ const Testimonials = () => {
             ) : (
               <>
                 <h3 className="text-2xl font-bold text-[#1a2b3c] font-serif mb-2">Leave a Review</h3>
-                <p className="text-gray-500 text-sm mb-8">Share your experience with Luxora Real Estate.</p>
+                <p className="text-gray-500 text-sm mb-8">Share your experience with Mithila Legacy Realty.</p>
                 
                 {submitError && (
                   <div className="bg-red-50 text-red-600 p-4 rounded-lg mb-6 text-sm border border-red-100">

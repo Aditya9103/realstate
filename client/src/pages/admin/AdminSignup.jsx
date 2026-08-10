@@ -107,7 +107,7 @@ const AdminSignup = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-white border border-gray-200 focus:bg-white focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] rounded-xl pl-12 pr-4 py-4 outline-none transition-all text-sm placeholder-gray-400 shadow-sm"
-                  placeholder="admin@luxora.com"
+                  placeholder="admin@mithilalegacy.com"
                   required
                 />
               </div>

@@ -1,10 +1,15 @@
 import mongoose from 'mongoose';
+import slugify from 'slugify';
 
 const propertySchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
     trim: true,
+  },
+  slug: {
+    type: String,
+    unique: true,
   },
   location: {
     type: String,
@@ -85,5 +90,24 @@ const propertySchema = new mongoose.Schema({
 
 // Low-cost numeric compound index for bounding box geospatial searches
 propertySchema.index({ 'coordinates.lat': 1, 'coordinates.lng': 1 });
+
+// Generate slug before saving
+propertySchema.pre('save', async function () {
+  if (!this.isModified('title')) {
+    return;
+  }
+
+  // Create base slug
+  let baseSlug = slugify(this.title, { lower: true, strict: true });
+  this.slug = baseSlug;
+
+  // Ensure uniqueness
+  const slugRegEx = new RegExp(`^(${baseSlug})((-[0-9]*$)?)$`, 'i');
+  const propertiesWithSlug = await this.constructor.find({ slug: slugRegEx, _id: { $ne: this._id } });
+
+  if (propertiesWithSlug.length) {
+    this.slug = `${baseSlug}-${propertiesWithSlug.length + 1}`;
+  }
+});
 
 export default mongoose.model('Property', propertySchema);

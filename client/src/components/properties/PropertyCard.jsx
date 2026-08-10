@@ -76,7 +76,7 @@ const PropertyCard = ({ property }) => {
             {property.priceDisplay}
           </div>
           <Link 
-            to={`/properties/${property._id || property.id}`} 
+            to={`/properties/${property.slug || property._id || property.id}`} 
             className="w-full sm:w-auto text-center px-4 py-2.5 bg-[#D29F54]/10 hover:bg-[#D29F54] text-[#D29F54] hover:text-white border border-[#D29F54]/30 hover:border-[#D29F54] rounded-lg text-xs font-bold transition-all duration-300 flex items-center justify-center gap-1.5 group"
           >
             View Details

@@ -13,15 +13,7 @@ const Footer = () => {
           {/* Brand & About */}
           <div className="lg:pr-8">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="flex items-end">
-                <div className="w-1.5 h-6 bg-[#D29F54] mx-0.5 rounded-t-sm"></div>
-                <div className="w-1.5 h-10 bg-[#D29F54] mx-0.5 rounded-t-sm"></div>
-                <div className="w-1.5 h-8 bg-[#D29F54] mx-0.5 rounded-t-sm"></div>
-              </div>
-              <div className="flex flex-col tracking-wider">
-                <span className="text-2xl font-semibold uppercase leading-none tracking-[0.2em] text-white">Luxora</span>
-                <span className="text-[0.6rem] text-[#D29F54] uppercase tracking-[0.3em] mt-1">Real Estate</span>
-              </div>
+              <img src="/logo.png" alt="Mithila Legacy Realty Logo" className="h-16 w-auto object-contain" />
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed mb-8">
               Redefining luxury living. We provide an unparalleled real estate experience, helping you find exceptional properties in premium locations with absolute transparency.
@@ -100,7 +92,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <h5 className="font-semibold text-sm mb-1">Email Address</h5>
-                  <p className="text-gray-300 text-sm">contact@luxora.in</p>
+                  <p className="text-gray-300 text-sm">contact@mithilalegacy.in</p>
                 </div>
               </li>
             </ul>
@@ -114,7 +106,7 @@ const Footer = () => {
           {/* Left: Copyright */}
           <div className="flex-1 text-center md:text-left">
             <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Luxora Real Estate. All rights reserved.
+              &copy; {new Date().getFullYear()} Mithila Legacy Realty. All rights reserved.
             </p>
           </div>
 

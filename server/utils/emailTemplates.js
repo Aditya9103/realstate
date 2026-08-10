@@ -77,13 +77,13 @@ const baseEmailTemplate = (title, content) => `
 <body>
   <div class="container">
     <div class="header">
-      <h1>REAL ESTATE PORTAL</h1>
+      <h1>MITHILA LEGACY REALTY</h1>
     </div>
     <div class="content">
       ${content}
     </div>
     <div class="footer">
-      &copy; ${new Date().getFullYear()} Real Estate Portal. All rights reserved.<br>
+      &copy; ${new Date().getFullYear()} Mithila Legacy Realty. All rights reserved.<br>
       If you have any questions, simply reply to this email.
     </div>
   </div>
@@ -101,7 +101,7 @@ export const contactMessageReceivedTemplate = (name, subject) => {
     <p>Our team is currently reviewing your inquiry and will get back to you as soon as possible.</p>
     <p>We appreciate your interest in our properties!</p>
     <br/>
-    <p>Best regards,<br><strong>The Real Estate Team</strong></p>
+    <p>Best regards,<br><strong>The Mithila Legacy Realty Team</strong></p>
   `;
   return baseEmailTemplate('We received your message', content);
 };
@@ -116,7 +116,7 @@ export const visitRequestReceivedTemplate = (name, date, time) => {
     </div>
     <p>Our team will review availability for this time slot and send you a confirmation email shortly.</p>
     <br/>
-    <p>Best regards,<br><strong>The Real Estate Team</strong></p>
+    <p>Best regards,<br><strong>The Mithila Legacy Realty Team</strong></p>
   `;
   return baseEmailTemplate('Visit Request Received', content);
 };
@@ -132,7 +132,7 @@ export const visitRequestConfirmedTemplate = (name, propertyTitle, date, time) =
     </div>
     <p>Please arrive a few minutes early. Our agent will be waiting for you at the property.</p>
     <br/>
-    <p>Best regards,<br><strong>The Real Estate Team</strong></p>
+    <p>Best regards,<br><strong>The Mithila Legacy Realty Team</strong></p>
   `;
   return baseEmailTemplate('Your Visit is Confirmed', content);
 };

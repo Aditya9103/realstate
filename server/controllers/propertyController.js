@@ -1,4 +1,5 @@
 import Property from '../models/Property.js';
+import mongoose from 'mongoose';
 
 // @desc    Fetch all properties
 // @route   GET /api/properties
@@ -32,7 +33,7 @@ export const getProperties = async (req, res) => {
     }
 
     const properties = await Property.find(queryConditions)
-      .select('title type status priceDisplay priceValue location beds baths sqft image tags coordinates createdAt')
+      .select('title slug type status priceDisplay priceValue location beds baths sqft image tags coordinates createdAt amenities furnishing yearBuilt')
       .sort({ createdAt: -1 })
       .limit(300); // Prevent massive payloads on empty search
     res.json(properties);
@@ -46,7 +47,19 @@ export const getProperties = async (req, res) => {
 // @access  Public
 export const getPropertyById = async (req, res) => {
   try {
-    const property = await Property.findById(req.params.id);
+    const { id } = req.params;
+    let property;
+    
+    // Check if ID is a valid MongoDB ObjectId
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      property = await Property.findOne({
+        $or: [{ _id: id }, { slug: id }]
+      });
+    } else {
+      // If not a valid ObjectId, it must be a slug
+      property = await Property.findOne({ slug: id });
+    }
+
     if (property) {
       res.json(property);
     } else {

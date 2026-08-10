@@ -4,7 +4,7 @@ export const servicesData = [
     slug: 'buy-a-home',
     title: "Buy a Home",
     description: "Discover handpicked properties that match your lifestyle and budget. We help you find the perfect place to call home.",
-    longDescription: "Purchasing a home is one of the most significant investments you'll ever make. At Horizon Real Estate, we streamline this complex journey into a seamless, rewarding experience. Our expert agents take the time to understand your unique lifestyle, preferences, and financial goals, ensuring that every property we show you is a potential match. From sprawling estates to modern urban apartments, our curated portfolio offers the best of luxury living.",
+    longDescription: "Purchasing a home is one of the most significant investments you'll ever make. At Mithila Legacy Realty, we streamline this complex journey into a seamless, rewarding experience. Our expert agents take the time to understand your unique lifestyle, preferences, and financial goals, ensuring that every property we show you is a potential match. From sprawling estates to modern urban apartments, our curated portfolio offers the best of luxury living.",
     iconName: "Home",
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1200",
     keyFeatures: [
@@ -64,7 +64,7 @@ export const servicesData = [
     slug: 'sell-property',
     title: "Sell Property",
     description: "Get the best value for your property with our expert marketing, pricing, and negotiation strategies.",
-    longDescription: "Selling a premium property requires more than just a listing; it requires a strategic, targeted approach. Horizon Real Estate leverages cutting-edge marketing, professional staging, and a vast network of high-net-worth buyers to ensure your property stands out. We are committed to achieving the maximum return on your investment in the shortest possible time, handling every detail from valuation to the final handshake.",
+    longDescription: "Selling a premium property requires more than just a listing; it requires a strategic, targeted approach. Mithila Legacy Realty leverages cutting-edge marketing, professional staging, and a vast network of high-net-worth buyers to ensure your property stands out. We are committed to achieving the maximum return on your investment in the shortest possible time, handling every detail from valuation to the final handshake.",
     iconName: "TrendingUp",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200",
     keyFeatures: [

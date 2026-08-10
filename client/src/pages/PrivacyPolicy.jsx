@@ -11,7 +11,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-xl font-bold text-[#1a2b3c] mb-3">1. Introduction</h2>
             <p className="leading-relaxed">
-              At Luxora Real Estate, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+              At Mithila Legacy Realty, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
             </p>
           </section>
 
@@ -50,7 +50,7 @@ const PrivacyPolicy = () => {
             <h2 className="text-xl font-bold text-[#1a2b3c] mb-3">5. Contact Us</h2>
             <p className="leading-relaxed">
               If you have questions or comments about this Privacy Policy, please contact us at: <br />
-              <a href="mailto:privacy@luxora.in" className="text-[#D29F54] hover:underline font-semibold mt-2 inline-block">privacy@luxora.in</a>
+              <a href="mailto:privacy@mithilalegacy.in" className="text-[#D29F54] hover:underline font-semibold mt-2 inline-block">privacy@mithilalegacy.in</a>
             </p>
           </section>
         </div>

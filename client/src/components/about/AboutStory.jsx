@@ -14,7 +14,7 @@ const AboutStory = () => {
           Guided by <span className="text-[#D29F54]">Purpose.</span>
         </h2>
         <p className="text-gray-600 text-[15px] leading-relaxed mb-10 text-justify">
-          Horizon Real Estate was founded with a simple mission – to make real estate experiences transparent, seamless, and rewarding. What started as a small team of passionate professionals has grown into a trusted brand known for integrity, expertise, and client-first service.
+          Mithila Legacy Realty was founded with a simple mission – to make real estate experiences transparent, seamless, and rewarding. What started as a small team of passionate professionals has grown into a trusted brand known for integrity, expertise, and client-first service.
         </p>
 
         {/* Signature Area */}
@@ -24,7 +24,7 @@ const AboutStory = () => {
             Rahul Malhotra
           </div>
           <h4 className="font-bold text-[#1a2b3c] text-sm">Rahul Malhotra</h4>
-          <p className="text-xs text-gray-600 font-medium">Founder & CEO, Horizon Real Estate</p>
+          <p className="text-xs text-gray-600 font-medium">Founder & CEO, Mithila Legacy Realty</p>
         </div>
       </div>
 

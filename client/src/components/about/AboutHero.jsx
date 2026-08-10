@@ -36,7 +36,7 @@ const AboutHero = () => {
           </h1>
 
           <p className="text-gray-600 max-w-sm text-sm md:text-base leading-relaxed mb-6">
-            At Horizon Real Estate, we believe that a home is more than just a property – it's where life happens. Since our inception, we've been committed to helping people find spaces that inspire, elevate, and truly feel like home.
+            At Mithila Legacy Realty, we believe that a home is more than just a property – it's where life happens. Since our inception, we've been committed to helping people find spaces that inspire, elevate, and truly feel like home.
           </p>
 
           <button className="bg-[#0f172a] hover:bg-[#1a2b3c] text-white font-semibold py-3 px-6 rounded-lg flex items-center gap-3 transition-colors shadow-sm w-max text-sm">

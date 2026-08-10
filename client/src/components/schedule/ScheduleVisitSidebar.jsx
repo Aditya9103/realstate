@@ -95,7 +95,7 @@ const ScheduleVisitSidebar = ({
               </div>
             </div>
 
-            <Link to={`/properties/${displayProperty._id || displayProperty.id}`} className="text-[#D29F54] text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 hover:text-[#b88a44] transition-colors">
+            <Link to={`/properties/${displayProperty.slug || displayProperty._id || displayProperty.id}`} className="text-[#D29F54] text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 hover:text-[#b88a44] transition-colors">
               View Property Details <ArrowRight size={12} />
             </Link>
           </div>

@@ -37,7 +37,7 @@ const AdminSidebar = () => {
           <ShieldCheck className="text-white" size={20} strokeWidth={2} />
         </div>
         <div>
-          <h2 className="text-xl font-serif font-bold text-white tracking-wide">Luxora</h2>
+          <h2 className="text-xl font-serif font-bold text-white tracking-wide">Mithila Legacy Realty</h2>
           <p className="text-[10px] text-[#D29F54] uppercase tracking-widest font-bold">Admin Portal</p>
         </div>
       </div>

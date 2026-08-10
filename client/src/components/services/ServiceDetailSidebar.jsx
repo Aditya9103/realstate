@@ -113,13 +113,13 @@ const ServiceDetailSidebar = ({ service }) => {
             </div>
           </a>
 
-          <a href="mailto:contact@horizon.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
+          <a href="mailto:contact@mithilalegacy.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
             <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#D29F54] group-hover:text-[#1a2b3c] transition-colors">
               <Mail size={18} />
             </div>
             <div>
               <p className="text-xs text-gray-500 uppercase tracking-wider mb-0.5">Email Us</p>
-              <p className="font-semibold">contact@horizon.com</p>
+              <p className="font-semibold">contact@mithilalegacy.com</p>
             </div>
           </a>
         </div>

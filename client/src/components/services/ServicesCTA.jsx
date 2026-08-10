@@ -36,7 +36,7 @@ const ServicesCTA = () => {
         {/* Center Text */}
         <div className="hidden xl:block w-[1px] h-16 bg-white/10 mx-4"></div>
         
-        <p className="text-gray-500 text-sm md:text-base leading-relaxed max-w-md xl:max-w-sm">
+        <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md xl:max-w-sm">
           Our real estate experts are ready to answer your questions and help you make the right move.
         </p>
       </div>

@@ -68,7 +68,7 @@ const PropertiesMap = ({ properties }) => {
                     </div>
                     
                     <Link 
-                      to={`/properties/${property._id}`}
+                      to={`/properties/${property.slug || property._id}`}
                       className="block text-center w-full bg-[#1a2b3c] text-white text-[11px] font-bold py-2 rounded hover:bg-[#D29F54] transition-colors"
                     >
                       View Details

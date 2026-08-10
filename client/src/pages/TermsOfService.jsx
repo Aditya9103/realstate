@@ -11,7 +11,7 @@ const TermsOfService = () => {
           <section>
             <h2 className="text-xl font-bold text-[#1a2b3c] mb-3">1. Agreement to Terms</h2>
             <p className="leading-relaxed">
-              These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Luxora Real Estate ("we," "us" or "our"), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
+              These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Mithila Legacy Realty ("we," "us" or "our"), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
             </p>
           </section>
 
@@ -54,7 +54,7 @@ const TermsOfService = () => {
             <h2 className="text-xl font-bold text-[#1a2b3c] mb-3">6. Contact Us</h2>
             <p className="leading-relaxed">
               In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at: <br />
-              <a href="mailto:legal@luxora.in" className="text-[#D29F54] hover:underline font-semibold mt-2 inline-block">legal@luxora.in</a>
+              <a href="mailto:legal@mithilalegacy.in" className="text-[#D29F54] hover:underline font-semibold mt-2 inline-block">legal@mithilalegacy.in</a>
             </p>
           </section>
         </div>

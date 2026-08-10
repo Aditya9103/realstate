@@ -50,7 +50,7 @@ const AdminLogin = () => {
               <ShieldCheck className="text-white transform -rotate-45" size={32} strokeWidth={1.5} />
             </div>
           </div>
-          <h2 className="text-5xl font-serif font-bold mb-6 leading-tight">Luxora Control Panel</h2>
+          <h2 className="text-5xl font-serif font-bold mb-6 leading-tight">Mithila Legacy Realty Control Panel</h2>
           <p className="text-lg text-gray-200 leading-relaxed font-light">
             Secure access to manage your luxury properties, oversee client communications, and track performance metrics.
           </p>
@@ -87,7 +87,7 @@ const AdminLogin = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-white border border-gray-200 focus:bg-white focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] rounded-xl pl-12 pr-4 py-4 outline-none transition-all text-sm placeholder-gray-400 shadow-sm"
-                  placeholder="admin@luxora.com"
+                  placeholder="admin@mithilalegacy.com"
                   required
                 />
               </div>

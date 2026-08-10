@@ -11,7 +11,7 @@ const AboutSection = () => {
           
           {/* Label */}
           <h4 className="text-[#D29F54] font-bold text-xs tracking-widest uppercase mb-4">
-            ABOUT LUXORA REAL ESTATE
+            ABOUT Mithila Legacy Realty
           </h4>
 
           {/* Heading */}
@@ -22,7 +22,7 @@ const AboutSection = () => {
 
           {/* Description */}
           <p className="text-gray-600 text-sm leading-relaxed mb-12 max-w-xl">
-            Luxora Real Estate is a leading real estate company dedicated to helping individuals and families find properties that truly feel like home. With a client-first approach and deep market knowledge, we make every step of your real estate journey seamless and successful.
+            Mithila Legacy Realty is a leading real estate company dedicated to helping individuals and families find properties that truly feel like home. With a client-first approach and deep market knowledge, we make every step of your real estate journey seamless and successful.
           </p>
 
           {/* Features Grid */}

@@ -16,7 +16,7 @@ const ContactFeatures = () => {
           </div>
           <div>
             <h4 className="text-white text-sm font-bold mb-1">100% Trusted</h4>
-            <p className="text-gray-500 text-xs leading-relaxed">
+            <p className="text-gray-300 text-xs leading-relaxed">
               Transparent & reliable<br/>real estate services
             </p>
           </div>
@@ -29,7 +29,7 @@ const ContactFeatures = () => {
           </div>
           <div>
             <h4 className="text-white text-sm font-bold mb-1">Wide Property Options</h4>
-            <p className="text-gray-500 text-xs leading-relaxed">
+            <p className="text-gray-300 text-xs leading-relaxed">
               Residential, commercial,<br/>and luxury properties
             </p>
           </div>
@@ -42,7 +42,7 @@ const ContactFeatures = () => {
           </div>
           <div>
             <h4 className="text-white text-sm font-bold mb-1">Expert Guidance</h4>
-            <p className="text-gray-500 text-xs leading-relaxed">
+            <p className="text-gray-300 text-xs leading-relaxed">
               Personalized advice from<br/>industry professionals
             </p>
           </div>
@@ -55,7 +55,7 @@ const ContactFeatures = () => {
           </div>
           <div>
             <h4 className="text-white text-sm font-bold mb-1">Customer First</h4>
-            <p className="text-gray-500 text-xs leading-relaxed">
+            <p className="text-gray-300 text-xs leading-relaxed">
               Your satisfaction is<br/>our top priority
             </p>
           </div>
@@ -68,7 +68,7 @@ const ContactFeatures = () => {
         <h3 className="text-xl md:text-2xl font-bold text-[#D29F54] mb-3 font-serif leading-tight">
           Ready to Find<br/>Your Dream Property?
         </h3>
-        <p className="text-gray-500 text-sm mb-6">
+        <p className="text-gray-300 text-sm mb-6">
           Let our experts help you every step of the way.
         </p>
         <Link 

@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 const faqs = [
   {
     id: 1,
-    question: "What is the process of buying a property through Luxora?",
+    question: "What is the process of buying a property through Mithila Legacy Realty?",
     answer: "Our process is simple and transparent. First, you explore our listings or consult with our agents. Then, we arrange site visits. Once you select a property, our legal and financial teams help you with the paperwork, negotiation, and final registration."
   },
   {
@@ -15,7 +15,7 @@ const faqs = [
   {
     id: 3,
     question: "Are the properties listed on your website verified?",
-    answer: "Absolutely. Every property listed with Luxora undergoes a rigorous 50-point verification process by our legal team to ensure clean titles, clear ownership, and compliance with local real estate regulations."
+    answer: "Absolutely. Every property listed with Mithila Legacy Realty undergoes a rigorous 50-point verification process by our legal team to ensure clean titles, clear ownership, and compliance with local real estate regulations."
   },
   {
     id: 4,

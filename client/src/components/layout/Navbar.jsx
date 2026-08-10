@@ -7,18 +7,11 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 py-6 px-4 md:px-16 flex items-center justify-between text-white border-b transition-all duration-300 bg-[#0a192f] border-[#1a2b3c]">
+    <nav className="fixed top-0 w-full z-50 py-3 md:py-4 px-4 md:px-16 flex items-center justify-between text-white border-b transition-all duration-300 bg-[#0a192f] border-[#1a2b3c]">
       {/* Logo */}
       <div className="flex items-center gap-2">
         <Link to="/" className="flex items-end text-[#D29F54]">
-          {/* Logo icon representation */}
-          <div className="w-1.5 h-6 bg-[#D29F54] mx-0.5 rounded-t-sm"></div>
-          <div className="w-1.5 h-10 bg-[#D29F54] mx-0.5 rounded-t-sm"></div>
-          <div className="w-1.5 h-8 bg-[#D29F54] mx-0.5 rounded-t-sm"></div>
-        </Link>
-        <Link to="/" className="flex flex-col tracking-wider">
-          <span className="text-xl md:text-2xl font-semibold uppercase leading-none tracking-[0.2em]">Luxora</span>
-          <span className="text-[0.6rem] text-gray-300 uppercase tracking-[0.3em] mt-1">Real Estate</span>
+          <img src="/logo.png" alt="Mithila Legacy Realty Logo" className="h-10 md:h-12 w-auto object-contain" />
         </Link>
       </div>
 

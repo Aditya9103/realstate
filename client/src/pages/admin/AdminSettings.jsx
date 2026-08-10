@@ -292,7 +292,7 @@ const AdminSettings = () => {
                   <p className="text-xs text-gray-500 mb-2">If left blank, notifications will be sent to your primary admin login email.</p>
                   <input 
                     type="email" 
-                    placeholder="e.g. alerts@luxora.com"
+                    placeholder="e.g. alerts@mithilalegacy.com"
                     value={notificationEmail}
                     onChange={(e) => setNotificationEmail(e.target.value)}
                     className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 outline-none focus:border-[#D29F54] transition-colors max-w-md" 

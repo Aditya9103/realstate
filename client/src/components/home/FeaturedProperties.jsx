@@ -36,7 +36,7 @@ const FeaturedProperties = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {properties.map((property) => (
-              <Link to={`/properties/${property._id}`} key={property._id} className="bg-white rounded-[1.25rem] overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group/card cursor-pointer flex flex-col">
+              <Link to={`/properties/${property.slug || property._id}`} key={property._id} className="bg-white rounded-[1.25rem] overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group/card cursor-pointer flex flex-col">
                 {/* Image Container */}
                 <div className="relative h-56 overflow-hidden">
                   <img
