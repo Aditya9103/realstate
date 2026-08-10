@@ -12,15 +12,10 @@ const s3Config = new S3Client({
 });
 
 const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === 'image/jpeg' ||
-    file.mimetype === 'image/png' ||
-    file.mimetype === 'image/webp' ||
-    file.mimetype === 'image/jpg'
-  ) {
+  if (file.mimetype.startsWith('image/')) {
     cb(null, true);
   } else {
-    cb(new Error('Invalid file type, only JPEG, PNG and WEBP are allowed!'), false);
+    cb(new Error('Invalid file type, only images are allowed!'), false);
   }
 };
 

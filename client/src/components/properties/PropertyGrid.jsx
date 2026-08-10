@@ -4,6 +4,13 @@ import PropertyCard from './PropertyCard';
 
 const PropertyGrid = ({ properties }) => {
   const [sortBy, setSortBy] = useState('newest');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+
+  // Reset page when properties or sort criteria change
+  React.useEffect(() => {
+    setCurrentPage(1);
+  }, [properties, sortBy]);
 
   // Sort properties based on selected criteria
   const sortedProperties = [...properties].sort((a, b) => {
@@ -12,6 +19,12 @@ const PropertyGrid = ({ properties }) => {
     // newest first (assuming _id or createdAt can be used, or just reverse if no createdAt)
     return new Date(b.createdAt || Date.now()) - new Date(a.createdAt || Date.now());
   });
+
+  const totalPages = Math.ceil(sortedProperties.length / itemsPerPage);
+  const paginatedProperties = sortedProperties.slice(
+    (currentPage - 1) * itemsPerPage, 
+    currentPage * itemsPerPage
+  );
   return (
     <div className="flex-1">
       {/* Header */}
@@ -34,9 +47,9 @@ const PropertyGrid = ({ properties }) => {
       </div>
 
       {/* Grid */}
-      {sortedProperties.length > 0 ? (
+      {paginatedProperties.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-          {sortedProperties.map(property => (
+          {paginatedProperties.map(property => (
             <PropertyCard key={property._id || property.id} property={property} />
           ))}
         </div>
@@ -47,23 +60,45 @@ const PropertyGrid = ({ properties }) => {
         </div>
       )}
 
-      {/* Pagination Placeholder */}
-      {sortedProperties.length > 0 && (
+      {/* Pagination */}
+      {totalPages > 1 && (
         <div className="mt-12 flex justify-center">
           <div className="flex gap-2">
-            <button className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-500 hover:border-[#D29F54] hover:text-[#D29F54] transition-colors">
+            <button 
+              onClick={() => {
+                setCurrentPage(prev => Math.max(prev - 1, 1));
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              disabled={currentPage === 1}
+              className={`w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center transition-colors ${currentPage === 1 ? 'text-gray-400 cursor-not-allowed bg-gray-50' : 'text-gray-600 hover:border-[#D29F54] hover:text-[#D29F54]'}`}
+            >
               &lt;
             </button>
-            <button className="w-10 h-10 rounded-lg bg-[#D29F54] text-white flex items-center justify-center font-bold shadow-md">
-              1
-            </button>
-            <button className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:border-[#D29F54] hover:text-[#D29F54] transition-colors font-medium">
-              2
-            </button>
-            <button className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:border-[#D29F54] hover:text-[#D29F54] transition-colors font-medium">
-              3
-            </button>
-            <button className="w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:border-[#D29F54] hover:text-[#D29F54] transition-colors">
+            
+            {Array.from({ length: totalPages }).map((_, index) => {
+              const pageNum = index + 1;
+              return (
+                <button 
+                  key={pageNum}
+                  onClick={() => {
+                    setCurrentPage(pageNum);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold transition-colors ${currentPage === pageNum ? 'bg-[#D29F54] text-white shadow-md' : 'border border-gray-200 text-gray-600 hover:border-[#D29F54] hover:text-[#D29F54]'}`}
+                >
+                  {pageNum}
+                </button>
+              );
+            })}
+
+            <button 
+              onClick={() => {
+                setCurrentPage(prev => Math.min(prev + 1, totalPages));
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              disabled={currentPage === totalPages}
+              className={`w-10 h-10 rounded-lg border border-gray-200 flex items-center justify-center transition-colors ${currentPage === totalPages ? 'text-gray-400 cursor-not-allowed bg-gray-50' : 'text-gray-600 hover:border-[#D29F54] hover:text-[#D29F54]'}`}
+            >
               &gt;
             </button>
           </div>

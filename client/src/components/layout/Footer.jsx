@@ -109,14 +109,38 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm text-center md:text-left">
-            &copy; {new Date().getFullYear()} Luxora Real Estate. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link to="/" className="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</Link>
-            <Link to="/" className="text-gray-400 text-sm hover:text-white transition-colors">Terms of Service</Link>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
+          
+          {/* Left: Copyright */}
+          <div className="flex-1 text-center md:text-left">
+            <p className="text-gray-400 text-sm">
+              &copy; {new Date().getFullYear()} Luxora Real Estate. All rights reserved.
+            </p>
           </div>
+
+          {/* Center: Developer Badge */}
+          <div className="flex-1 flex justify-center">
+            <a
+              href="https://primeimpact.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-[#D29F54]/30 bg-[#D29F54]/5 hover:border-[#D29F54]/80 hover:bg-[#D29F54]/10 transition-all duration-300 shadow-lg shadow-[#D29F54]/5"
+            >
+              <span className="text-[10px] text-gray-400 tracking-wider font-medium">
+                ✦ Designed &amp; Developed by
+              </span>
+              <span className="text-[12px] font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-[#D29F54] to-[#e6b872]">
+                Prime Impact IT Solutions
+              </span>
+            </a>
+          </div>
+
+          {/* Right: Links */}
+          <div className="flex-1 flex justify-center md:justify-end gap-6">
+            <Link to="/privacy-policy" className="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-gray-400 text-sm hover:text-white transition-colors">Terms of Service</Link>
+          </div>
+
         </div>
 
       </div>

@@ -12,6 +12,8 @@ import Services from './pages/Services'
 import ServiceDetails from './pages/ServiceDetails'
 import Contact from './pages/Contact'
 import ScheduleVisit from './pages/ScheduleVisit'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
 
 // Admin imports
 import AdminLogin from './pages/admin/AdminLogin'
@@ -21,6 +23,7 @@ import ManageProperties from './pages/admin/ManageProperties'
 import AddEditProperty from './pages/admin/AddEditProperty'
 import ManageMessages from './pages/admin/ManageMessages'
 import ManageVisits from './pages/admin/ManageVisits'
+import ManageTestimonials from './pages/admin/ManageTestimonials'
 import AdminSettings from './pages/admin/AdminSettings'
 import ProtectedRoute from './components/admin/ProtectedRoute'
 import AdminLayout from './components/admin/AdminLayout'
@@ -41,6 +44,7 @@ function App() {
           <Route path="properties/edit/:id" element={<AddEditProperty />} />
           <Route path="messages" element={<ManageMessages />} />
           <Route path="visits" element={<ManageVisits />} />
+          <Route path="testimonials" element={<ManageTestimonials />} />
           <Route path="settings" element={<AdminSettings />} />
           {/* Add more protected admin routes here in the future */}
         </Route>
@@ -57,6 +61,8 @@ function App() {
               <Route path="/properties/:id" element={<PropertyDetails />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/schedule-visit" element={<ScheduleVisit />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
             </Routes>
           </Layout>
         } />

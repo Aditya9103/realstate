@@ -17,6 +17,26 @@ const adminSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
+  },
+  profilePhoto: {
+    type: String,
+    default: '',
+  },
+  notificationPreferences: {
+    emailVisits: {
+      type: Boolean,
+      default: true,
+    },
+    emailMessages: {
+      type: Boolean,
+      default: true,
+    },
+    notificationEmail: {
+      type: String,
+      default: '',
+      trim: true,
+      lowercase: true,
+    }
   }
 }, { timestamps: true });
 

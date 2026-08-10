@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useGetPropertyByIdQuery } from '../redux/api/propertyApiSlice';
-import { MapPin, Share, ArrowLeftRight, Heart, ChevronRight } from 'lucide-react';
+import { MapPin, Share, Heart, ChevronRight } from 'lucide-react';
 import PropertyGallery from '../components/property-details/PropertyGallery';
 import PropertyTabs from '../components/property-details/PropertyTabs';
 import PropertySidebar from '../components/property-details/PropertySidebar';
@@ -10,6 +10,14 @@ const PropertyDetails = () => {
   const { id } = useParams();
   const { data: property, isLoading, isError } = useGetPropertyByIdQuery(id);
   const [activeTab, setActiveTab] = useState('overview');
+  const [isSaved, setIsSaved] = useState(false);
+  const [shareText, setShareText] = useState('Share');
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setShareText('Copied!');
+    setTimeout(() => setShareText('Share'), 2000);
+  };
 
   useEffect(() => {
     // Scroll to top when loading a new property
@@ -79,23 +87,17 @@ const PropertyDetails = () => {
           </div>
 
           <div className="flex items-center gap-4 lg:gap-6">
-            <button className="flex flex-col items-center gap-1 text-gray-600 hover:text-[#1a2b3c] transition-colors group">
+            <button onClick={handleShare} className="flex flex-col items-center gap-1 text-gray-600 hover:text-[#1a2b3c] transition-colors group">
               <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#1a2b3c] bg-white transition-colors">
                 <Share size={18} />
               </div>
-              <span className="text-xs font-semibold">Share</span>
+              <span className="text-xs font-semibold">{shareText}</span>
             </button>
-            <button className="flex flex-col items-center gap-1 text-gray-600 hover:text-[#1a2b3c] transition-colors group">
-              <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-[#1a2b3c] bg-white transition-colors">
-                <ArrowLeftRight size={18} />
+            <button onClick={() => setIsSaved(!isSaved)} className={`flex flex-col items-center gap-1 transition-colors group ${isSaved ? 'text-red-500' : 'text-gray-600 hover:text-red-500'}`}>
+              <div className={`w-10 h-10 rounded-full border flex items-center justify-center transition-colors bg-white ${isSaved ? 'border-red-500' : 'border-gray-200 group-hover:border-red-500'}`}>
+                <Heart size={18} fill={isSaved ? 'currentColor' : 'none'} />
               </div>
-              <span className="text-xs font-semibold">Compare</span>
-            </button>
-            <button className="flex flex-col items-center gap-1 text-gray-600 hover:text-red-500 transition-colors group">
-              <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-red-500 bg-white transition-colors">
-                <Heart size={18} />
-              </div>
-              <span className="text-xs font-semibold">Save</span>
+              <span className="text-xs font-semibold">{isSaved ? 'Saved' : 'Save'}</span>
             </button>
           </div>
         </div>

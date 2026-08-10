@@ -16,7 +16,14 @@ export const adminApiSlice = apiSlice.injectEndpoints({
         body: adminData,
       }),
     }),
+    updateAdminProfile: builder.mutation({
+      query: (data) => ({
+        url: '/admin/profile',
+        method: 'PUT',
+        body: data,
+      }),
+    }),
   }),
 });
 
-export const { useLoginAdminMutation, useSignupAdminMutation } = adminApiSlice;
+export const { useLoginAdminMutation, useSignupAdminMutation, useUpdateAdminProfileMutation } = adminApiSlice;

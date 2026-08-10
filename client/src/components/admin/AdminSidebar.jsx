@@ -5,9 +5,7 @@ import {
   Building2,
   MessageSquare,
   CalendarCheck,
-  Briefcase,
   Star,
-  HelpCircle,
   Settings,
   LogOut,
   ShieldCheck
@@ -23,6 +21,8 @@ const AdminSidebar = () => {
     { name: 'Properties', path: '/admin/properties', icon: Building2 },
     { name: 'Messages', path: '/admin/messages', icon: MessageSquare },
     { name: 'Visits', path: '/admin/visits', icon: CalendarCheck },
+    { name: 'Testimonials', path: '/admin/testimonials', icon: Star },
+    { name: 'Settings', path: '/admin/settings', icon: Settings },
   ];
 
   const handleLogout = () => {

@@ -31,7 +31,10 @@ export const getProperties = async (req, res) => {
       }
     }
 
-    const properties = await Property.find(queryConditions).sort({ createdAt: -1 });
+    const properties = await Property.find(queryConditions)
+      .select('title type status priceDisplay priceValue location beds baths sqft image tags coordinates createdAt')
+      .sort({ createdAt: -1 })
+      .limit(300); // Prevent massive payloads on empty search
     res.json(properties);
   } catch (error) {
     res.status(500).json({ message: error.message });

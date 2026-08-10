@@ -25,10 +25,12 @@ app.use(express.json());
 import propertyRoutes from './routes/propertyRoutes.js';
 import messageRoutes from './routes/messageRoutes.js';
 import visitRoutes from './routes/visitRoutes.js';
+import testimonialRoutes from './routes/testimonialRoutes.js';
 app.use('/api/admin', authRoutes);
 app.use('/api/properties', propertyRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/visits', visitRoutes);
+app.use('/api/testimonials', testimonialRoutes);
 
 app.get('/', (req, res) => {
   res.send('API is running...');

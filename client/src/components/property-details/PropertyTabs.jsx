@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HelpCircle, FileText, Blocks, Map, Grid3X3, Video, MapPin, Bus, TrendingUp, ChevronDown } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
@@ -12,6 +12,9 @@ const tabs = [
 ];
 
 const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  
+  const description = property.description || `Experience luxury living in this beautifully designed ${property.beds || ''}BHK ${property.type?.toLowerCase() || ''} located in the heart of ${property.location ? property.location.split(',')[0] : 'the city'}. With world-class amenities, modern architecture, and spacious interiors, this property offers the perfect blend of comfort and elegance.`;
   return (
     <div id="property-tabs" className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8">
       
@@ -44,14 +47,18 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
             {/* Description */}
             <div className="flex-1">
               <h3 className="text-xl font-bold text-[#1a2b3c] mb-4">About this Property</h3>
-              <p className="text-gray-600 leading-relaxed text-sm">
-                Experience luxury living in this beautifully designed {property.beds}BHK {property.type.toLowerCase()} located in the 
-                heart of {property.location.split(',')[0]}. With world-class amenities, modern architecture, and spacious interiors, 
-                this property offers the perfect blend of comfort and elegance.
+              <p className="text-gray-600 leading-relaxed text-sm whitespace-pre-line">
+                {isExpanded ? description : (description.length > 180 ? `${description.substring(0, 180)}...` : description)}
               </p>
-              <button className="text-[#D29F54] font-semibold text-sm flex items-center gap-1 mt-4 hover:underline">
-                Read More <ChevronDown size={14} />
-              </button>
+              {description.length > 180 && (
+                <button 
+                  onClick={() => setIsExpanded(!isExpanded)} 
+                  className="text-[#D29F54] font-semibold text-sm flex items-center gap-1 mt-4 hover:underline"
+                >
+                  {isExpanded ? 'Read Less' : 'Read More'} 
+                  <ChevronDown size={14} className={`transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
+                </button>
+              )}
             </div>
             
             {/* Grid Specs */}

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Search, Bell, User as UserIcon } from 'lucide-react';
 
 const AdminHeader = () => {
-  const { adminName, adminEmail } = useSelector((state) => state.auth);
+  const { adminName, adminEmail, adminPhoto } = useSelector((state) => state.auth);
 
   return (
     <header className="h-20 bg-white border-b border-gray-100 flex items-center justify-between px-8 sticky top-0 z-10 font-sans">
@@ -35,10 +35,14 @@ const AdminHeader = () => {
 
         {/* Profile Dropdown Trigger */}
         <div className="flex items-center space-x-3 cursor-pointer group">
-          <div className="w-10 h-10 bg-[#1a2b3c] rounded-full flex items-center justify-center text-white shadow-sm group-hover:shadow-md transition-shadow">
-            <span className="font-serif font-bold text-lg">
-              {adminName ? adminName.charAt(0).toUpperCase() : 'A'}
-            </span>
+          <div className="w-10 h-10 bg-[#1a2b3c] rounded-full overflow-hidden flex items-center justify-center text-white shadow-sm group-hover:shadow-md transition-shadow">
+            {adminPhoto ? (
+              <img src={adminPhoto} alt="Admin" className="w-full h-full object-cover" />
+            ) : (
+              <span className="font-serif font-bold text-lg">
+                {adminName ? adminName.charAt(0).toUpperCase() : 'A'}
+              </span>
+            )}
           </div>
           <div className="hidden sm:block">
             <p className="text-sm font-bold text-gray-700">{adminName || 'Admin'}</p>

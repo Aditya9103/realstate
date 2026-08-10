@@ -1,8 +1,26 @@
-import React from 'react';
-import { Phone, Mail, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Phone, Mail, ArrowRight, Loader2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useSubmitMessageMutation } from '../../redux/api/messageApiSlice';
 
 const ServiceDetailSidebar = ({ service }) => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [submitMessage, { isLoading, isSuccess, isError, error }] = useSubmitMessageMutation();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+    try {
+      await submitMessage({
+        ...formData,
+        subject: `Inquiry about ${service.title} service`,
+        phone: '' 
+      }).unwrap();
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err) {
+      console.error('Failed to submit message', err);
+    }
+  };
   return (
     <div className="sticky top-32">
       
@@ -13,11 +31,24 @@ const ServiceDetailSidebar = ({ service }) => {
           Interested in our {service.title} service? Fill out the form below and we'll be in touch shortly.
         </p>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
+          {isSuccess && (
+            <div className="bg-green-50 text-green-700 p-3 rounded-lg text-sm border border-green-200">
+              Message sent successfully!
+            </div>
+          )}
+          {isError && (
+            <div className="bg-red-50 text-red-700 p-3 rounded-lg text-sm border border-red-200">
+              {error?.data?.message || 'Failed to send message.'}
+            </div>
+          )}
           <div>
             <label className="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">Full Name</label>
             <input 
               type="text" 
+              required
+              value={formData.name}
+              onChange={(e) => setFormData({...formData, name: e.target.value})}
               placeholder="John Doe" 
               className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-colors"
             />
@@ -27,6 +58,9 @@ const ServiceDetailSidebar = ({ service }) => {
             <label className="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">Email Address</label>
             <input 
               type="email" 
+              required
+              value={formData.email}
+              onChange={(e) => setFormData({...formData, email: e.target.value})}
               placeholder="john@example.com" 
               className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-colors"
             />
@@ -36,17 +70,27 @@ const ServiceDetailSidebar = ({ service }) => {
             <label className="block text-xs font-bold text-gray-700 mb-1.5 uppercase tracking-wider">Message</label>
             <textarea 
               rows="4"
+              required
+              value={formData.message}
+              onChange={(e) => setFormData({...formData, message: e.target.value})}
               placeholder={`I'd like more information about your ${service.title} service...`}
               className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54] transition-colors resize-none"
             ></textarea>
           </div>
 
           <button 
-            type="button"
-            className="w-full bg-[#1a2b3c] text-white font-bold px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 mt-2"
+            type="submit"
+            disabled={isLoading}
+            className={`w-full bg-[#1a2b3c] text-white font-bold px-6 py-3.5 rounded-lg hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 mt-2 ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
           >
-            Send Message
-            <ArrowRight size={16} />
+            {isLoading ? (
+              <Loader2 size={16} className="animate-spin" />
+            ) : (
+              <>
+                Send Message
+                <ArrowRight size={16} />
+              </>
+            )}
           </button>
         </form>
       </div>

@@ -1,6 +1,7 @@
 import VisitRequest from '../models/VisitRequest.js';
+import Admin from '../models/Admin.js';
 import sendEmail from '../utils/sendEmail.js';
-import { visitRequestReceivedTemplate, visitRequestConfirmedTemplate } from '../utils/emailTemplates.js';
+import { visitRequestReceivedTemplate, visitRequestConfirmedTemplate, adminNewVisitTemplate } from '../utils/emailTemplates.js';
 
 // @desc    Submit a new visit request (Public)
 // @route   POST /api/visits
@@ -28,6 +29,22 @@ export const submitVisitRequest = async (req, res) => {
       subject: `Visit Request Received`,
       html: visitRequestReceivedTemplate(name, new Date(preferredDate).toLocaleDateString(), preferredTime)
     });
+
+    // Notify admins who have emailVisits enabled
+    const adminsToNotify = await Admin.find({ 'notificationPreferences.emailVisits': true });
+    
+    // We need the property title for the email. Let's populate it.
+    const populatedVisit = await VisitRequest.findById(newVisitRequest._id).populate('propertyId', 'title');
+    
+    for (const admin of adminsToNotify) {
+      const emailTarget = admin.notificationPreferences?.notificationEmail || admin.email;
+      console.log(`Sending admin alert for new visit request to: ${emailTarget}`);
+      await sendEmail({
+        email: emailTarget,
+        subject: `New Visit Request: ${populatedVisit.propertyId?.title || 'Property'}`,
+        html: adminNewVisitTemplate(name, populatedVisit.propertyId?.title || 'Property', new Date(preferredDate).toLocaleDateString(), preferredTime)
+      });
+    }
 
     res.status(201).json({ success: true, data: newVisitRequest });
   } catch (error) {

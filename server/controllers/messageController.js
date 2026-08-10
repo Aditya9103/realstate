@@ -1,6 +1,7 @@
 import Message from '../models/Message.js';
+import Admin from '../models/Admin.js';
 import sendEmail from '../utils/sendEmail.js';
-import { contactMessageReceivedTemplate } from '../utils/emailTemplates.js';
+import { contactMessageReceivedTemplate, adminNewMessageTemplate } from '../utils/emailTemplates.js';
 
 // @desc    Submit a new message (Public)
 // @route   POST /api/messages
@@ -27,6 +28,19 @@ export const submitMessage = async (req, res) => {
       subject: `We received your message: ${subject}`,
       html: contactMessageReceivedTemplate(name, subject)
     });
+
+    // Notify admins who have emailMessages enabled
+    const adminsToNotify = await Admin.find({ 'notificationPreferences.emailMessages': true });
+    
+    for (const admin of adminsToNotify) {
+      const emailTarget = admin.notificationPreferences?.notificationEmail || admin.email;
+      console.log(`Sending admin alert for new message to: ${emailTarget}`);
+      await sendEmail({
+        email: emailTarget,
+        subject: `New Contact Message: ${subject}`,
+        html: adminNewMessageTemplate(name, subject, message)
+      });
+    }
 
     res.status(201).json({ success: true, data: newMessage });
   } catch (error) {

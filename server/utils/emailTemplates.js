@@ -136,3 +136,44 @@ export const visitRequestConfirmedTemplate = (name, propertyTitle, date, time) =
   `;
   return baseEmailTemplate('Your Visit is Confirmed', content);
 };
+
+export const adminNewVisitTemplate = (userName, propertyTitle, date, time) => {
+  return `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #D29F54;">New Property Visit Request</h2>
+      <p>A new user has scheduled a visit request for one of your properties.</p>
+      
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1a2b3c;">Details:</h3>
+        <p><strong>Property:</strong> ${propertyTitle}</p>
+        <p><strong>User:</strong> ${userName}</p>
+        <p><strong>Requested Date:</strong> ${date}</p>
+        <p><strong>Requested Time:</strong> ${time}</p>
+      </div>
+      
+      <p>Please log in to the Admin Portal to review and confirm this request.</p>
+      <a href="${process.env.CLIENT_URL}/admin/visits" style="display: inline-block; background-color: #1a2b3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">View Request</a>
+    </div>
+  `;
+};
+
+export const adminNewMessageTemplate = (userName, subject, message) => {
+  return `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #D29F54;">New Contact Message Received</h2>
+      <p>A user has just submitted a new message via the contact form.</p>
+      
+      <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
+        <h3 style="margin-top: 0; color: #1a2b3c;">Message Details:</h3>
+        <p><strong>From:</strong> ${userName}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
+        <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #ddd;">
+          <p style="white-space: pre-wrap; font-style: italic; color: #555;">"${message}"</p>
+        </div>
+      </div>
+      
+      <p>Please log in to the Admin Portal to reply to this message.</p>
+      <a href="${process.env.CLIENT_URL}/admin/messages" style="display: inline-block; background-color: #1a2b3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">View Message</a>
+    </div>
+  `;
+};

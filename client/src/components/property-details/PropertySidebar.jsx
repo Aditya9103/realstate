@@ -118,9 +118,12 @@ const PropertySidebar = ({ property }) => {
         </div>
 
         <div className="grid grid-cols-2 gap-3 md:gap-4">
-          <button className="bg-[#b88a44] hover:bg-[#a67c3d] text-white font-bold py-2 rounded-xl flex items-center justify-center gap-2 transition-colors">
+          <a 
+            href="tel:+18001234567"
+            className="bg-[#b88a44] hover:bg-[#a67c3d] text-white font-bold py-2 rounded-xl flex items-center justify-center gap-2 transition-colors"
+          >
             <Phone size={18} fill="currentColor" /> <span className="text-[15px]">Call Now</span>
-          </button>
+          </a>
           <Link 
             to="/contact"
             className="bg-white border-2 border-[#b88a44] text-[#b88a44] hover:bg-[#fcf9f2] font-bold py-2 rounded-xl flex items-center justify-center gap-2 transition-colors"
