@@ -27,13 +27,13 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             # If the repo isn't cloned yet, clone it. Otherwise, pull latest.
-            if [ ! -d "~/realstate/.git" ]; then
-              cd ~
+            if [ ! -d "$HOME/realstate/.git" ]; then
+              cd $HOME
               # Replace with your actual GitHub repo URL
               git clone https://github.com/Aditya9103/realstate.git
               cd realstate
             else
-              cd ~/realstate
+              cd $HOME/realstate
               git fetch origin
               git reset --hard origin/main
             fi
