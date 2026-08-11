@@ -28,7 +28,7 @@ jobs:
             if [ ! -d "~/realstate/.git" ]; then
               cd ~
               # Replace with your actual GitHub repo URL
-              git clone https://github.com/yourusername/realstate.git
+              git clone https://github.com/Aditya9103/realstate
               cd realstate
             else
               cd ~/realstate
