@@ -1,0 +1,43 @@
+# .github/workflows/deploy-backend.yml
+name: Deploy Backend to EC2
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "server/**" # Only trigger if backend files change
+      - "docker-compose.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to EC2 via SSH
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            # If the repo isn't cloned yet, clone it. Otherwise, pull latest.
+            if [ ! -d "~/realstate/.git" ]; then
+              cd ~
+              # Replace with your actual GitHub repo URL
+              git clone https://github.com/yourusername/realstate.git
+              cd realstate
+            else
+              cd ~/realstate
+              git pull origin main
+            fi
+
+            # Restart Docker Compose and rebuild the server image
+            docker-compose down
+            docker-compose up -d --build server
+
+            # Clean up old dangling images to save disk space
+            docker image prune -f
