@@ -10,14 +10,28 @@ export const getProperties = async (req, res) => {
     
     let queryConditions = {};
 
-    // 1. Geographic Bounding Box Search (if provided)
+    // 1. Location Search (Geographic Bounding Box OR Text Match)
+    let locationConditions = [];
+    
+    // If bounding box is provided
     if (minLat && maxLat && minLon && maxLon) {
-      queryConditions['coordinates.lat'] = { $gte: parseFloat(minLat), $lte: parseFloat(maxLat) };
-      queryConditions['coordinates.lng'] = { $gte: parseFloat(minLon), $lte: parseFloat(maxLon) };
-    } 
-    // Fallback to text search if no bounding box but text is provided
-    else if (location && location.trim() !== '') {
-      queryConditions.location = { $regex: location, $options: 'i' };
+      locationConditions.push({
+        'coordinates.lat': { $gte: parseFloat(minLat), $lte: parseFloat(maxLat) },
+        'coordinates.lng': { $gte: parseFloat(minLon), $lte: parseFloat(maxLon) }
+      });
+    }
+    
+    // Text search fallback/addition
+    if (location && location.trim() !== '') {
+      locationConditions.push(
+        { location: { $regex: location, $options: 'i' } },
+        { title: { $regex: location, $options: 'i' } }
+      );
+    }
+
+    // Apply location conditions if any exist
+    if (locationConditions.length > 0) {
+      queryConditions.$or = locationConditions;
     }
 
     // 2. Standard Filters

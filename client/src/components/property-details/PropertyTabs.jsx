@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { HelpCircle, FileText, Blocks, Map, Grid3X3, Video, MapPin, Bus, TrendingUp, ChevronDown } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Link } from 'react-router-dom';
 
 const tabs = [
   { id: 'overview', label: 'Overview', icon: HelpCircle },
@@ -13,11 +14,11 @@ const tabs = [
 
 const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  
+
   const description = property.description || `Experience luxury living in this beautifully designed ${property.beds || ''}BHK ${property.type?.toLowerCase() || ''} located in the heart of ${property.location ? property.location.split(',')[0] : 'the city'}. With world-class amenities, modern architecture, and spacious interiors, this property offers the perfect blend of comfort and elegance.`;
   return (
     <div id="property-tabs" className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8">
-      
+
       {/* Tab Navigation */}
       <div className="flex overflow-x-auto border-b border-gray-200 mb-8 scrollbar-hide">
         {tabs.map((tab) => {
@@ -27,11 +28,10 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 pb-4 px-4 whitespace-nowrap font-bold text-base transition-colors border-b-2 ${
-                isActive 
-                  ? 'border-[#D29F54] text-[#D29F54]' 
-                  : 'border-transparent text-gray-900 hover:text-[#D29F54]'
-              }`}
+              className={`flex items-center gap-2 pb-4 px-4 whitespace-nowrap font-bold text-base transition-colors border-b-2 ${isActive
+                ? 'border-[#D29F54] text-[#D29F54]'
+                : 'border-transparent text-gray-900 hover:text-[#D29F54]'
+                }`}
             >
               <Icon size={16} />
               {tab.label}
@@ -51,16 +51,16 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
                 {isExpanded ? description : (description.length > 180 ? `${description.substring(0, 180)}...` : description)}
               </p>
               {description.length > 180 && (
-                <button 
-                  onClick={() => setIsExpanded(!isExpanded)} 
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
                   className="text-[#D29F54] font-semibold text-sm flex items-center gap-1 mt-4 hover:underline"
                 >
-                  {isExpanded ? 'Read Less' : 'Read More'} 
+                  {isExpanded ? 'Read Less' : 'Read More'}
                   <ChevronDown size={14} className={`transition-transform ${isExpanded ? 'rotate-180' : ''}`} />
                 </button>
               )}
             </div>
-            
+
             {/* Grid Specs */}
             <div className="flex-1 bg-[#fafafa] rounded-xl p-5 border border-gray-100">
               <div className="grid grid-cols-2 gap-y-4">
@@ -159,20 +159,20 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
       {activeTab === 'location' && (
         <div className="animate-fade-in">
           <h3 className="text-xl font-bold text-[#1a2b3c] mb-4">Location Map</h3>
-          <p className="text-sm text-gray-900 flex items-center gap-2 mb-6"><MapPin size={16} className="text-[#D29F54]"/> {property.location}</p>
-          
+          <p className="text-sm text-gray-900 flex items-center gap-2 mb-6"><MapPin size={16} className="text-[#D29F54]" /> {property.location}</p>
+
           {property.coordinates?.lat && property.coordinates?.lng ? (
             <div className="w-full h-[400px] bg-gray-200 rounded-xl overflow-hidden relative border border-gray-100 z-0">
-              <MapContainer 
-                center={[property.coordinates.lat, property.coordinates.lng]} 
-                zoom={14} 
+              <MapContainer
+                center={[property.coordinates.lat, property.coordinates.lng]}
+                zoom={14}
                 style={{ height: '100%', width: '100%' }}
               >
                 <TileLayer
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker 
+                <Marker
                   position={[property.coordinates.lat, property.coordinates.lng]}
                 >
                   <Popup>
@@ -193,7 +193,7 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
       {activeTab === 'floor' && (
         <div className="animate-fade-in">
           <h3 className="text-xl font-bold text-[#1a2b3c] mb-6">Floor Plan Details</h3>
-          
+
           <div className="bg-[#fcf9f2] rounded-xl p-6 md:p-8 border border-[#D29F54]/20">
             <div className="flex flex-col md:flex-row gap-8 items-center justify-between border-b border-[#D29F54]/20 pb-6 mb-6">
               <div className="text-center md:text-left">
@@ -222,14 +222,14 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
                   {i === 0 && property.baths > 0 && <span className="text-[10px] bg-[#D29F54]/10 text-[#D29F54] px-2 py-1 rounded font-bold uppercase">Ensuite</span>}
                 </div>
               ))}
-              
+
               <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm flex justify-between items-center">
                 <div>
                   <h5 className="font-bold text-[#1a2b3c]">Living & Dining Area</h5>
                   <p className="text-xs text-gray-900 mt-1">Spacious open-concept layout</p>
                 </div>
               </div>
-              
+
               <div className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm flex justify-between items-center">
                 <div>
                   <h5 className="font-bold text-[#1a2b3c]">Modern Kitchen</h5>
@@ -247,14 +247,14 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
           <h3 className="text-xl font-bold text-[#1a2b3c] mb-6">Property Walkthrough</h3>
           <div className="bg-white rounded-xl p-6 md:p-8 border border-gray-100 shadow-sm leading-relaxed text-gray-900">
             <p className="mb-4">
-              Welcome to this breathtaking <span className="font-semibold text-[#1a2b3c]">{property.type}</span> located in the highly sought-after neighborhood of <span className="font-semibold text-[#1a2b3c]">{property.location.split(',')[0]}</span>. 
+              Welcome to this breathtaking <span className="font-semibold text-[#1a2b3c]">{property.type}</span> located in the highly sought-after neighborhood of <span className="font-semibold text-[#1a2b3c]">{property.location.split(',')[0]}</span>.
               As you approach the property, you are immediately greeted by its stunning modern architecture and premium finish.
             </p>
             <p className="mb-4">
               Step inside, and you'll find yourself in a massive, sun-drenched living and dining area spanning a significant portion of this <span className="font-semibold text-[#1a2b3c]">{property.sqft} sq.ft.</span> layout. The open-concept design seamlessly connects the living space to a state-of-the-art modern kitchen, making it perfect for both entertaining guests and relaxing with family.
             </p>
             <p className="mb-4">
-              This home features <span className="font-semibold text-[#1a2b3c]">{property.beds} luxurious bedrooms</span> and <span className="font-semibold text-[#1a2b3c]">{property.baths} well-appointed bathrooms</span>. The master suite is a true retreat, offering ample space, natural ventilation, and premium fittings. 
+              This home features <span className="font-semibold text-[#1a2b3c]">{property.beds} luxurious bedrooms</span> and <span className="font-semibold text-[#1a2b3c]">{property.baths} well-appointed bathrooms</span>. The master suite is a true retreat, offering ample space, natural ventilation, and premium fittings.
             </p>
             {property.amenities && property.amenities.length > 0 && (
               <p>
@@ -262,10 +262,12 @@ const PropertyTabs = ({ property, activeTab, setActiveTab }) => {
               </p>
             )}
             <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
-               <span className="text-sm font-semibold text-[#D29F54]">Ready to experience it yourself?</span>
-               <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs bg-[#1a2b3c] text-white px-4 py-2 rounded-lg hover:bg-[#D29F54] transition-colors">
-                 Schedule a Visit
-               </button>
+              <span className="text-sm font-semibold text-[#D29F54]">Ready to experience it yourself?</span>
+              <Link to={`/schedule-visit?propertyId=${property._id}`}>
+                <button className="text-xs bg-[#1a2b3c] text-white px-4 cursor-pointer py-2 rounded-lg hover:bg-[#D29F54] transition-colors">
+                  Schedule a Visit
+                </button>
+              </Link>
             </div>
           </div>
         </div>

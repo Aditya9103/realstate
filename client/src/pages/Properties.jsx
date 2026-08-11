@@ -37,7 +37,7 @@ const Properties = () => {
     ...(filters.maxLat && { maxLat: filters.maxLat }),
     ...(filters.minLon && { minLon: filters.minLon }),
     ...(filters.maxLon && { maxLon: filters.maxLon }),
-    ...(filters.location && !filters.minLat && { location: filters.location }),
+    ...(filters.location && { location: filters.location }),
     ...(filters.types.length === 1 && { type: filters.types[0] }),
     ...(filters.status && { status: filters.status }),
   };
