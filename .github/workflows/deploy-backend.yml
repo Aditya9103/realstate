@@ -38,8 +38,8 @@ jobs:
             fi
 
             # Restart Docker Compose and rebuild the server image
-            docker-compose down
-            docker-compose up -d --build server
+            docker compose down
+            docker compose up -d --build server
 
             # Clean up old dangling images to save disk space
             docker image prune -f
