@@ -8,6 +8,8 @@ on:
     paths:
       - "server/**" # Only trigger if backend files change
       - "docker-compose.yml"
+      - ".github/workflows/**" # Trigger if workflow itself changes
+  workflow_dispatch: # Allows manual trigger from GitHub UI
 
 jobs:
   deploy:
