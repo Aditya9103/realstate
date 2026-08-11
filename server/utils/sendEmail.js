@@ -13,7 +13,7 @@ const sendEmail = async (options) => {
     });
 
     const mailOptions = {
-      from: `${ENV.FROM_NAME} <${ENV.FROM_EMAIL}>`,
+      from: `"${ENV.FROM_NAME || 'Mithila Legacy Realty'}" <${ENV.FROM_EMAIL}>`,
       to: options.email,
       subject: options.subject,
       html: options.html,

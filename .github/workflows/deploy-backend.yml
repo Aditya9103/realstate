@@ -34,7 +34,8 @@ jobs:
               cd realstate
             else
               cd ~/realstate
-              git pull origin main
+              git fetch origin
+              git reset --hard origin/main
             fi
 
             # Restart Docker Compose and rebuild the server image
