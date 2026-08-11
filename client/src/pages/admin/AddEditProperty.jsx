@@ -7,10 +7,20 @@ import {
 } from '../../redux/api/propertyApiSlice';
 import PropertyMapPicker from '../../components/admin/PropertyMapPicker';
 
+const AMENITY_OPTIONS = [
+  'Air Conditioning', 'Balcony', 'Barbeque', 'Broadband Internet', 'CCTV Security', 
+  'Central Heating', 'Club House', 'Dishwasher', 'Elevator', 'Fireplace',
+  'Fully Fitted Kitchen', 'Garden', 'Gym', 'Intercom', 'Laundry Room',
+  'Library', 'Microwave', 'Parking', 'Pet Friendly', 'Power Backup',
+  'Private Pool', 'Security Staff', 'Spa', 'Study Room', 'Swimming Pool',
+  'Tennis Court', 'Water Supply 24/7', 'Wifi'
+];
+
 const AddEditProperty = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const isEditMode = !!id;
+  const [showAmenities, setShowAmenities] = useState(false);
 
   const { data: existingProperty, isLoading: isFetching } = useGetPropertyByIdQuery(id, {
     skip: !isEditMode
@@ -28,7 +38,7 @@ const AddEditProperty = () => {
     beds: '',
     baths: '',
     sqft: '',
-    amenities: '',
+    amenities: [],
     tags: [],
     status: 'Buy',
     furnishing: '',
@@ -51,7 +61,7 @@ const AddEditProperty = () => {
         beds: existingProperty.beds || '',
         baths: existingProperty.baths || '',
         sqft: existingProperty.sqft,
-        amenities: existingProperty.amenities?.join(', ') || '',
+        amenities: existingProperty.amenities || [],
         tags: existingProperty.tags || [],
         status: existingProperty.status,
         furnishing: existingProperty.furnishing || '',
@@ -95,7 +105,7 @@ const AddEditProperty = () => {
 
     const data = new FormData();
     Object.keys(formData).forEach(key => {
-      if (key === 'tags') {
+      if (key === 'tags' || key === 'amenities') {
         data.append(key, JSON.stringify(formData[key]));
       } else if (key === 'coordinates') {
         data.append(key, JSON.stringify(formData[key]));
@@ -224,9 +234,39 @@ const AddEditProperty = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-1">Amenities (Comma separated)</label>
-              <input type="text" name="amenities" value={formData.amenities} onChange={handleChange} className="w-full border border-gray-200 rounded-lg p-2.5 focus:border-[#D29F54] outline-none" placeholder="Pool, Gym, Security, Balcony" />
+            <div className="relative">
+              <label className="block text-sm font-semibold text-gray-700 mb-1">Amenities</label>
+              <div 
+                className="w-full border border-gray-200 rounded-lg p-2.5 focus:border-[#D29F54] outline-none bg-white cursor-pointer flex justify-between items-center"
+                onClick={() => setShowAmenities(!showAmenities)}
+              >
+                <span className="text-gray-600 truncate">
+                  {formData.amenities.length > 0 ? formData.amenities.join(', ') : 'Select Amenities'}
+                </span>
+                <span className="text-gray-400 text-xs">▼</span>
+              </div>
+              
+              {showAmenities && (
+                <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto p-2">
+                  {AMENITY_OPTIONS.map(amenity => (
+                    <label key={amenity} className="flex items-center gap-2 p-2 hover:bg-gray-50 cursor-pointer rounded">
+                      <input 
+                        type="checkbox"
+                        checked={formData.amenities.includes(amenity)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setFormData(prev => ({ ...prev, amenities: [...prev.amenities, amenity] }));
+                          } else {
+                            setFormData(prev => ({ ...prev, amenities: prev.amenities.filter(a => a !== amenity) }));
+                          }
+                        }}
+                        className="rounded text-[#D29F54] focus:ring-[#D29F54]"
+                      />
+                      <span className="text-sm text-gray-700">{amenity}</span>
+                    </label>
+                  ))}
+                </div>
+              )}
             </div>
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">Marketing Tags</label>

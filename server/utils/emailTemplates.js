@@ -121,7 +121,14 @@ export const visitRequestReceivedTemplate = (name, date, time) => {
   return baseEmailTemplate('Visit Request Received', content);
 };
 
-export const visitRequestConfirmedTemplate = (name, propertyTitle, date, time) => {
+export const visitRequestConfirmedTemplate = (name, propertyTitle, date, time, meetingLink) => {
+  const meetingHtml = meetingLink ? `
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="${meetingLink}" style="background-color: #D29F54; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 16px;">Join Virtual Meeting</a>
+      <p style="margin-top: 10px; font-size: 14px; color: #555;">(Or copy this link: <a href="${meetingLink}" style="color: #D29F54;">${meetingLink}</a>)</p>
+    </div>
+  ` : '<p>Please arrive a few minutes early. Our agent will be waiting for you at the property.</p>';
+
   const content = `
     <h2>Great news, ${name}!</h2>
     <p>Your property visit has been officially <strong>confirmed</strong>. We are excited to show you around!</p>
@@ -130,7 +137,8 @@ export const visitRequestConfirmedTemplate = (name, propertyTitle, date, time) =
       <p style="margin: 0 0 10px 0;"><strong>Date:</strong> ${date}</p>
       <p style="margin: 0;"><strong>Time:</strong> ${time}</p>
     </div>
-    <p>Please arrive a few minutes early. Our agent will be waiting for you at the property.</p>
+    ${meetingHtml}
+    <p>We have also attached a Calendar invite (.ics) to this email so you can add it to your schedule!</p>
     <br/>
     <p>Best regards,<br><strong>The Mithila Legacy Realty Team</strong></p>
   `;

@@ -24,6 +24,7 @@ const PropertiesSidebar = ({ filters, setFilters, onReset }) => {
     amenities: false,
     propertySize: false
   });
+  const [showAmenities, setShowAmenities] = useState(false);
 
   const toggleSection = (section) => {
     setExpanded(prev => ({ ...prev, [section]: !prev[section] }));
@@ -247,25 +248,45 @@ const PropertiesSidebar = ({ filters, setFilters, onReset }) => {
       </AccordionItem>
 
       <AccordionItem title="Amenities" section="amenities">
-        <div className="space-y-2.5">
-          {['Pool', 'Gym', 'Security', 'Parking', 'Elevator', 'Balcony', 'Garden'].map((amenity) => (
-            <label key={amenity} className="flex items-center gap-3 cursor-pointer group">
-              <div
-                onClick={() => {
-                  setFilters(prev => {
-                    const amenities = prev.amenities.includes(amenity)
-                      ? prev.amenities.filter(a => a !== amenity)
-                      : [...prev.amenities, amenity];
-                    return { ...prev, amenities };
-                  });
-                }}
-                className={`w-4 h-4 rounded border flex items-center justify-center transition-colors ${filters.amenities.includes(amenity) ? 'bg-[#D29F54] border-[#D29F54]' : 'border-gray-300 group-hover:border-[#D29F54]'}`}
-              >
-                {filters.amenities.includes(amenity) && <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>}
-              </div>
-              <span className="text-sm text-gray-600 group-hover:text-[#1a2b3c] transition-colors">{amenity}</span>
-            </label>
-          ))}
+        <div className="relative">
+          <div 
+            className="w-full border border-gray-200 rounded-lg p-2.5 focus:border-[#D29F54] outline-none bg-white cursor-pointer flex justify-between items-center"
+            onClick={() => setShowAmenities(!showAmenities)}
+          >
+            <span className="text-gray-600 truncate text-sm">
+              {filters.amenities.length > 0 ? filters.amenities.join(', ') : 'Select Amenities'}
+            </span>
+            <span className="text-gray-400 text-xs">▼</span>
+          </div>
+          
+          {showAmenities && (
+            <div className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-60 overflow-y-auto p-2">
+              {[
+                'Air Conditioning', 'Balcony', 'Barbeque', 'Broadband Internet', 'CCTV Security', 
+                'Central Heating', 'Club House', 'Dishwasher', 'Elevator', 'Fireplace',
+                'Fully Fitted Kitchen', 'Garden', 'Gym', 'Intercom', 'Laundry Room',
+                'Library', 'Microwave', 'Parking', 'Pet Friendly', 'Power Backup',
+                'Private Pool', 'Security Staff', 'Spa', 'Study Room', 'Swimming Pool',
+                'Tennis Court', 'Water Supply 24/7', 'Wifi'
+              ].map((amenity) => (
+                <label key={amenity} className="flex items-center gap-2 p-2 hover:bg-gray-50 cursor-pointer rounded">
+                  <input 
+                    type="checkbox"
+                    checked={filters.amenities.includes(amenity)}
+                    onChange={(e) => {
+                      if (e.target.checked) {
+                        setFilters(prev => ({ ...prev, amenities: [...prev.amenities, amenity] }));
+                      } else {
+                        setFilters(prev => ({ ...prev, amenities: prev.amenities.filter(a => a !== amenity) }));
+                      }
+                    }}
+                    className="rounded text-[#D29F54] focus:ring-[#D29F54]"
+                  />
+                  <span className="text-sm text-gray-700">{amenity}</span>
+                </label>
+              ))}
+            </div>
+          )}
         </div>
       </AccordionItem>
 

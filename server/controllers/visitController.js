@@ -8,7 +8,7 @@ import { visitRequestReceivedTemplate, visitRequestConfirmedTemplate, adminNewVi
 // @access  Public
 export const submitVisitRequest = async (req, res) => {
   try {
-    const { name, email, phone, propertyId, preferredDate, preferredTime, message } = req.body;
+    const { name, email, phone, propertyId, preferredDate, preferredTime, message, visitType } = req.body;
 
     if (!name || !email || !phone || !propertyId || !preferredDate || !preferredTime) {
       return res.status(400).json({ message: 'Please provide all required fields' });
@@ -21,7 +21,8 @@ export const submitVisitRequest = async (req, res) => {
       propertyId,
       preferredDate,
       preferredTime,
-      message
+      message,
+      visitType
     });
 
     await sendEmail({
@@ -84,15 +85,20 @@ export const getVisitRequest = async (req, res) => {
 // @access  Private/Admin
 export const updateVisitStatus = async (req, res) => {
   try {
-    const { status } = req.body;
+    const { status, meetingLink } = req.body;
 
     if (!['Pending', 'Confirmed', 'Cancelled'].includes(status)) {
       return res.status(400).json({ message: 'Invalid status' });
     }
 
+    const updateData = { status };
+    if (meetingLink !== undefined) {
+      updateData.meetingLink = meetingLink;
+    }
+
     const visit = await VisitRequest.findByIdAndUpdate(
       req.params.id,
-      { status },
+      updateData,
       { returnDocument: 'after', runValidators: true }
     ).populate('propertyId', 'title location image priceDisplay');
 
@@ -101,15 +107,66 @@ export const updateVisitStatus = async (req, res) => {
     }
 
     if (status === 'Confirmed') {
+      // Create a basic .ics calendar invite string
+      const startDate = new Date(visit.preferredDate);
+      // Try to parse preferredTime (e.g. "14:00" or "02:00 PM") to set hours
+      let hours = 9, minutes = 0;
+      if (visit.preferredTime) {
+        const timeMatch = visit.preferredTime.match(/(\d+):(\d+)/);
+        if (timeMatch) {
+          hours = parseInt(timeMatch[1]);
+          minutes = parseInt(timeMatch[2]);
+          if (visit.preferredTime.toLowerCase().includes('pm') && hours < 12) hours += 12;
+          if (visit.preferredTime.toLowerCase().includes('am') && hours === 12) hours = 0;
+        }
+      }
+      startDate.setHours(hours, minutes, 0);
+      
+      const endDate = new Date(startDate);
+      endDate.setHours(startDate.getHours() + 1); // 1 hour duration
+      
+      const formatIcsDate = (date) => {
+        return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+      };
+
+      const propertyTitle = visit.propertyId?.title || 'the property';
+      const location = visit.visitType === 'virtual' ? 'Virtual Meeting' : (visit.propertyId?.location || 'Property Location');
+      const description = visit.meetingLink ? `Virtual Meeting Link: ${visit.meetingLink}` : `Tour of ${propertyTitle}`;
+
+      const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mithila Legacy//Real Estate//EN
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+UID:${visit._id}@mithilalegacy.com
+DTSTAMP:${formatIcsDate(new Date())}
+DTSTART:${formatIcsDate(startDate)}
+DTEND:${formatIcsDate(endDate)}
+SUMMARY:Property Visit: ${propertyTitle}
+DESCRIPTION:${description}
+LOCATION:${location}
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
       await sendEmail({
         email: visit.email,
         subject: `Your Property Visit is Confirmed!`,
         html: visitRequestConfirmedTemplate(
           visit.name,
-          visit.propertyId?.title || 'the property',
+          propertyTitle,
           new Date(visit.preferredDate).toLocaleDateString(),
-          visit.preferredTime
-        )
+          visit.preferredTime,
+          visit.meetingLink
+        ),
+        attachments: [
+          {
+            filename: 'visit-invite.ics',
+            content: icsContent,
+            contentType: 'text/calendar'
+          }
+        ]
       });
     }
 

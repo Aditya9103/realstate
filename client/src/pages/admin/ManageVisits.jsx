@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, Trash2, Home, User, Clock, Eye, X, MessageSquare } from 'lucide-react';
+import { Calendar, Trash2, Home, User, Clock, Eye, X, MessageSquare, Video } from 'lucide-react';
 import { useGetVisitsQuery, useUpdateVisitStatusMutation, useDeleteVisitMutation } from '../../redux/api/visitApiSlice';
 
 const ManageVisits = () => {
@@ -7,12 +7,45 @@ const ManageVisits = () => {
   const [updateStatus] = useUpdateVisitStatusMutation();
   const [deleteVisit] = useDeleteVisitMutation();
   const [selectedVisit, setSelectedVisit] = useState(null);
+  const [meetingPrompt, setMeetingPrompt] = useState({ show: false, visitId: null, status: null, link: '' });
 
   const visits = response?.data || [];
 
   const handleStatusChange = async (id, status) => {
     try {
+      const visit = visits.find(v => v._id === id);
+
+      if (status === 'Confirmed' && visit && visit.visitType === 'virtual') {
+        setMeetingPrompt({ show: true, visitId: id, status, link: '' });
+        return; // Wait for modal submission
+      }
+
       await updateStatus({ id, status }).unwrap();
+    } catch (err) {
+      alert(err?.data?.message || 'Error updating status');
+    }
+  };
+
+  const handleMeetingLinkSubmit = async () => {
+    try {
+      await updateStatus({ 
+        id: meetingPrompt.visitId, 
+        status: meetingPrompt.status, 
+        meetingLink: meetingPrompt.link 
+      }).unwrap();
+      setMeetingPrompt({ show: false, visitId: null, status: null, link: '' });
+    } catch (err) {
+      alert(err?.data?.message || 'Error updating status');
+    }
+  };
+
+  const handleMeetingLinkSkip = async () => {
+    try {
+      await updateStatus({ 
+        id: meetingPrompt.visitId, 
+        status: meetingPrompt.status 
+      }).unwrap();
+      setMeetingPrompt({ show: false, visitId: null, status: null, link: '' });
     } catch (err) {
       alert(err?.data?.message || 'Error updating status');
     }
@@ -93,7 +126,7 @@ const ManageVisits = () => {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2 font-semibold text-gray-800 mb-1">
-                        <Calendar size={14} className="text-[#D29F54]" /> 
+                        <Calendar size={14} className="text-[#D29F54]" />
                         {new Date(visit.preferredDate).toLocaleDateString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })}
                       </div>
                       <div className="flex items-center gap-2 text-xs text-gray-600">
@@ -101,15 +134,14 @@ const ManageVisits = () => {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <select 
+                      <select
                         value={visit.status}
                         onChange={(e) => handleStatusChange(visit._id, e.target.value)}
-                        className={`text-xs font-bold px-2 py-1 rounded outline-none border-none cursor-pointer ${
-                          visit.status === 'Pending' ? 'bg-yellow-100 text-yellow-700' :
+                        className={`text-xs font-bold px-2 py-1 rounded outline-none border-none cursor-pointer ${visit.status === 'Pending' ? 'bg-yellow-100 text-yellow-700' :
                           visit.status === 'Confirmed' ? 'bg-blue-100 text-blue-700' :
-                          visit.status === 'Completed' ? 'bg-green-100 text-green-700' :
-                          'bg-red-100 text-red-700'
-                        }`}
+                            visit.status === 'Completed' ? 'bg-green-100 text-green-700' :
+                              'bg-red-100 text-red-700'
+                          }`}
                       >
                         <option value="Pending">Pending</option>
                         <option value="Confirmed">Confirmed</option>
@@ -119,13 +151,13 @@ const ManageVisits = () => {
                     </td>
                     <td className="px-6 py-4 text-right">
                       <div className="flex items-center justify-end gap-2">
-                        <button 
+                        <button
                           onClick={() => setSelectedVisit(visit)}
                           className="p-1.5 text-blue-500 hover:bg-blue-50 rounded transition-colors" title="View Details"
                         >
                           <Eye size={18} />
                         </button>
-                        <button 
+                        <button
                           onClick={() => handleDelete(visit._id)}
                           className="p-1.5 text-red-500 hover:bg-red-50 rounded transition-colors" title="Delete Request"
                         >
@@ -147,14 +179,14 @@ const ManageVisits = () => {
           <div className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
             <div className="flex justify-between items-center p-6 border-b border-gray-100 bg-gray-50">
               <h2 className="text-xl font-bold text-[#1a2b3c] font-serif">Visit Request Details</h2>
-              <button 
+              <button
                 onClick={() => setSelectedVisit(null)}
                 className="text-gray-400 hover:text-gray-700 bg-white hover:bg-gray-100 rounded-full p-2 transition-colors border border-gray-200"
               >
                 <X size={20} />
               </button>
             </div>
-            
+
             <div className="p-6 overflow-y-auto space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-gray-50 p-5 rounded-xl border border-gray-100">
                 <div>
@@ -186,6 +218,17 @@ const ManageVisits = () => {
                 </div>
               </div>
 
+              {selectedVisit.meetingLink && (
+                <div>
+                  <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-2">Virtual Meeting Link</p>
+                  <div className="bg-gray-50 p-4 rounded-xl border border-gray-100 text-sm">
+                    <a href={selectedVisit.meetingLink} target="_blank" rel="noreferrer" className="text-blue-500 hover:underline">
+                      {selectedVisit.meetingLink}
+                    </a>
+                  </div>
+                </div>
+              )}
+
               {selectedVisit.propertyId && (
                 <div>
                   <p className="text-[11px] uppercase font-bold text-gray-500 tracking-wider mb-2">Interested Property</p>
@@ -210,17 +253,59 @@ const ManageVisits = () => {
             </div>
 
             <div className="p-6 border-t border-gray-100 flex justify-end gap-3 bg-gray-50">
-              <a 
+              <a
                 href={`mailto:${selectedVisit.email}`}
                 className="px-6 py-2.5 bg-[#1a2b3c] text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
               >
                 Contact Visitor
               </a>
-              <button 
+              <button
                 onClick={() => setSelectedVisit(null)}
                 className="px-6 py-2.5 border border-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-100 transition-colors bg-white"
               >
                 Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Virtual Meeting Link Modal */}
+      {meetingPrompt.show && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl w-full max-w-md overflow-hidden shadow-2xl flex flex-col p-6 animate-fade-in-up">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 rounded-full bg-[#fcf9f2] flex items-center justify-center text-[#D29F54]">
+                <Video size={20} />
+              </div>
+              <h2 className="text-xl font-bold text-[#1a2b3c]">Virtual Visit Confirmed!</h2>
+            </div>
+            <p className="text-sm text-gray-600 mb-5 ml-13">
+              Please enter the Zoom, Google Meet, or Teams link for this virtual tour. 
+              This will be emailed to the client alongside their calendar invite.
+            </p>
+            
+            <input 
+              type="url"
+              placeholder="https://zoom.us/j/123456789"
+              className="w-full border border-gray-200 rounded-lg px-4 py-3 mb-6 focus:outline-none focus:border-[#D29F54] focus:ring-1 focus:ring-[#D29F54]"
+              value={meetingPrompt.link}
+              onChange={(e) => setMeetingPrompt({ ...meetingPrompt, link: e.target.value })}
+              autoFocus
+            />
+
+            <div className="flex justify-end gap-3">
+              <button 
+                onClick={handleMeetingLinkSkip}
+                className="px-5 py-2.5 rounded-lg border border-gray-200 text-gray-600 font-semibold hover:bg-gray-50 transition-colors"
+              >
+                Skip Link
+              </button>
+              <button 
+                onClick={handleMeetingLinkSubmit}
+                className="px-5 py-2.5 rounded-lg bg-[#D29F54] text-white font-semibold hover:bg-[#b88a44] transition-colors"
+              >
+                Save & Send Email
               </button>
             </div>
           </div>

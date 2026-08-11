@@ -19,10 +19,10 @@ export const visitApiSlice = apiSlice.injectEndpoints({
       invalidatesTags: ['VisitRequest'],
     }),
     updateVisitStatus: builder.mutation({
-      query: ({ id, status }) => ({
+      query: ({ id, status, meetingLink }) => ({
         url: `/visits/${id}/status`,
         method: 'PUT',
-        body: { status },
+        body: { status, meetingLink },
       }),
       invalidatesTags: (result, error, { id }) => [{ type: 'VisitRequest', id }, 'VisitRequest'],
     }),

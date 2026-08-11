@@ -37,6 +37,11 @@ const visitRequestSchema = new mongoose.Schema({
     enum: ['in-person', 'virtual'],
     default: 'in-person'
   },
+  meetingLink: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   status: {
     type: String,
     enum: ['Pending', 'Confirmed', 'Completed', 'Cancelled'],
